@@ -1,0 +1,4215 @@
+@import url(reset.css);
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/open-sans.regular.eot");
+    src: url("../fonts/OpenSans/open-sans.regular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OpenSans/open-sans.regular.woff") format("woff"),
+    url("../fonts/OpenSans/open-sans.regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+	background-color: transparent !important;
+    background-image: url(../images/white-bg.jpg);
+    background-size: cover;
+    background-position: center -150px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+
+::-webkit-input-placeholder {
+        color:#585858;
+    }
+     ::-moz-placeholder {
+        color:#585858;
+    }/* Firefox 19+ */
+    :-moz-placeholder {
+        color:#585858;
+    }/* Firefox 18- */
+    :-ms-input-placeholder {
+        color:#585858;
+    }
+    input[placeholder]          {text-overflow:ellipsis;}
+    input::-moz-placeholder     {text-overflow:ellipsis;} 
+    input:-moz-placeholder      {text-overflow:ellipsis;} 
+    input:-ms-input-placeholder {text-overflow:ellipsis;} 
+
+a:hover{
+    color:#FFF;
+    text-decoration: none;
+}
+.prinats{
+     width: 180px;
+    height: 40px;
+    background-color: #000;
+    color: #9a9a9a;
+    /*-webkit-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);*/
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px; 
+}
+.jspVerticalBar {
+    display: none;
+}
+.news ::-webkit-scrollbar {
+    width: 0;
+}
+.news { 
+    -ms-overflow-style: none;
+}
+.news_in ::-webkit-scrollbar {
+    width: 0;
+}
+.news_in { 
+    -ms-overflow-style: none;
+}
+/*******************************ГЛАВНАЯ С ВЫБОРОМ СТОРОН***************************/
+.bg-index {
+	background-image: url(../images/index-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    height: 100%;
+}
+.black_side {
+	width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+.white_side {
+	width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+.black_side h2 {
+	font-size: 25px;
+    color: #ffffff;
+    font-family: Arial;
+    text-transform: uppercase;
+    margin-top: 165px;
+}
+.subcontainer {	
+    align-self: center;
+    margin: auto;
+    text-align: center;
+}
+.white_side h2 {
+	font-size: 25px;
+    color: #414141;
+    font-family: Arial;
+    text-transform: uppercase;
+    margin-top: 165px;
+}
+.button_black {
+	background-image: url(../images/button_black.png);
+    width: 377px;
+    height: 76px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    color: #dddddd;
+    text-transform: uppercase;
+    font-size: 29px;
+    font-family: Arial;
+    margin-top: 135px;
+}
+.button_white {
+	background-image: url(../images/button_white.png);
+    width: 377px;
+    height: 76px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 29px;
+    font-family: Arial;
+    margin-top: 135px;
+}
+.button_black:hover, .button_white:hover {
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	transition: 0.5s;
+}
+
+/*****************************************КОНЕЦ ГЛАВНОЙ*******************************************/
+
+/******************************************ПЕРВАЯ СТРАНИЦА ТЕМНОЙ СТОРОНЫ***************************/
+.nav_black {
+    height: 67px;
+    background-image: url(../images/nav_white.jpg);
+    background-size: cover;
+    border-top: 4px solid #fff;
+    background-repeat: no-repeat;
+}
+.logo_black {
+    width: 163px;
+    height: 110px;
+    background-image: url(../images/logo_white.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    margin-top: 0px;
+    float: left;
+}
+nav ul {
+    float: left;
+}
+nav ul li {
+    color: #616161;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+    display: inline-block;
+    width: 125px;
+    text-align: center;
+    padding-top: 20px;
+    height: 63px;
+    border-left: 2px solid #bdc0c5;
+}
+nav ul li a {
+    text-decoration: none;
+    outline: 0;
+}
+nav ul li:hover {
+    color: #2c9eff;
+}
+nav .nav-right {
+    float: right;
+}
+.nav-right li {
+    color: #616161;
+    font-size: 15px;
+    font-family: "OpenSans";
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    padding-top: 20px;
+    height: 63px;
+    border-left: 2px solid #bdc0c5;
+    text-transform: capitalize;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.nav-right .selectbox .select {
+    width: 80px;
+}
+.nav-right .selectbox .dropdown {
+    width: 80px;
+}
+.nav-right .selectbox li.selected {
+    width: 80px;
+}
+.nav-right .selectbox li {
+    width: 80px;
+}
+.gam {
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    background-image: url(../images/burger2.png);
+    background-position: center;
+    background-size: contain;
+    margin: 20px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 20px;
+    border: 2px solid #fff;
+    transition: all 1s;
+    display: none;
+}
+.active .gam{
+
+}
+/****************СТИЛИ myselect*****************/
+.selectbox {
+    vertical-align: middle;
+    cursor: pointer;    
+}
+.selectbox .select {
+    width: 125px;
+    height: 30px;   
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;    
+    background: transparent;    
+    text-align: center;
+    box-shadow: none !important;
+}
+.selectbox .select:hover {
+    background-color: transparent;
+    background-position: 0 -10px;
+}
+.selectbox .select:active {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+}
+.selectbox.focused .select {
+    border: 1px solid #5794BF;
+}
+.selectbox .select .text {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #616161;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+}
+.selectbox .trigger {
+    position: absolute; top: 0; right: 0;
+    width: 7px;
+    height: 100%;
+
+}
+.selectbox .trigger .arrow {
+    position: absolute; 
+    top: 13px;  
+    right: 12px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #5f5f5f;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 1;
+    filter: alpha(opacity=30);
+}
+.selectbox:hover .arrow {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.selectbox .dropdown {
+    top: 33px;
+    width: 125px;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.selectbox li {
+    padding: 16px 0px 6px;
+    color: #616161;
+    list-style: none;
+    background-color: #fff;
+    height: 50px;
+    margin-bottom: 1px;
+    border: 0px;
+}
+.selectbox li.selected {
+    color: #616161;
+
+}
+.selectbox li:hover {
+    background: #fff;
+    color: #2c9eff;
+}
+.selectbox li.disabled {
+    display:none;
+}
+.selectbox li.disabled:hover {
+    background: none;
+}
+.dropdown {
+    top: 50px !important;
+    border-radius: 0px !important;
+}
+.selectbox .select .text:hover {
+    color: #2c9eff;
+}
+/************************КОНЕЦ СТИЛЕЙ myselect**********************/
+
+/************************СТИЛИ BODY*********************************/
+
+.bg-black {
+}
+.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+    width: 100%;
+    height: 342px;
+}
+.carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-left: 3px;
+}
+.carousel-indicators .active {
+    width: 21px;
+    height: 21px;
+    float: right;
+    margin-left: 3px;
+}
+.carousel-indicators li {
+    background-color: #fff;
+    border: 2px solid #7f7f7f;
+}
+.carousel-indicators .active {
+     background-color: #2c9eff;
+    -webkit-box-shadow: inset 0px 0px 3px 2px rgba(255,255,255,0.75);
+    -moz-box-shadow: inset 0px 0px 3px 2px rgba(255,255,255,0.75);
+    box-shadow: inset 0px 0px 3px 2px rgba(255,255,255,0.75);
+}
+.carousel-inner {
+    margin-top: -10px;
+}
+.carousel-indicators {
+    bottom: -30px;
+    width: 100%;
+    margin: 0px;
+    right: 0px !important;
+    left: 0px !important;
+    text-align: right;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.images_for_black {
+    margin-top: 50px;
+}
+.image1 {
+    height: 295px;
+}
+.image1:hover {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.image1:hover .black_line p {
+    color: #2c9eff;
+}
+.active_menu_middle_image{
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    
+}
+.active_menu_middle_image .black_line p {
+	color: #ff7e00;
+}
+.black_line {
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 45px;
+    margin-top: -3px;
+    padding-top: 13px;
+    background-image: url(../images/border.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 40px;
+    width: 190px;
+    margin: 0 auto;
+    margin-top: -5px;
+}
+.black_line p {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    font-family: "OpenSans";
+    color: #585858;
+}
+.paginat {
+    margin-top: 75px;
+    margin-bottom: 95px;
+}
+.paginat ul {
+    text-align: center;
+}
+.paginat ul li {
+    color: #838182;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+    display: inline-block;
+    text-align: center;
+}
+.news-top-bg {
+    background: url(../images/news_bg_white.png) no-repeat center top;
+    margin-top: 50px;
+    position: relative;
+}
+.picLeft {
+    background:url(../images/pic-left-light.png) no-repeat;
+    position:absolute;
+    width: 280px;
+    height: 230px;
+    top: -35px;
+    left: -35px;
+}
+.picRight {
+    background:url(../images/pic-right-light.png) no-repeat;
+    position:absolute;
+    width: 280px;
+    height: 230px;
+    top: -35px;
+    right: -35px;
+}
+.news {
+	background: url(../images/news_bg_white_repeat.png) repeat-y center top;
+    padding-top: 0px;
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-top: 58px;
+    padding-bottom: 20px;
+}
+.scroll-pane {
+    width: 100% !important; /* Ширина видимой области*/
+    height: 1600px; /* Высота видимой области*/
+    /*overflow: auto !important; 
+    outline: none;*/
+}
+.news p {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.news_text h5 {
+    color: #585858;
+    font-size: 17px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+    margin-top: 25px;
+    max-height: 60px;
+    overflow: hidden;
+}
+.news img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 213px;
+}
+.news h3 {
+    color: #585858;
+    font-size: 20px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 58px;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+.social_icon {
+    margin-bottom: 25px;
+}
+.social_icon ul li img {
+    display: inline-block;
+    width: auto;
+}
+.social_icon ul {
+    margin-top: 30px;
+}
+.social_icon ul li {
+    display: inline-block;
+}
+.button_news {
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-top: 30px;
+    float: right;
+    margin-left: 25px;
+    
+}
+.button_news:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.news1 hr {
+    margin-top: 0px;
+    margin-bottom: 2px;
+    border: 0;
+    border-top: 1px solid #989898;
+    width: 100%;
+}
+
+.paginat2 {
+    position: relative;
+    bottom: 50px;
+    right: 15px;
+}
+.paginat2 ul {
+    text-align: right;
+}
+.paginat2 ul li {
+    color: #838182;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.fb2, .vk2, .tv2, .gl2, .in2 {
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 15px;
+}
+.fb2 {
+    background-image: url(../images/facebook_w.png);
+}
+.fb2:hover {
+    background-image: url(../images/facebook_wh.png);
+    transition: 0.3s;
+}
+.vk2 {
+    background-image: url(../images/vkontakte_w.png);
+}
+.vk2:hover {
+    background-image: url(../images/vkontakte_wh.png);
+    transition: 0.3s;
+}
+.tv2 {
+    background-image: url(../images/twitter_w.png);
+}
+.tv2:hover {
+    background-image: url(../images/twitter_wh.png);
+    transition: 0.3s;
+}
+.gl2 {
+    background-image: url(../images/google_w.png);
+}
+.gl2:hover {
+    background-image: url(../images/google_wh.png);
+    transition: 0.3s;
+}
+.in2 {
+    background-image: url(../images/in_fw.png);
+}
+.in2:hover {
+    background-image: url(../images/in_fwh.png);
+    transition: 0.3s;
+}
+.fb:hover {
+    background-image: url(../images/fb_wh.png);
+    transition: 0.3s;
+}
+.fb {
+    background-image: url(../images/fb_w.png);
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+.vk {
+    background-image: url(../images/vk_w.png);
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+.vk:hover {
+    background-image: url(../images/vk_wh.png);
+    transition: 0.3s;
+}
+.tv {
+    background-image: url(../images/tw_w.png);
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+.tv:hover {
+    background-image: url(../images/tw_wh.png);
+    transition: 0.3s;
+}
+.gl {
+    background-image: url(../images/gl_w.png);
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+.gl:hover {
+    background-image: url(../images/gl_wh.png);
+    transition: 0.3s;
+}
+.in {
+    background-image: url(../images/in_w.png);
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+.in:hover {
+    background-image: url(../images/in_wh.png);
+    transition: 0.3s;
+}
+.comments {
+    background-image: url(../images/km2_w.png);
+    background-repeat: no-repeat;
+    float: right;
+}
+
+.comments:hover {
+    background-image: url(../images/km2_wh.png);
+    transition: 0.3s;
+}
+.liked {
+    background-image: url(../images/ht2_w.png);
+    background-repeat: no-repeat;
+    float: right;
+}
+.liked:hover {
+    background-image: url(../images/ht2_wh.png);
+    transition: 0.3s;
+}
+.right p {
+    color: #585858;
+    margin-left: 40px;
+    margin-right: 30px;
+}
+.news1 hr:last-child {
+    margin-bottom: 20px;
+}
+/********************************ФУТЕР************************************/
+.padding-top {
+    padding-top: 90px;
+}
+footer {
+    background-color: #686868;
+}
+footer p {
+    color: #fff;
+    font-size: 16px;
+    font-family: "OpenSans";
+    line-height: 28px;
+}
+.social_footer {
+    margin-top: 80px;
+    margin-bottom: 90px;
+}
+.social_footer ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+.center-footer p {
+    text-align: center;
+}
+.center-footer p span {
+    color: #fff;
+    font-size: 19px;
+    font-family: "OpenSans";
+    line-height: 110px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: underline;
+}
+.right-footer p {
+    text-align: right;
+}
+.right-footer img {
+    float: right;
+    margin-left: 15px;
+    margin-top: 24px;
+}
+/******************************КОНЕЦ ФУТЕРА*********************************/
+
+/******************************Страница НОВОСТИ ВНУТР.***********************/
+.news_in {
+    background-image: url(../images/news_bg_white.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 137px;
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-top: 50px;
+    padding-bottom: 55px;
+    overflow: hidden;
+}
+.news_in p {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.news_in_text h5 {
+    color: #585858;
+    font-size: 17px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+    margin-top: 25px;
+    overflow: hidden;
+    text-indent: 35px;
+}
+.news_in img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 213px;
+}
+.news_in h3 {
+    color: #585858;
+    font-size: 35px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 58px;
+    text-align: center;
+    max-width: 65%;
+    margin: 0 auto;
+}
+.comments_in {
+    background-image: url(../images/km2_w.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 30px;
+}
+.comments_in p {
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.comments_in p span {
+    margin-right: 9px;
+}
+.comments_in:hover {
+    background-image: url(../images/km2_wh.png);
+    transition: 0.3s;
+}
+.star_in {
+    background-image: url(../images/star_wh.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 55px;
+    margin-top: 30px;
+    background-size: contain;
+}
+.star_in:hover {
+    background-image: url(../images/star_w.png);
+    transition: 0.3s;
+}
+.star_in2 {
+    background-image: url(../images/star.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 29px;
+    margin-top: 30px;
+}
+.star_in2 p {
+    color: #fff;
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.star_in p {
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.liked_in {
+    background-image: url(../images/ht2_w.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+.liked_in p {
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-left: 40px;
+    line-height: 29px;
+}
+.liked_in p span {
+    margin-right: 9px;
+}
+.liked_in:hover {
+    background-image: url(../images/ht2_wh.png);
+    transition: 0.3s;
+}
+.news_in .social_icon {
+    float: right;
+    margin-bottom: 13px;
+}
+/******************************БЛОК КОМЕНТАРИЕВ*****************************/
+.koment {
+    background-image: url(../images/podlogka_koment_w.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-top: 50px;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+
+}
+.koment h3 {
+    color: #585858;
+    font-size: 35px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 58px;
+    text-align: center;
+    max-width: 65%;
+    margin: 0 auto;
+    margin-top: 27px;
+}
+.margin-top {
+    margin-top: 10px;
+    margin-left: -40px;
+}
+.avatar {
+    background-image: url(../images/avatar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 115px;
+    background-position: center;
+    float: left;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.koment p {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+}
+.koment .vivod_koment p {
+    color: #585858;
+    font-size: 14px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+    float: left;
+    width: 90%;
+}
+.napisat_koment textarea {
+    max-width: 585px;
+    min-height: 85px;
+    background-color: #989898;
+    color: #838182;
+    width: 585px;
+    border: 0px;
+    outline: 0px;
+    padding: 15px 10px;
+    font-family: "OpenSans";
+    resize: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.button_koment {
+    width: 210px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 30px;
+}
+.button_koment:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.avatar2 {
+    background-image: url(../images/avatar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    float: left;
+}
+.koment .vivod_pod_koment p {
+    color: #585858;
+    font-size: 14px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+    float: left;
+    width: 90%;
+}
+.otpravit_koment {
+    background-image: url(../images/otpravit_koment_w.png);
+    background-repeat: no-repeat;
+    float: right;
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.prosmotr_komentov {
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/prosmotr_w.png);
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+
+/*************************************Страница РЕГИСТРАЦИИ**********************************/
+.registr img {
+    display: block;
+    margin: 0 auto;
+}
+.registr h3, .registr h5  {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
+.registr p {
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    line-height: 17px;
+}
+.registr_center {
+    max-width: 440px;
+    display: block;
+    margin: 0 auto;
+}
+.name, .mail, .pass, .nikname, textarea {
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-family: "OpenSans";
+    color: #585858;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.border-top {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    height: 50px;
+    background-color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+    background-size: 100%;
+}
+.border-top-bottom {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+    background-color: rgba(255,255,255,0.7);
+    background-size: 100%;
+}
+.border-top-select {
+    width: 100px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    height: 30px;
+    background-color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+}
+.border-top-select2 {
+    width: 170px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    height: 30px;
+    background-color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+}
+.border-bottom-select {
+    width: 100px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+}
+.border-bottom-select2 {
+    width: 170px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+}
+.border-top3 {
+    width: 200px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    height: 50px;
+    background-color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+}
+.border-bottom3 {
+    width: 200px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+}
+.border-top-text {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    min-height: 100px;
+    background-color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+    background-size: 100%;
+}
+.border-bottom-text {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+    background-size: 100%;
+}
+.select_day .selectbox .select {
+    width: 100px;
+    background-color: transparent;
+    color: #e4e4e4;
+    font-size: 20px;
+    border: none;
+}
+.select_day .selectbox .dropdown, .select_year .selectbox .dropdown {
+    width: 100px;
+}
+.select_month .dropdown {
+    width: 170px;
+}
+.registr_center .selectbox li {
+    text-align: center;
+    margin-bottom: 0px;
+}
+.registr_center .selectbox li:hover {
+    background-color: #585858;
+    color: #fff;
+}
+.registr_center .selectbox .select .text:hover {
+    color: #585858;
+}
+.select_month .selectbox .select {
+    width: 170px;
+    background-color: transparent;
+    color: #e4e4e4;
+    font-size: 20px;
+    border: none;
+}
+.select_year .selectbox .select {
+    width: 100px;
+    background-color: transparent;
+    color: #e4e4e4;
+    font-size: 20px;
+    border: none;
+}
+.country, .city {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "OpenSans";
+    color: #585858;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*.select_games span, .select_games .dropdown {
+    width: 100%;
+}
+.select_games .selectbox .select {
+    background-color: rgba(0,0,0,0.7);
+    color: #e4e4e4;
+    font-size: 20px;
+    margin-top: 20px;
+    border-image: url(../images/border_input.png) 5;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+}
+*/
+.info textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.button_black_regist {
+    background-image: url(../images/button_white2.png);
+    width: 255px;
+    height: 55px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    color: #dddddd;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Arial;
+    display: block;
+    margin: 20px auto 0px;
+}
+.button_black_regist:hover {
+    -moz-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+.social_registr {
+    background-color: rgba(255,255,255,0.7);
+    padding-top: 15px;
+    margin-bottom: 90px;
+    margin-top: 20px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+}
+.social_registr h6 {
+    font-size: 20px;
+    color: #e4e4e4;
+    font-family: "OpenSans";
+    text-align: center;
+}
+.social_registr ul {
+    text-align: center;
+    margin-top: 15px;
+}
+.registr_center .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.limitedNumbChosen, .limitedNumbSelect2{
+  width: 400px;
+}
+.border-bottom {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    height: 5px;
+    padding-bottom: 15px;
+}
+/*************************Мульти Селект********************/
+.no-select .selectbox {
+    display: none !important;
+}
+.select2 {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple {
+    background-color: transparent !important;
+}
+.select2-container .select2-selection--multiple {
+    min-height: 50px !important;
+    border: none !important;
+    border-radius: 0px !important;
+}
+.select2-search__field {
+    text-align: center !important;
+    font-family: "OpenSans" !important;
+    font-size: 20px !important;
+}
+.select2-container .select2-search--inline .select2-search__field {
+    margin-top: 10px !important;
+    cursor: pointer !important;
+}
+.select2-dropdown {
+    /*background-color: #000 !important;*/
+    border: none !important;
+    border-radius: 0px !important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    /*background-color: #585858 !important;*/
+    color: #fff !important;
+}
+.select2-results__option {
+    height: 50px !important;
+    font-family: "OpenSans" !important;
+    text-align: center !important;
+    padding: 15px !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: transparent !important;
+    border: none !important;
+    font-family: "OpenSans" !important;
+    color: #bcbbbb !important;
+}
+.select2-container--default .select2-selection--multiple {
+    cursor: pointer !important;
+}
+.border-multi {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    min-height: 50px;
+    background-size: 100%;
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.7);
+}
+.border-bottom-multi {
+    width: 100%;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:bottom;
+    min-height: 5px;
+    background-size: 100%;
+}
+/************************************РАДИО КНОПКИ******************************************/
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+input[type=radio] {
+    display: none;
+}
+.man label:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    float: right;
+    background-color: rgba(255,255,255,0.7);
+    border: 2px solid #7f7f7f;
+}
+.wooman label:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    float: left;
+    background-color: rgba(255,255,255,0.7);
+    border: 2px solid #7f7f7f;
+}
+.radio label:before {
+    border-radius: 50%;
+}
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #60bdfe;
+    font-size: 55px;
+    text-align: center;
+    line-height: 20px;
+}
+.radio label, .checkbox label {
+    font-size: 20px;
+    font-family: "OpenSans";
+    color: #585858;
+    padding-left: 0px;
+}
+.man {
+    margin-top: 20px;
+    float: left;
+    margin-left: 10px;
+}
+.wooman {
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
+}
+.radio {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 50px;
+}
+/************************************ВОСТАНОВЛЕНИЕ ПАРОЛЯ**********************************/
+.name_vostan {
+    height: 50px;
+    width: 430px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "OpenSans";
+    color: #585858;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.border-top-vostan {
+    width: 430px;
+    background-image: url(../images/border_input_w.png);
+    background-repeat: no-repeat;
+    background-position-y:top;
+    height: 50px;
+    background-color: rgba(255,255,255,0.7);
+    background-size: 100%;
+    display: block;
+    margin: 20px auto 0;
+}
+.mail_vostan {
+    height: 50px;
+    width: 430px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "OpenSans";
+    color: #585858;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.button_black_vostan {
+    background-image: url(../images/button_white2.png);
+    width: 255px;
+    height: 55px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    color: #dddddd;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Arial;
+    display: block;
+    margin: 20px auto 90px;
+}
+.button_black_vostan:hover {
+    -moz-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+
+/*********************************СТРАНИЦА ВХОДА**********************************/
+.registr_center h6 {
+    text-align: center;
+    text-decoration: none;
+    color: #585858;
+    font-size: 20px;
+    font-family: "OpenSans";
+    margin-top: 20px;
+}
+.registr_center h5 {
+    text-align: center;
+    text-decoration: none;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+#uLogin {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/*************************************Страница Игроков **********************************/
+.player_avatar {
+    background-image: url(../images/player-avatar.png);
+    background-size: cover;
+    background-position: center;
+    width: 160px;
+    height: 150px;
+    float: left;
+    margin-right: 10px;
+}
+.info_vivod {
+    float: left;
+    min-width: 183px;
+}
+.news .info_vivod p {
+    margin-left: 0px;
+}
+.liked_games {
+    max-width: 160px;
+    max-height: 160px;
+    min-width: 160px;
+        float: left;
+    margin-left: 40px;
+    min-height: 160px;
+}
+.liked_games img {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.liked_games img:hover {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+.group_buttons {
+    float: left;
+    margin-left: 45px;
+    width: 190px;
+}
+.button_players {
+    width: 100%;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 15px;
+    
+}
+.button_players:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.sortirovka p {
+    font-size: 15px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+}
+.vivod_liked_games img {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.vivod_liked_games {
+    margin-bottom: 25px;
+}
+.vivod_liked_games img:hover {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sortirovka .selectbox {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.sortirovka .selectbox .select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.sortirovka .selectbox .select .text {
+    text-transform: inherit;
+    text-align: left;
+    padding-left: 10px;
+}
+.sortirovka .selectbox .select .text:hover {
+    color: #2c9eff;;
+}
+.sortirovka .selectbox .dropdown {
+    width: 100%;
+}
+.sortirovka .selectbox li {
+    margin-bottom: 0px;
+    background-color: #e0f1fa;
+    padding: 7px 10px 6px 0px;
+    height: 30px;
+    padding-left: 10px;
+}
+.sortirovka .selectbox li:hover {
+    background-color: #fff;
+    color: #2c9eff;
+}
+.sortirovka .button_players {
+    margin-top: 20px;
+}
+.news hr {
+    margin-top: 0px;
+    margin-bottom: 2px;
+    border: 0;
+    border-top: 1px solid #000;
+    width: 98%;
+    float: left;
+}
+.news hr:last-child {
+    margin-bottom: 20px;
+}
+.sortirovka {
+    float: right;
+}
+.players {
+    float: left;
+}
+.news {
+    overflow-x: hidden;
+    min-height: 400px;
+}
+/************************************Страница ГАЙДОВ*********************************/
+.vibor_game2 {
+
+}
+.vibor_game2 .selectbox {
+    width: 380px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+.vibor_game2 .selectbox .select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_game2 .selectbox .select .text {
+    text-transform: inherit;
+    text-align: left;
+    padding-left: 10px;
+}
+.vibor_game2 .selectbox .select .text:hover {
+    color: #2c9eff;
+}
+.vibor_game2 .selectbox .dropdown {
+    width: 100%;
+}
+.vibor_game2 .selectbox li {
+    margin-bottom: 0px;
+    background-color: #e0f1fa;
+    padding: 7px 10px 6px 0px;
+    height: 30px;
+    padding-left: 10px;
+}
+.vibor_game2 .selectbox li:hover {
+    background-color: #fff;
+    color: #2c9eff;
+}
+.flex-container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*********************************ПОПАП ДЛЯ НАПИСАНИЯ СООБЩЕНИЯ*********************************/
+#popup_mes {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 10002;
+    top: 0;
+    left: 0;
+}
+.cover {
+    background: rgba(0, 0, 0, 0.65);
+    width:100%;
+    position: fixed;
+    height: 100%;
+    top: 1px;
+    z-index: 10001;
+    display: none;
+}
+.popup_podlogka {
+    background-image: url(../images/popup_podlogka_w.png);
+    background-size: 100% 100%;
+    padding-bottom: 50px;
+    padding-top: 80px;
+}
+.close {
+    top: 3px;
+    margin-top: -5px;
+    right: -40px;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    opacity: 1;
+}
+.popup_podlogka h4 {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: center;
+    margin-bottom: 20px;
+}
+.popup_input {
+    width: 70%;
+    height: 40px;
+    border: 1px solid #585858;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+    padding-left: 10px;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    margin-bottom: 10px;
+}
+.popup_textarea {
+    width: 70%;
+    max-width: 70%;
+    min-height: 270px;
+    background-color: transparent;
+    border: 1px solid #585858;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    outline: 0px;
+    padding: 10px;
+    resize: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+.popup_button {
+    width: 265px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.popup_button:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+
+/***********************************СТРАНИЦА КЛАНЫ 1***********************************/
+.menu_klan {
+    float: left;
+}
+.klan_avatar {
+    width: 200px;
+}
+.klan_avatar img {
+    display: block;
+    width: 100%;
+    float: left;
+}
+.uzor_avatar {
+    background-image: url(../images/uzor_avatar_w.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    background-size: 100%;
+    position: relative;
+}
+.nav_klan {
+    background-image: url(../images/nav_menu_w.png);
+    background-repeat: no-repeat;
+    float: left;
+    width: 200px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background-size: 100% 100%;
+}
+.nav_klan ul li {
+    text-align: center;
+}
+.nav_klan ul li a {
+    font-size: 14px;
+    font-family: "OpenSans";
+    color: #585858;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+.nav_klan ul li a:hover {
+    color: #2c9eff;
+}
+.players_in_klan {
+    float: right;
+}
+.otstyp_klan {
+    margin-top: 40px;
+}
+.nagradi img {
+    width: 31px;
+    float: left;
+    margin-right: 5px;
+    height: 38px;
+}
+/****************************************************СТРАНИЦА КЛАНЫ 2 (С ТАБАМИ)************************************/
+.nav-tabs {
+    border: none;
+}
+.nav-tabs>li>a {
+    border-radius: 0px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #2c9eff;
+    border: none;
+    font-size: 18px;
+    font-family: "OpenSans";
+    color: #fff;
+}
+.nav-tabs>li>a {
+    font-size: 18px;
+    font-family: "OpenSans";
+    color: #585858;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: #2c9eff;
+    color: #fff;
+}
+.nav-tabs>li>a:hover {
+    border: none;
+}
+.nav-tabs>li>a {
+    border: none;
+}
+.nav-tabs>li>a {
+    background-color: #fff;
+}
+.nav {
+    margin-bottom: 40px;
+}
+.reit_player {
+    width: 190px;
+    max-height: 160px;
+    float: left;
+    margin-left: 40px;
+}
+.reit_player .button_players:hover {
+    color: #838182;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: 0.5s;
+    opacity: 0.5;
+}
+.iskluchenie_buttons {
+    float: left;
+    margin-left: 20px;
+    width: 190px;
+}
+/******************************************************СТРАНИЦА КЛАНЫ 3*******************************************************/
+.klan_info {
+    float: left;
+}
+.klan_info h3 {
+    font-size: 27px;
+    text-align: left;
+    font-family: "OpenSans";
+    color: #2c9eff;
+    text-transform: capitalize;
+    margin-left: 0px;
+    line-height: 21px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.klan_info p {
+    font-size: 18px;
+    text-align: left;
+    font-family: "OpenSans";
+    color: #585858;
+    margin-left: 0px;
+    margin-bottom: 30px;
+}
+.klan_info p span {
+    color: #585858;
+}
+.igri_klana img {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.igri_klana img:hover {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+    cursor: pointer;
+}
+.zayavka {
+    width: 200px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.zayavka:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.pencil {
+    background-image: url(../images/pencil.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+#popup_pencil, #popup_prinat {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 10002;
+    top: 50px;
+    left: 0;
+}
+#popup_pencil .popup_textarea {
+    margin-bottom: 10px;
+}
+#popup_pencil .popup_podlogka2 h5, .smena_glovi h5 {
+    color: #b8b8b8;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-bottom: 20px;
+}
+.popup_podlogka2 {
+    background-image: url(../images/podlogka_moder_pop_w.png);
+    background-size: 100% 100%;
+    padding-bottom: 200px;
+    padding-top: 80px;
+}
+.popup_podlogka2 h4 {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: center;
+    margin-bottom: 20px;
+}
+.avatar_moder_pop {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.avatar_moder_pop img {
+    float: left;
+    width: 210px;
+    height: 210px;
+}
+.avatar_moder_pop h4 {
+    color: #b8b8b8;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-bottom: 20px;
+}
+.vibor_fail {
+    width: 140px;
+    height: 40px;
+    background-color: #2c9eff;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    font-family: "OpenSans";
+    float: left;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+.avatar_moder_pop p {
+    color: #717171;
+    font-size: 15px;
+    font-family: "OpenSans";
+    float: left;
+    margin-top: 10px;
+}
+.ssilka_moder_pop {
+    width: 74%;
+    float: left;
+}
+.ssilka_moder_pop p {
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ssilka_na_fail {
+    width: 95%;
+    height: 40px;
+    border: 1px solid #585858;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+    padding-left: 10px;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    margin-left: 30px;
+}
+.popup_button2 {
+    width: 260px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.popup_button3 {
+    width: 195px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 15px;
+    display: block;
+    margin-right: 10px;
+    float: right;
+}
+.popup_button3:hover, .popup_button2:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.smena_glovi {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 65px;
+}
+.smena_glovi h4 {
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-bottom: 20px;
+}
+.vibor_players .selectbox {
+    width: 74%;
+    margin-bottom: 10px;
+    float: left;
+}
+.vibor_players .selectbox .select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.vibor_players .selectbox .select .text {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: none;
+    font-family: "OpenSans";
+    text-align: left;
+}
+.vibor_players .selectbox .dropdown {
+    width: 100%;
+}
+.vibor_players .selectbox li {
+    margin-bottom: 0px;
+    background-color: #0c0a0b;
+    padding: 7px 10px 6px 0px;
+    height: 30px;
+    padding-left: 10px;
+}
+.vibor_players .selectbox li:hover {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+.favorit_games {
+    width: 70%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 1px solid #585858;
+    color: #9a9a9a;
+    font-size: 15px;
+    font-family: "OpenSans";
+    outline: 0px;
+    border-radius: 5px;
+    text-align: left;
+}
+.favorit_games .select2-search__field {
+    width: 130px !important; 
+}
+.select2-container {
+    z-index: 1000000 !important;
+}
+.favorit_games .select2-container .select2-search--inline .select2-search__field {
+    margin-top: 10px !important;
+    cursor: pointer !important;
+    font-size: 15px !important;
+    font-family: "OpenSans" !important;
+    text-align: left !important;
+}
+/*********************************************СТРАНИЦА ПОИСКА КЛАНА**********************************************/
+.search_klan {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.group_buttons2 {
+    float: right;
+    width: 180px;
+    margin-right: 20px;
+}
+.player_avatar2 {
+    background-image: url(../images/avatar_search_klan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 30px;
+    border: 7px solid #333;
+    border-image: url(../images/border-clan.png) 7;
+}
+.liked_games2 {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    float: left;
+    width: 70%;
+}
+.liked_games2 img {
+    width: 48px;
+    height: 48px;
+    float: left;
+
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.liked_games2 img:hover {
+    cursor: pointer;
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+    transition: 0.3s;
+}
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/*********************************************************Страница ТУРНИРОВ***************************************************/
+.ychasniki {
+    width: 225px;
+    height: 85px;
+    background-color: transparent;
+    position: relative;
+    margin-top: 30px;
+}
+.ychasnik1 {
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+}
+.ychasniki_top {
+    width: 225px;
+    height: 85px;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+}
+.ychasniki_bottom {
+    width: 225px;
+    height: 85px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0px;
+}
+.ychasnik1 p, .ychasnik2 p {
+    font-size: 14px;
+    font-family: "OpenSans";
+    color: #585858;
+    float: left;
+    margin-left: 0px;
+    line-height: 40px;
+    max-width: 85px;
+    overflow: hidden;
+}
+.ychasnik1::after { 
+    content: attr(data-title);
+    position: absolute;
+    display: none;
+    font-size: 15px;
+    font-family: "OpenSans";
+    color: #585858;
+    bottom: 50px;
+    background-color: #fff;
+    padding: 5px;
+}
+.ychasnik2::after { 
+    content: attr(data-title);
+    position: absolute;
+    display: none;
+    font-size: 15px;
+    font-family: "OpenSans";
+    color: #585858;
+    bottom: -25px;
+    background-color: #fff;
+    padding: 5px;
+}
+.ychasnik1:hover::after { 
+    content: attr(data-title); 
+    display: block;
+}
+.ychasnik2:hover::after { 
+    content: attr(data-title); 
+    display: block;
+}
+.ychasnik2 {
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+}
+.schet1 {
+    width: 55px;
+    height: 100%;
+    background-color: #cdd8df;
+    position: absolute;
+    right: 0px;
+    top:0px;
+}
+.schet2 {
+    width: 55px;
+    height: 100%;
+    background-color: #cdd8df;
+    position: absolute;
+    right: 0px;
+    top:0px;
+}
+.schet1 p, .schet2 p {
+    font-size: 14px;
+    font-family: "OpenSans";
+    color: #585858;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    float: none;
+}
+.avatar_tour {
+    width: 50px;
+    height: 25px;
+    background-image: url(../images/avatar_tour.jpg);
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.column1 {
+    width: 225px;
+    height: 460px;
+    display: inline-block;
+    position: relative;
+}
+.column5 {
+    width: 225px;
+    height: 460px;
+    display: inline-block;
+    position: relative;
+}
+.column7 {
+    width: 220px;
+    height: 460px;
+    display: inline-block;
+    position: relative;
+}
+.column7 .ychasniki {
+    position: absolute;
+    height: 42px;
+    top: calc(50% - 42px);
+    margin-top: 0px;
+}
+.column5 .ychasniki {
+    position: absolute;
+    top: calc(50% - 85px);
+}
+
+.column3 {
+    width: 225px;
+    height: 320px;
+    display: inline-block;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.column2  {
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: 60px;
+}
+.column4 {
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: 140px;
+}
+.column6 {
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: 250px;
+}
+.ugolok1 {
+    width: 30px;
+    height: 40px;
+    border-top: 1px solid #252324;
+    border-right: 1px solid #252324;
+    float: left;
+}
+.ugolok2 {
+    width: 30px;
+    height: 40px;
+    border-bottom: 1px solid #252324;
+    float: left;
+}
+.ugolok_all {
+    width: 100%;
+    height: 40px;
+    margin-top: 50px;
+}
+.ugolok_all2 {
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+}
+.ugolok_all3 {
+    width: 100%;
+    height: 40px;
+    margin-top: 110px;
+}
+.ugolok_all4 {
+    width: 100%;
+    height: 30px;
+    margin-top: 40px;
+}
+.ugolok_all5 {
+    width: 100%;
+    height: 110px;
+    margin-top: 90px;
+}
+.ugolok_all6 {
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+}
+.ugolok_all7 {
+    width: 100%;
+    height: 20px;
+    margin-top: 190px;
+}
+.ugolok3 {
+    width: 30px;
+    height: 40px;
+    border-bottom: 1px solid #252324;
+    border-right: 1px solid #252324;
+    float: left;
+}
+.ugolok4 {
+    width: 30px;
+    height: 40px;
+    border-top: 1px solid #252324;
+    float: left;
+}
+.ugolok_big {
+    width: 30px;
+    height: 110px;
+    border-top: 1px solid #252324;
+    border-right: 1px solid #252324;
+    float: left;
+}
+.ugolok_big2 {
+    width: 30px;
+    height: 80px;
+    border-bottom: 1px solid #252324;
+    border-right: 1px solid #252324;
+    float: left;
+}
+.ugolok_big3 {
+    width: 30px;
+    height: 20px;
+    border-top: 1px solid #252324;
+    border-right: 1px solid #252324;
+    float: left;
+}
+.ugolok_little {
+    width: 30px;
+    height: 110px;
+    border-bottom: 1px solid #252324;
+    float: left;
+}
+.ugolok_little2 {
+    width: 30px;
+    height: 80px;
+    border-top: 1px solid #252324;
+    float: left;
+}
+.ugolok_little3 {
+    width: 30px;
+    height: 20px;
+    border-bottom: 1px solid #252324;
+    float: left;
+}
+.podpisi {
+    width: 225px;
+    border-left: 1px solid #3e3e3e;
+    border-right: 1px solid #3e3e3e;
+    height: 55px;
+    margin-top: 25px;
+    padding-top: 12px;
+    display: inline-block;
+}
+.podpisi:nth-child(1) {
+    margin-right: 30px;
+}
+.podpisi:nth-child(4) {
+    margin-left: 25px;
+}
+.podpisi:nth-child(2), .podpisi:nth-child(3) {
+    margin: 25px 30px 0px;
+}
+.podpisi p {
+    font-size: 13px;
+    font-family: "OpenSans";
+    text-align: center;
+    color: #3e3e3e;
+    margin-left: 0px;
+}
+.scroll-block {
+    display: inline-block;
+    overflow-x: scroll !important;
+    white-space:nowrap;
+    width: 1070px;
+}
+
+/******************************************СТРАНИЦА ВХОД ТУРНИРОВ*******************************************/
+.fonds p {
+    font-size: 18px;
+    color: #2c9eff;
+    font-family: "OpenSans";
+    text-align: center;
+    margin: 0px;
+}
+.fonds ul li {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: left;
+    margin: 0px;
+    line-height: 32px;
+}
+.fonds ul li:first-child {
+    font-size: 18px;
+    color: #2c9eff;
+    font-family: "OpenSans";
+    text-align: left;
+    margin: 0px;
+}
+.fonds ul {
+    margin-left: 85px;
+}
+.prinat {
+    width: 180px;
+    height: 40px;
+    background-color: #2c9eff;
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px; 
+}
+.avatar-tyrnira {
+    width: 175px;
+    height: 175px;
+    background-image: url(../images/avatar_tour_ych.png);
+    background-size: cover;
+    background-position: center;
+}
+.vivod_avatar_tyrnira {
+    width: 175px;
+    min-height: 210px;
+    float: left;
+}
+.vivod_avatar_tyrnira p {
+    margin: 0px;
+    text-align: center;
+    color: #585858;
+    font-size: 18px;
+    font-family: "OpenSans";
+    font-weight: bold;
+}
+.spisok-ychasnikov {
+    float: left;
+    min-height: 210px;
+    width: calc(100% - 190px);
+    margin-left: 15px;
+}
+.spisok-ychasnikov ul li {
+    height: 40px;
+    background-color: #fff;
+    margin-bottom: 1px;
+    padding-left: 20px;
+}
+.avatar_tour2 {
+    width: 50px;
+    height: 25px;
+    background-image: url(../images/avatar_tour.jpg);
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+.spisok-ychasnikov img {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+.spisok-ychasnikov ul li p {
+    color: #585858;
+    font-size: 14px;
+    text-align: left;
+    font-family: "OpenSans";
+    float: left;
+    margin: 0px;
+    margin-top: 5px;
+}
+.ychasniki-right {
+    float: right;
+}
+.select-prinat {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    height: 40px;
+}
+.select-prinat .select2-search__field {
+    width: 300px !important;
+
+}
+.select-prinat .select2-container .select2-search--inline .select2-search__field {
+    margin-top: 8px !important;
+    cursor: pointer !important;
+    font-size: 15px !important;
+    text-align: left !important;
+    margin-left: 10px !important;
+}
+.add_gamer {
+    width: 100%;
+    height: 40px;
+    color: #afafaf;
+    font-size: 15px;
+    background-color: #000;
+    border: 0px;
+    outline: 0px;
+    margin-top: 10px;
+    font-family: "OpenSans";
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.add_gamer:hover {
+    color: #ff7e00;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+}
+.oplata {
+    width: 260px;
+    height: 40px;
+    color: #afafaf;
+    font-size: 15px;
+    background-color: #000;
+    border: 0px;
+    outline: 0px;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-family: "OpenSans";
+    border-radius: 5px;
+    transition: 0.5s;
+    display: block;
+}
+.oplata:hover {
+    color: #ff7e00;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+}
+.social_turnir .social_icon ul {
+    margin-top: 30px;
+    text-align: right;
+}
+.ychasniki_marg_top {
+    margin-top: 45px;
+    display: inline-block;
+    width: 100%;
+}
+.chleni {
+    background-image: url(../images/players.png);
+    background-repeat: no-repeat;
+    float: right;
+}
+/********************************************Страница ТАБЛИЦА ТУРНИРОВ*****************************/
+.nav-turnir ul li {
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    padding: 20px 40px;
+    background-color: #fff;
+    margin-left: -4px;
+    transition: 0.5s;
+}
+.nav-turnir ul li:hover {
+    background-color: #2c9eff;
+    cursor: pointer;
+    color: #fff;
+}
+.nav-turnir ul {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.noiminovanie {
+    overflow: hidden;
+}
+.noiminovanie ul {
+    text-align: right;
+    float: right;
+    margin-top: 25px;
+}
+.noiminovanie ul li {
+    display: inline-block;
+    font-size: 14px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: center;
+    width: 40px;
+    float: right;
+}
+.block_tabl_tyrnir h5 {
+    color: #585858;
+    font-size: 17px;
+    font-family: "OpenSans";
+    text-align: left;
+    line-height: 29px;
+    margin-top: 25px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.line_tabl {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    margin-bottom: 3px;
+    clear: both;
+}
+.spisok-ychasnikov-turnir {
+    float: left;
+    min-height: 40px;
+    width: 300px;
+    margin-left: 15px;
+}
+.spisok-ychasnikov-turnir span {
+    color: #585858;
+    font-size: 14px;
+    font-family: "OpenSans";
+    text-align: center;
+    float: left;
+    margin-right: 20px;
+    margin-top: 13px;
+}
+.spisok-ychasnikov-turnir p {
+    color: #585858;
+    font-size: 14px;
+    text-align: left;
+    font-family: "OpenSans";
+    float: left;
+    margin: 0px;
+    margin-top: 5px;
+}
+.sigranie-igri {
+    height: 20px;
+    min-width: 240px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 95px;
+}
+.igra {
+    width: 20px;
+    height: 20px;
+    background-color: #cdd8df;
+    float: left;
+    margin-right: 3px;
+    cursor: pointer;
+}
+.igra_win {
+    width: 20px;
+    height: 20px;
+    background-color: #ff8700;
+    float: left;
+    margin-right: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.igra_win:hover .podskazka_win {
+     display: block;
+}
+.igra_defeat:hover .podskazka_defeat {
+     display: block;
+}
+.podskazka_win {
+    height: 30px;
+    min-width: 185px;
+    background-color: #9dabae;
+    position: absolute;
+    top: -40px;
+    left: -90px;
+    display: none;
+}
+.podskazka_win p {
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    margin: 0px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.podskazka_win p span {
+    color: #ff8700;
+}
+.podskazka_defeat {
+    height: 30px;
+    min-width: 200px;
+    width: auto;
+    background-color: #9dabae;
+    position: absolute;
+    top: -40px;
+    left: -90px;
+    display: none;
+}
+.podskazka_defeat p {
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    margin: 0px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.podskazka_defeat p span {
+    color: #8e8e8e;
+}
+.igra_defeat {
+    width: 20px;
+    height: 20px;
+    background-color: #9dabae;
+    float: left;
+    margin-right: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.itog1 {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+.itog2 {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #2c9eff;
+}
+.itog3 {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+.itog1 p, .itog2 p, .itog3 p {
+    color: #585858;
+    font-size: 14px;
+    font-family: "OpenSans";
+    text-align: center;
+    margin: 0px;
+    line-height: 40px;
+}
+.itog2 p {
+    color: #fff;
+}
+
+/*************************************СТРАНИЦА ТУРНИРА С ФИЛЬТРОМ**********************************/
+.fonds h5 {
+    font-size: 18px;
+    color: #2c9eff;
+    font-family: "OpenSans";
+    text-align: center;
+    margin: 0px;
+    margin-top: 30px;
+}
+.next_game {
+    margin-bottom: 20px;
+}
+.next_game .selectbox {
+    width: 50%;
+}
+.next_game .selectbox .select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+    padding: 5px;
+}
+.next_game .selectbox .dropdown {
+    width: 100%;
+}
+.next_game .selectbox .select .text {
+    text-align: left;
+    text-transform: none;
+}
+.next_game .selectbox li {
+    padding: 16px 5px 6px;
+    color: #585858;
+    list-style: none;
+    background-color: #e0f1fa;
+    height: 50px;
+    margin-bottom: 1px;
+}
+.next_game .selectbox li:hover {
+    color: #2c9eff;
+    background-color: #fff;
+}
+.komandi_turnira {
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 1px;
+    float: right;
+}
+.komanda1 {
+    height: 40px;
+    float: left;
+    margin-left: 20px;
+}
+.komanda2 {
+    height: 40px;
+    float: left;
+}
+.komanda1 p {
+    font-size: 14px;
+    color: #585858;
+    font-family: "OpenSans";
+    float: left;
+    margin-right: 8px;
+    margin-top: 3px;
+    margin-left: 0px;
+}
+.komanda2 p {
+    font-size: 14px;
+    color: #585858;
+    font-family: "OpenSans";
+    float: right;
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-top: 3px;
+}
+.avatar_komanda1 {
+    width: 50px;
+    height: 25px;
+    background-image: url(../images/avatar_tour.jpg);
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+.avatar_komanda2 {
+    width: 50px;
+    height: 25px;
+    background-image: url(../images/avatar_tour.jpg);
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-top: 7px;
+}
+.protiv {
+    font-size: 14px;
+    color: #585858;
+    font-family: "OpenSans";
+    float: left;
+    margin-right: 8px;
+    margin-top: 10px;
+    height: 40px;
+}
+.data_game {
+    float: right;
+    height: 40px;
+    margin-right: 20px;
+}
+.data_game p {
+    color: #585858;
+    font-size: 14px;
+    margin: 0px;
+    font-family: "OpenSans";
+    margin-top: 4px;
+}
+/****************************************СТРАНИЦА ТУРНИРОВ С СЫГРАНЫМИ И БЛИЖАЙШИМИ**************************/
+.name_games p {
+    margin: 0px;
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-bottom: 20px;
+}
+.name_games2 p {
+    margin: 0px;
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+/*****************************************ЛИЧНЫЙ КАБИНЕТ*****************************************/
+.privat_name p, .privat_city p, .privat_years p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+}
+.privat_all p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.privat_liked_game p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+}
+.liked_games_privat {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    float: left;
+}
+.liked_games_privat img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.liked_games_privat img:hover {
+    cursor: pointer;
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+    transition: 0.3s;
+}
+.line_privat {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    float: right;
+    margin-bottom: 1px;
+}
+.line_privat .avatar_tour2 {
+    margin-left: 5px;
+}
+.privat_block1 {
+    height: 40px;
+    min-width: 440px;
+    float: left;
+}
+.privat_block2 {
+    height: 40px;
+    min-width: 115px;
+    float: left;
+}
+.privat_block3 {
+    height: 40px;
+    min-width: 115px;
+    float: right;
+}
+
+.privat_block1 p, .privat_block2 p, .privat_block3 p {
+    color: #585858;
+    font-size: 14px;
+    text-align: left;
+    font-family: "OpenSans";
+    float: left;
+    margin: 0px;
+    margin-top: 5px;
+}
+.line_naimenovaniya {
+    width: 100%;
+    background-color: transparent;
+    height: 40px;
+    float: right;
+}
+.line_naimenovaniya p {
+    color: #585858;
+    font-size: 14px;
+    text-align: left;
+    font-family: "OpenSans";
+    float: none;
+    margin: 0px;
+    margin-top: 5px;
+}
+.naimen1 {
+    float: left;
+    width: 440px;
+    height: 40px;
+}
+.naimen2 {
+    float: left;
+    width: 115px;
+    height: 40px;
+}
+.naimen3 {
+    float: right;
+    width: 115px;
+    height: 40px;
+}
+.players_privat {
+    float: right;
+}
+.button_news_privat {
+    width: 170px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-top: 30px;
+    float: right;
+    margin-left: 25px;
+}
+.button_news_privat:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.privat_name2 p, .privat_name_nick2 p, .privat_email2 p, .privat_rogdenie2 p, .privat_pol2 p, .privat_strana2 p, .privat_o_sebe p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    max-width: 90%;
+}
+.privat_strana2 p span {
+    margin-left: 45px;
+}
+.privat_kontakt_info p, .privat_praim_time p, .privat_obrazovanie p, .privat_rod_deyat p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.pencil2 {
+    background-image: url(../images/pencil.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+.pencil3 {
+    background-image: url(../images/pencil.png);
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+    background-repeat: no-repeat;
+    background-color: #151515;
+    top: 40px;
+}
+.privat_input_grup {
+    width: 410px;
+    float: left;
+}
+.privat_lich_dannie p {
+    font-size: 19px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-bottom: 30px;
+}
+.privat_input1 {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.privat_data_rogdeniya {
+    clear: both;
+}
+.privat_dannie {
+    float: left;
+    
+}
+.privat_dannie2 {
+    float: left;
+    width: 410px;
+}
+.privat_data_rogdeniya p {
+    font-size: 15px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    float: left;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+.vibor_chislo {
+    width: 60px;
+    float: left;
+    margin-left: 10px;
+}
+.vibor_chislo .selectbox .select {
+    width: 60px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_chislo .selectbox .dropdown {
+    width: 60px;
+}
+.vibor_chislo .selectbox li {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.vibor_chislo .selectbox .trigger .arrow, .vibor_mesyac .selectbox .trigger .arrow, .vibor_god .selectbox .trigger .arrow  {
+    right: 5px;
+}
+/************************/
+.vibor_mesyac {
+    width: 110px;
+    float: left;
+    margin-left: 10px;
+}
+.vibor_mesyac .selectbox .select {
+    width: 110px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_mesyac .selectbox .dropdown {
+    width: 110px;
+}
+.vibor_mesyac .selectbox li {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.vibor_mesyac .selectbox .select .text {
+    text-transform: none;
+}
+/************************/
+.vibor_god {
+    width: 90px;
+    float: left;
+    margin-left: 7px;
+}
+.vibor_god .selectbox .select {
+    width: 90px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_god .selectbox .dropdown {
+    width: 90px;
+}
+.vibor_god .selectbox li {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.vibor_god .selectbox .select .text {
+    text-transform: none;
+}
+/************************/
+.vibor_pol, .vibor_strana, .vibor_gorod {
+    width: 100%;
+    clear: both;
+    margin-top: 10px;
+    float: left;
+}
+.vibor_pol .selectbox .select, .vibor_strana .selectbox .select, .vibor_gorod .selectbox .select {
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_pol .selectbox .dropdown, .vibor_strana .selectbox .dropdown, .vibor_gorod .selectbox .dropdown  {
+    width: 100%;
+}
+.vibor_pol .selectbox li, .vibor_strana .selectbox li, .vibor_gorod .selectbox li  {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.vibor_pol .selectbox .select .text, .vibor_strana .selectbox .select .text, .vibor_gorod .selectbox .select .text {
+    text-transform: none;
+}
+.vibor_pol .selectbox, .vibor_strana .selectbox, .vibor_gorod .selectbox {
+    width: 100%;
+}
+.vibor_pol .selectbox .select .text, .vibor_strana .selectbox .select .text, .vibor_gorod .selectbox .select .text {
+    text-align: left;
+    padding-left: 10px;
+}
+.privat_lich_information p {
+    font-size: 19px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.privat_save {
+    width: 260px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: block;
+}
+.privat_save:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.privat_winners p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.line_games {
+    width: 100%;
+    min-height: 60px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    height: auto;
+}
+.line_games img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.line_games p {
+    font-size: 18px;
+    color: #585858;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-left: 20px;
+    float: left;
+    margin-top: 12px;
+}
+.line_games p span {
+    font-weight: bold;
+}
+.line_games:hover img {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+}
+.line_games:hover {
+    background-color: #fff;
+}
+.line_games:hover p {
+    color: #2c9eff;
+}
+
+/***********************Добавки*************************/
+.nav_klan_but {
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    margin: 20px auto;
+}
+.nav_klan_but:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.vibor_chas_poyas, .vibor_storoni {
+    width: 100%;
+    clear: both;
+    margin-top: 10px;
+    float: left;
+}
+.vibor_chas_poyas .selectbox .select, .vibor_storoni .selectbox .select {
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.vibor_chas_poyas .selectbox .dropdown, .vibor_storoni .selectbox .dropdown  {
+    width: 100%;
+}
+.vibor_chas_poyas .selectbox li, .vibor_storoni .selectbox li  {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.vibor_chas_poyas .selectbox .select .text, .vibor_storoni .selectbox .select .text {
+    text-transform: none;
+}
+.vibor_chas_poyas .selectbox, .vibor_storoni .selectbox {
+    width: 100%;
+}
+.vibor_chas_poyas .selectbox .select .text, .vibor_storoni .selectbox .select .text {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/********************************Страницы FAQ, ABOUT, Pravila****************************/
+
+.faq_block h3 {
+    color: #585858;
+    font-size: 35px;
+    font-family: "OpenSans";
+    text-align: center;
+    line-height: 58px;
+    text-align: center;
+    margin: 0px;
+}
+
+/*********************************Страница Редактирования Приват8*******************************************/
+.privat8_edit {
+    float: right;
+}
+.privat8_edit p {
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: right;
+    color: #2c9eff;;
+    margin: 0px;
+    margin-left: 25px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.privat8_button, .privat8_button2 {
+    width: 265px;
+    height: 40px;
+    color: #fff;
+    transition: 0.5s;
+    background-color: #2c9eff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-top: 30px;
+    display: block;
+}
+.privat8_edit_game {
+    width: 410px;
+    height: 40px;
+    margin-top: 30px;
+}
+.privat8_edit_game .selectbox .select {
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+.privat8_edit_game .selectbox .dropdown {
+    width: 100%;
+}
+.privat8_edit_game .selectbox li {
+    text-align: center;
+    padding: 10px 0px 6px;
+    height: 40px;
+}
+.privat8_edit_game .selectbox .select .text {
+    text-transform: none;
+}
+.privat8_edit_game .selectbox {
+    width: 100%;
+}
+.privat8_edit_game .selectbox .select .text {
+    text-align: left;
+    padding-left: 10px;
+}
+.privat8_text {
+    width: 410px;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #585858;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+/***************************************СТРАНИЦА ЧАТА**********************************/
+.nav_chat {
+    width: 200px;
+    background-color: rgba(225,225,225,0.5);
+    height: 100%;
+}
+.nav_chat_uzor {
+    background-image: url(../images/uzor_avatar_w.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    background-size: 100%;
+    position: relative;
+    width: 200px;
+}
+.nav_chat_uzor2 {
+    background-image: url(../images/uzor_chat_w.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    background-size: 100%;
+    position: relative;
+    width: 200px;
+}
+.panel-default>.panel-heading {
+    background-color: transparent;
+    background-image: url(../images/arrow_accord.png);
+    background-repeat: no-repeat;
+    background-position-y: 15px;
+    margin-left: 15px;
+}
+.panel {
+    background-color: transparent;
+}
+.panel-group .panel {
+    border: none;
+    box-shadow: none;
+}
+.panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
+    font-size: 13px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: left;
+    text-decoration: none;
+}
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border: none;
+}
+.panel-body li a {
+    font-size: 13px;
+    color: #585858;
+    font-family: "OpenSans";
+    text-align: left;
+    text-decoration: none;
+    line-height: 26px;
+}
+.panel-body li a:hover {
+    color: #2c9eff;
+}
+.panel-body ul {
+    margin-left: 30px;
+}
+.button_chat1 {
+    width: 140px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+.button_chat1:hover, .button_chat2:hover, .button_chat3:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+.panel-group {
+    margin-bottom: 0px;
+}
+.chat_right {
+    float: right;
+}
+.chat_vivod_nazvanie {
+
+}
+.chat_vivod_nazvanie h3 {
+    font-size: 19px;
+    font-family: "OpenSans";
+    color: #585858;
+    text-align: left;
+    text-transform: none;
+    margin: 0px;
+}
+.chat_vivod_nazvanie h3 span {
+    font-size: 15px;
+    font-family: "OpenSans";
+    color: #505050;
+    text-align: right;
+    text-transform: none;
+    margin: 0px;
+    float: right;
+    cursor: pointer;
+}
+.chat_vivod_uchasniki {
+    float: left;
+}
+.chat_uchasnik {
+    min-width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+    padding-left: 15px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.close_uchasnik {
+    width: 35px;
+    height: 36px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #cdd8df;
+    float: right;
+    margin-top: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.close_uchasnik p {
+    color: #9a9a9a;
+    font-size: 13px;
+    font-family: "OpenSans";
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 36px;
+    float: none !important;
+}
+.chat_uchasnik p {
+    margin: 0px;
+    float: left;
+}
+.chat_uchasnik p span {
+    color: #9a9a9a;
+    font-size: 13px;
+    font-family: "OpenSans";
+    text-align: left;
+    text-transform: none;
+    margin: 0px;
+    line-height: 36px;
+    float: left;
+    margin-right: 5px;
+}
+.chat_add_g {
+    clear: both;
+    float: left;
+}
+.chat_add_people {
+    width: 320px;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #9a9a9a;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    float: left;
+}
+.button_chat2 {
+    width: 140px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+.chat_message_all {
+    clear: both;
+    margin-top: 50px;
+    float: left;
+    width: 100%;
+}
+.chat_message1 {
+    width: 100%;
+    height: auto;
+    float: left;
+    position: relative;
+    margin-bottom: 30px;
+}
+.chat_message_avatar {
+    background-image: url(../images/chat_message_avatar.png);
+    width: 33px;
+    height: 33px;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-right: 10px;
+}
+.chat_message_people {
+    float: left;
+    width: calc(100% - 45px);
+}
+.chat_message_people h4 {
+    font-size: 15px;
+    font-family: "OpenSans";
+    text-align: left;
+    color: #585858;
+    margin: 0px;
+}
+.chat_message_neproch {
+    color: #2c9eff !important;
+}
+.chat_message_people h4 span {
+    color: #9a9a9a;
+}
+.chat_message_people p {
+    font-size: 13px;
+    font-family: "OpenSans";
+    text-align: left;
+    color: #585858;
+    margin: 0px;
+}
+.chat_message_close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.chat_message_close p {
+    color: #9a9a9a;
+    font-size: 13px;
+    font-family: "OpenSans";
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 11px;
+    float: none !important;
+    cursor: pointer;
+}
+.chat_message_all .scroll-pane {
+    width: 100% !important;
+    height: 1220px;
+    outline: none;
+    padding-right: 10px;
+}
+
+.chat_message_all ::-webkit-scrollbar-button {
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:5px;
+    height:0px
+}
+
+.chat_message_all ::-webkit-scrollbar-track {
+    background-color: #9a9a9a;
+}
+
+.chat_message_all ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #2c9eff;
+}
+
+.chat_message_all ::-webkit-scrollbar-thumb:hover{
+    background-color:#56999f;
+}
+
+.chat_message_all ::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px
+}
+
+.chat_message_all ::-webkit-scrollbar{
+    width: 4px;
+}
+.chat_message_napisanie {
+    margin-top: 40px;
+}
+.chat_message_napisanie textarea {
+    max-width: calc(100% - 210px);
+    min-height: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #9a9a9a;
+    width: calc(100% - 210px);
+    border: 1px solid #9a9a9a;
+    outline: 0px;
+    padding: 5px;
+    font-family: "OpenSans";
+    resize: none;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 22px;
+    float: left;
+    margin-bottom: 40px;
+}
+.button_chat3 {
+    width: 190px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    display: block;
+    float: right;
+    margin-bottom: 20px;
+}
+.nav_chat .scroll-pane {
+    width: 100% !important;
+    height: auto;
+    outline: none;
+    padding-right: 10px;
+    min-height: 300px;
+    max-height: 600px;
+}
+
+.nav_chat ::-webkit-scrollbar-button {
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:5px;
+    height:0px
+}
+
+.nav_chat ::-webkit-scrollbar-track {
+    background-color:#9a9a9a;
+}
+
+.nav_chat ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color:#2c9eff;
+}
+
+.nav_chat ::-webkit-scrollbar-thumb:hover{
+    background-color:#56999f;
+}
+
+.nav_chat ::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px
+}
+
+.nav_chat ::-webkit-scrollbar{
+    width: 4px;
+}
+
+/********************************************Добавление к ПРИВАТ1**********************************/
+.privat_dannie .privat_kontakt_info {
+    clear: both;
+}
+
+/*********************************************************/
+textarea[name='descr'], textarea[name='about'] {
+    max-width: 100%;
+    min-height: 130px;
+    color: #838182;
+    width: 100%;
+    border: 0px;
+    outline: 0px;
+    padding: 15px 10px;
+    font-family: "OpenSans";
+    resize: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*******************************Создать Клан************************/
+input[name='sozdat_klan'] {
+    width: 100%;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input[name='sozdat_klan']:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+
+/***********************************СТИЛИЗАЦИЯ СЕЛЕКТОВ*************************/
+#new_info .selectbox .select {
+    width: 410px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: calibri, arial, verdana, tahoma;
+    color: #000;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+}
+#new_info .selectbox .dropdown {
+    width: 100%;
+}
+#new_info .selectbox .dropdown li {
+    text-align: center;
+}
+#new_info .selectbox .select .text {
+    text-transform: none !important;
+}
+.style_text {
+    font-size: 15px;
+    color: #b8b8b8;
+    font-family: "OpenSans";
+    line-height: 24px;
+    text-align: left;
+    margin: 0px;
+    margin-top: 10px;
+}
+.style_input {
+    width: 410px;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #9a9a9a;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+/****************************************Страница создание Клана*************************************/
+.creat_clan h4 {
+    color: #838182;
+    font-size: 35px;
+    font-family: "OpenSans";
+    text-align: center;
+    line-height: 58px;
+    text-align: center;
+}
+.name_clan p, .opisanie_clan p, .games_clan p,.creat_vibor_img p {
+    margin-left: 0px;
+}
+input[name='name_clan'] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #9a9a9a;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+textarea[name='opisanie_clan'] {
+    max-width: 100%;
+    min-height: 120px;
+    background-color: #989898;
+    color: #838182;
+    width: 100%;
+    border: 0px;
+    outline: 0px;
+    padding: 15px 10px;
+    font-family: "OpenSans";
+    resize: none;
+    margin-bottom: 15px;
+}
+.select_game_clan {
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.select_game_clan .select2-search__field {
+    text-align: left !important;
+}
+input[name='save_creat_clan'] {
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+input[name='save_creat_clan']:hover, input[name='creat_vibor_img']:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
+}
+
+/****************************************Страница создание Новости Клана*************************************/
+input[name='name_news'], input[name='name_news_en'] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9a9a9a;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #9a9a9a;
+    font-size: 15px;
+    font-family: "OpenSans";
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+textarea[name='opisanie_news'], textarea[name='opisanie_news_en'] {
+    max-width: 100%;
+    min-height: 120px;
+    background-color: #989898;
+    color: #838182;
+    width: 100%;
+    border: 0px;
+    outline: 0px;
+    padding: 15px 10px;
+    font-family: "OpenSans";
+    resize: none;
+    margin-bottom: 15px;
+}
+input[name='creat_vibor_img'] {
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "OpenSans";
+    border: 0px;
+    outline: 0px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+/***********************************Доработки натяжки*******************************/
+.koment {
+    padding-top: 15px;
+    padding-bottom: 120px;
+}
+.koment .scroll-pane {
+    height: 1000px;
+}
+.koment ::-webkit-scrollbar {
+    width: 0;
+}
+.koment { 
+    -ms-overflow-style: none;
+}
+.koment ::-webkit-scrollbar {
+    width: 0;
+}
+.koment { 
+    -ms-overflow-style: none;
+}
+.paginat2 ul li {
+    font-size: 18px;
+    color: #ff7e00;
+}
+.paginat2 li a, .paginat2 a {
+    color: #838182;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: "OpenSans";
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.nav_black .selectbox .select .text {
+    padding-top: 0px;
+}
+.selectbox .select .text {
+    padding-top: 3px;
+}
+.privat_data_rogdeniya {
+    float: left;
+}
+.privat_dannie2 p {
+    float: left;
+    margin-left: 0px;
+}
+.news1 hr:last-child {
+    margin-bottom: 20px;
+}
+.news .jspHorizontalBar {
+    display: none;
+}
+
+/****************************Для монетки*******************/
+.golden {
+    width: 38px;
+    height: 38px;
+}
+
+/*------------- Olga -------------*/
+
+.checkboxAgree {
+    margin: 20px 0 0 0;
+}
+.checkbox input[type=checkbox] {
+    margin-left: 7px !important;
+}
+.checkbox label {
+    margin-left: 35px;
+    font-size: 18px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    float: none !important;
+    font-size: 20px !important;
+    color: #585858 !important;
+}
+.select2-selection__choice {
+    padding: 10px 0 0 10px !important;
+}

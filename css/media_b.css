@@ -1,0 +1,1237 @@
+@media only screen and (max-width : 1570px) {
+	.logo_black {
+	}
+}
+@media only screen and (max-width : 1250px) {
+	nav ul li {
+		padding-left: 10px;
+    	padding-right: 10px;
+    	width: 90px;
+	}
+}
+@media only screen and (max-width : 1199px) {
+	nav ul li, .selectbox .select .text, .nav-right li {
+		font-size: 13px;
+	}
+	.margin-top {
+		margin-left: 0px;
+	}
+	.player_avatar {
+		width: 140px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: inherit;
+	}
+	.liked_games {
+		margin-left: 20px;
+	}
+	.group_buttons {
+		margin-left: 20px;
+		width: 170px;
+	}
+	.liked_games img, .vivod_liked_games img {
+		width: 38px;
+	}
+	.liked_games {
+		max-width: 125px;
+	}
+	.news .info_vivod p {
+		font-size: 15px;
+	}
+	.news hr {
+		width: 94%;
+	}
+	.reit_player, .iskluchenie_buttons {
+		width: 155px;
+	}
+	.ssilka_moder_pop {
+    	width: 67%;
+    }
+    .vibor_players .selectbox {
+    	width: 68%;
+    }
+    .player_avatar2 {
+    	width: 150px;
+    	height: 150px;
+    }
+    .liked_games2 {
+    	margin-top: 10px;
+    }
+    .right p {
+    	margin-right: 0px;
+    }
+    .fonds ul {
+    	margin-left: 50px;
+	}
+	.right p {
+    	margin-right: 15px;
+	}
+	.ychasniki, .column1, .column3, .column5, .column7, .ychasniki_top, .ychasniki_bottom, .podpisi {
+		width: 200px;
+	}
+	.column2, .column4, .column6 {
+		width: 24px;
+	}
+	.ugolok1, .ugolok2, .ugolok3, .ugolok4, .ugolok_big, .ugolok_little, .ugolok_big2, .ugolok_little2, .ugolok_big3, .ugolok_little3 {
+		width: 12px;
+	}
+	.podpisi:nth-child(1) {
+    	margin-right: 12px;
+	}
+	.podpisi:nth-child(2), .podpisi:nth-child(3) {
+    	margin: 25px 12px 0px;
+	}
+	.podpisi:nth-child(4) {
+    	margin-left: 12px;
+	}
+	.scroll-block {
+	    display: inline-block;
+	    overflow-x: scroll !important;
+	    white-space: nowrap;
+    	width: 870px;
+	}
+	.privat_block1 {
+    	min-width: 350px;
+	}
+	.naimen1 {
+		width: 350px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 284px;
+	}
+	.news1 img {
+		height: 172px;
+	}
+}
+@media only screen and (max-width : 1105px) {
+	nav ul li {
+		width: 75px;
+	}
+}
+@media only screen and (max-width : 1024px) {
+	.paginat {
+    	margin-top: 40px;
+    	margin-bottom: 10px;
+	}
+	.bg-black {
+		background-size: cover;
+		background-position: center;
+	}
+	.bg-index {
+		/*background-image: url(../images/index-bg_1024.jpg);*/
+	}
+	.selectYourSideBlock-left, .selectYourSideBlock-right {
+		width: 260px;
+	}
+	.button_black, .button_white {
+		width: 260px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		font-size: 20px;
+	}
+	.black_side h2, .white_side h2 {
+		font-size: 20px;
+	}
+	.subcontainer {
+		margin: 0px;
+	}
+	.black_side .subcontainer {
+		position: absolute;
+		left: 1px;
+		margin-left: 50px;
+	}
+	.white_side .subcontainer {
+		position: absolute;
+		right: 1px;
+		margin-right: 50px;
+	}
+	.black_side h2, .white_side h2 {
+		margin-top: 135px;
+	}
+	.black_side h2 {
+		text-align: left;
+	}
+	.white_side h2 {
+		text-align: right;
+	}
+	.close {
+		top: -50px;
+		right: 20px;
+	}
+	#popup_pencil .close {
+    	top: -40px;
+    	right: 20px;
+	}
+	.liked_games {
+		min-width: 120px;
+	}
+	.group_buttons {
+		width: 145px;
+	}
+	.button_players {
+		font-size: 12px;
+	}
+	.news hr {
+    	width: 97%;
+	}
+	.liked_games img, .vivod_liked_games img {
+		width: 38px;
+		height: 38px;
+	}
+}
+@media only screen and (max-width : 991px) {
+	.logo_black {
+		width: 147px;
+	}
+	.nav_black {
+		height: 150px;
+	}
+	nav ul, nav .nav-right {
+		float: none;
+		text-align: right;
+	}
+	.nav-right li, nav ul li {
+		border: none;
+	}
+	.comments, .liked, .chleni {
+		float: none;
+		background-size: contain;
+		margin-left: 40px;
+	}
+	.right p {
+		margin-left: 30px;
+		margin-bottom: 5px;
+		color: #838182;
+	}
+	.news_in h3 {
+		max-width: 100%;
+	}
+	.napisat_koment	textarea {
+		max-width: 100%;
+	}
+	.koment .vivod_koment p, .koment .vivod_pod_koment p {
+		width: 100%;
+	}
+	.otpravit_koment {
+		margin-top: 30px;
+	}
+	.group_buttons {
+		width: 100%;
+		margin-left: 0px;
+	}
+	.button_players {
+		width: 150px;
+		float: left;
+		font-size: 12px;
+		margin-right: 10px;
+	}
+	.liked_games {
+		float: right;
+		margin-right: 20px;
+	}
+	.flex-container2 {
+		margin-top: 20px;
+	}
+	.klan_avatar, .nav_klan {
+		width: 100%;
+	}
+	.otstyp_klan {
+		margin-left: 15px;
+	}
+	.uzor_avatar {
+		height: 30px;
+	}
+	.nagradi {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.otstyp_klan {
+    	margin-top: 30px;
+	}
+	.tab_otstyp {
+		margin-left: 10px;
+	}
+	.iskluchenie_buttons {
+		float: right;
+	}
+	.avatar_moder_pop img {
+	    width: 150px;
+	    height: 150px;
+	}
+	.popup_textarea {
+		min-height: 150px;
+	}
+	.popup_button {
+		margin-bottom: 15px;
+	}
+	.smena_glovi {
+		margin-top: 15px;
+	}
+	.vibor_players .selectbox {
+    	width: 59%;
+	}
+	.group_buttons2 {
+		float: left;
+		margin-top: 20px;
+	}
+	.liked_games2 {
+		width: 100%;
+	}
+	.prinat {
+    	width: 130px;
+    	height: 40px;
+	}
+	.fonds ul {
+    	margin-left: 0px;
+	}
+	.fonds p {
+		font-size: 16px;
+		text-align: left;
+	}
+	.avatar-tyrnira {
+    	width: 140px;
+    	height: 140px;
+	}
+	.vivod_avatar_tyrnira {
+    	width: 140px;
+	}
+	.spisok-ychasnikov {
+		width: calc(100% - 155px);
+	}
+	.sigranie-igri {
+		margin-left: 0px;
+	}
+	.spisok-ychasnikov-turnir {
+		width: 250px;
+	}
+	.nav-turnir ul li {
+		padding: 15px 15px;
+	}
+	.scroll-block {
+    	width: 656px;
+	}
+	.fonds h5 {
+    	font-size: 16px;
+    	text-align: left;
+	}
+	.privat_all p {
+		font-size: 14px;
+	}
+	.privat_name p, .privat_city p, .privat_years p, .privat_liked_game p {
+    	font-size: 16px;
+	}
+	.privat_block1 {
+    	min-width: 220px;
+	}
+	.privat_block1 p, .privat_block2 p, .privat_block3 p {
+		font-size: 12px;
+	}
+	.naimen1 {
+    	width: 220px;
+	}
+	.privat8_edit p {
+		font-size: 12px;
+		margin-left: 15px;
+	}
+	.line_games p {
+		font-size: 13px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 220px;
+	}
+	.news1 img {
+		height: 127px;
+	}
+}
+@media only screen and (max-width : 768px) {
+	.paginat {
+    	margin-top: 50px;
+    	margin-bottom: 20px;
+	}
+	.news p {
+		text-align: left;
+		margin-left: 0px;
+	}
+	.news h3 {
+		text-align: center;
+		margin-left: 0px;
+	}
+	.news_text h5 {
+		font-size: 15px;
+	}
+	.button_news {
+		width: 120px;
+	}
+	.flex-container {
+		justify-content: center;
+	}
+	.image1 {
+    	margin-left: 15px;
+    	margin-right: 15px;
+	}
+	.social_footer ul li {
+		margin-right: 1px;
+	}
+	.padding-top {
+    	padding-top: 30px;
+	}
+	.center-footer p span {
+		line-height: 100px;
+	}
+	.social_footer {
+		margin-bottom: 30px;
+	}
+	.bg-black {
+		background-size: cover;
+		background-position: center;
+	}
+	.comments, .liked, .chleni {
+		margin-left: 0px;
+	}
+	.right p {
+		margin-left: 35px;
+	}
+	.black_side h2, .white_side h2 {
+    	text-align: center;
+	}
+	.button_black, .button_white {
+		/*margin-top: 20px;*/
+	}
+	.black_side .subcontainer {
+		margin-left: 15px;
+	}
+	.white_side .subcontainer {
+		margin-right: 15px;
+	}
+	.itog1 p, .itog2 p, .itog3 p {
+		text-align: center;
+	}
+	.schet1 p, .schet2 p {
+		text-align: center;
+	} 
+	.podpisi p {
+		text-align: center;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 220px;
+	}
+	.liked_games {
+    	margin-right: 14px;
+	}
+
+}
+
+@media only screen and (max-width : 650px) {
+	.button_black, .button_white {
+	    width: 210px;
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    font-size: 20px;
+	}
+	.selectYourSideBlock-left, .selectYourSideBlock-right {
+		width: 210px;
+	}
+	.selectYourSideBlock-left {
+		left: 5%;
+	}
+	.selectYourSideBlock-right {
+		right: 5%;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.selectYourSideBlock-left {
+		left: 50% !important;
+		margin-left: -105px !important;
+		top: 60% !important;
+	}
+	.selectYourSideBlock-right {
+		right: 50% !important;
+		margin-right: -105px !important;
+		top: 13% !important;
+	}
+}
+
+@media only screen and (max-width : 640px) {
+	.nav_black {
+		border-top: none;
+	}
+	.left-footer, .right-footer, .right-footer p {
+		text-align: center;
+		float: none;
+	}
+	.right-footer img {
+		float: none;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-bottom: 20px;
+	}
+	.social_footer {
+		margin-top: 30px;
+	}
+	.logo_black {
+    	width: 147px;
+	}
+	.news p {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.news_text h5 {
+    	font-size: 13px;
+    	line-height: 22px;
+	}
+	.social_icon ul {
+		text-align: center;
+	}
+	.button_news {
+		margin: 0 auto;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.button-center {
+		text-align: center;
+	}
+	.news {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.5);
+		padding-top: 30px;
+		margin-left: 10px;
+   		margin-right: 10px;
+   		height: auto;
+   		padding-left: 20px;
+   		padding-right: 20px;
+	}
+	.koment, .news_in {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.5);
+		margin-left: 10px;
+   		margin-right: 10px;
+   		width: auto;
+   		padding-left: 20px;
+   		padding-right: 20px;
+	}
+	.paginat2 ul {
+		text-align: center;
+	}
+	.paginat2 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		bottom: 0px;
+		right: 0px;
+	}
+	.logo_black {
+		margin: 0 auto;
+		display: block;
+		float: none;
+		height: 130px;
+		width: 147px;
+	}
+	.nav_black {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.5);
+		height: 373px;
+	}
+	.carousel {
+       	margin-top: 30px;
+       	margin-left: 10px;
+       	margin-right: 10px;
+	}
+	.carousel-indicators {
+		text-align: center;
+	}
+	.bg-black {
+  		background-image: none;
+    	background-color: #3a3539;
+	}
+	footer p {
+		font-size: 14px;
+	}
+	.center-footer p span {
+    	line-height: 50px;
+	}
+	.nav-right li, nav ul li {
+	    display: block;
+	    width: 100%;
+	    height: auto;
+	    padding: 10px;
+	    text-transform: uppercase;
+	}
+	.nav_black {
+		height: auto;
+	}
+	.selectbox {
+		display: block !important;
+		text-align: center;
+	}
+	.select {
+		float: none !important;
+		margin: 0 auto;
+	}
+	.dropdown {
+    	top: 5px !important;
+    	border-radius: 0px !important;
+    	right: 1px;
+	}
+	.navigation {
+	    height: 0px;
+	    transition: all 1s;
+	    display: block;
+	    overflow: hidden;
+	}
+	.active .navigation {
+	    height: 300px;
+	    transition: all 1s;
+	}
+	.gam {
+		display: block;
+	}
+	.dropdown {
+		overflow-y: visible !important;
+    	overflow-x: visible !important;
+	}
+	.comments, .liked {
+		float: none;
+		background-size: contain;
+	}
+	.right p {
+		margin-left: 30px;
+		margin-bottom: 5px;
+		color: #838182;
+	}
+	.comments, .liked {
+		margin-left: 0px;
+	}
+	.koment {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+	.comments_in, .star_in, .liked_in {
+		float: none;
+		margin-left: 0px;
+	}
+	.news_in .social_icon {
+		float: none;
+	}
+	.news_in {
+		padding-top: 30px;
+	}
+	.news_in p {
+		margin-left: 0px;
+	}
+	.news_in_text h5, .koment .vivod_koment p {
+		font-size: 13px;
+	}
+	.comments_in p, .star_in p, .liked_in p {
+		margin-left: 35px;
+	}
+	.news_in p, .koment p {
+		font-size: 14px;
+	}
+	.news_in h3 {
+		font-size: 20px;
+	}
+	.koment h3 {
+		max-width: 100%;
+		font-size: 20px;
+	}
+	.avatar {
+		float: none;
+		margin: 0 auto;
+	}
+	.select_month .selectbox .select, .select_month .dropdown, .border-top-select2, .border-bottom-select2 {
+		width: 120px;
+	}
+
+	.registr_center, .vostan {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin: 0 auto;
+	}
+	.country, .city {
+		width: 150px;
+	}
+	.border-top3, .border-bottom3 {
+		width: 150px;
+	}
+	.registr_center .dropdown {
+		top: 40px !important;
+	}
+	.registr img {
+		margin-top: 20px;
+	}
+	.border-top, .border-top-bottom, .border-top-text, .border-bottom-text {
+		background-size: inherit;
+	}
+	.vostan {
+		max-width: 440px;
+	}
+	.name_vostan, .border-top-vostan, .mail_vostan {
+		width: 100%;
+	}
+	.liked_games, .info_vivod {
+		float: none;
+	}
+	.liked_games {
+		width: 100%;
+		margin-top: 65px;
+		margin-left: 0px;
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
+	.news hr {
+		width: 100%;
+	}
+	.sortirovka .dropdown {
+		top: 40px !important;
+	}
+	.vibor_game2 .selectbox {
+		margin-right: 0px;
+	}
+	.vibor_game2 .dropdown {
+   		top: 40px !important;
+	}
+	.popup_podlogka, .popup_podlogka2 {
+		background-image: none;
+		background-color: rgba(36,36,36, 0.8);
+		margin-right: 20px;
+    	margin-left: 20px;
+    	padding-top: 20px;
+    	padding-bottom: 1px;
+	}
+	.popup_button {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.popup_textarea {
+		min-height: 120px;
+	}
+	.close {
+    	right: 35px;
+	}
+
+	.klan_avatar, .nav_klan {
+		width: 200px;
+		margin: 0 auto;
+	}
+	.klan_avatar img, .nav_klan {
+		float: none;
+	}
+	.liked_games {
+		margin-top: 11px;
+	}
+	.nav_klan {
+		margin-bottom: 10px;
+	}
+	.tab2 .button_players {
+		width: 130px;
+		font-size: 10px
+	}
+	.tab_otstyp {
+		margin-left: 0px;
+	}
+	.smena_glovi {
+		margin-bottom: 135px;
+	}
+	#popup_pencil .close {
+        right: 35px;
+	}
+	.avatar_moder_pop img {
+    	width: 120px;
+    	height: 120px;
+	}
+	.ssilka_na_fail {
+		width: 94%;
+	}
+	.popup_button2 {
+		width: 255px;
+	}
+	.avatar_moder_pop h4, .smena_glovi h4 {
+		text-align: center;
+	}
+	.vibor_players .selectbox {
+    	width: 100%;
+	}
+	.popup_button3 {
+		float: none;
+		margin: 0 auto;
+	}
+	.smena_glovi {
+    	margin-bottom: 50px;
+	}
+	.avatar_moder_pop {
+		overflow: initial;
+		height: 330px;
+	}
+	.avatar_moder_pop img, .vibor_fail {
+		float: none;
+		margin: 10px auto;
+    	display: block;
+	}
+	.avatar_moder_pop p {
+		float: none;
+		margin-left: 0px;
+		text-align: center;
+	}
+	.ssilka_moder_pop {
+    	float: none;
+    	width: 100%;
+	}
+	.ssilka_na_fail {
+    	width: 100%;
+    	margin-left: 0px;
+	}
+	.popup_button2 {
+    	float: none;
+    	margin: 10px auto;
+    	width: 255px;
+	}
+	.vibor_players .selectbox {
+		float: none;
+	}
+	.smena_glovi {
+    	margin-top: 40px;
+	}
+	.vibor_players .dropdown {
+		top: 40px !important;
+	}
+	.zayavka {
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.fonds p, .fonds ul li, .fonds ul li:first-child {
+		text-align: center;
+	}
+	.prinat {
+		margin-bottom: 20px;
+	}
+	.social_turnir .social_icon ul {
+    	margin-top: 30px;
+    	text-align: center;
+	}
+	.igra_win, .igra_defeat, .igra {
+		width: 10px;
+	}
+	.sigranie-igri {
+		min-width: 135px;
+	}
+	.itog1 p, .itog2 p, .itog3 p {
+		line-height: 40px;
+		font-size: 11px;
+	}
+	.spisok-ychasnikov-turnir {
+    	width: 200px;
+	}
+	.spisok-ychasnikov-turnir p {
+		font-size: 11px;
+		margin-top: 7px;
+	}
+	.scroll-block {
+    	width: 580px;
+	}
+	.fonds h5 {
+    	font-size: 16px;
+    	text-align: center;
+	}
+	.next_game {
+    	margin-top: 20px;
+	}
+	.next_game .selectbox {
+    	width: 100%;
+	}
+	.komanda2 p {
+		margin-left: 8px;
+	}
+	.komandi_turnira {
+		height: auto;
+	}
+	.next_game .dropdown {
+    	top: 42px !important;
+    	border-radius: 0px !important;
+    	right: 1px;
+	}
+	.name_games p {
+		margin-top: 20px;
+	}
+	.name_games p, .name_games2 p {
+		text-align: center;
+	}
+	.pencil3 {
+		top: 37px;
+	}
+	.privat_dannie {
+		float: none;
+		margin: 0 auto;
+	}
+	.otstyp_klan {
+		margin-left: 0px;
+	}
+	.privat_dannie, .privat_input_grup {
+		width: 100%;
+	}
+	.privat8_edit p {
+    	font-size: 12px;
+	}
+	.line_games p {
+		margin-left: 5px;
+	}
+	.privat8_button, .privat8_button2 {
+		margin: 20px auto;
+	}
+	.privat8_edit_game, .privat8_text {
+		width: 100%;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 180px;
+	}
+	.news1 img {
+		height: 112px;
+	}
+	.news {
+		padding-bottom: 20px;
+		margin-bottom: 10px;
+	}
+	.liked_games {
+		min-height: auto;
+		margin-top: 67px;
+	}
+	.line_games img {
+		height: 48px;
+	}
+	#new_info .selectbox .select, .style_input {
+		width: 100%;
+	}
+}
+@media only screen and (max-width : 480px) {
+	.bg-index {
+    	background-image: url(../images/index-bg_480.jpg);
+	}
+	.white_side, .black_side {
+		width: 100%;
+		height: 50%;
+	}
+	.black_side .subcontainer, .white_side .subcontainer {
+		position: relative;
+		margin: auto;
+	}
+	.black_side h2 {
+		display: none;
+	}
+	.white_side h2 {
+		margin-top: 25px;
+	}
+	.white_side {
+		display: block;
+	}
+	.button_black {
+		margin-top: 10%;
+	}
+	.button_white {
+    	margin-top: 40%;
+	}
+	.button_players {
+		float: none;
+		display: block;
+   		margin: 0 auto 10px;
+	}
+	.group_buttons {
+		float: none;
+	}
+	.vibor_game2 .selectbox {
+    	width: 260px;
+	}
+	.popup_input, .favorit_games {
+		width: 90%;
+	}
+	.popup_textarea {
+		max-width: 90%;
+		width: 90%;
+	}
+	.reit_player, .iskluchenie_buttons {
+		float: none;
+		margin: 0 auto;
+	}
+	.tab2 .button_players {
+		width: 150px;
+		font-size: 12px;
+	}
+	.popup_button2 {
+		width: 100%;
+	}
+	.group_buttons2 {
+		margin-right: 0px;
+	}
+	.group_buttons2 .button_players {
+		margin: 0px;
+		margin-bottom: 5px;
+	}
+	.player_avatar2 {
+    	width: 100px;
+    	height: 100px;
+	}
+	.avatar-tyrnira {
+    	width: 100px;
+    	height: 100px;
+	}
+	.vivod_avatar_tyrnira {
+		width: 100px;
+	}
+	.spisok-ychasnikov {
+    	width: calc(100% - 115px);
+	}
+	.spisok-ychasnikov ul li {
+		padding-left: 5px;
+	}
+	.spisok-ychasnikov-turnir {
+		margin-left: 5px;
+	}
+	.spisok-ychasnikov-turnir span {
+		margin-right: 5px;
+	}
+	.spisok-ychasnikov-turnir {
+    	width: 145px;
+	}
+	.igra_win, .igra_defeat, .igra {
+    	width: 5px;
+	}
+	.itog1, .itog2, .itog3 {
+		width: 20px;
+	}
+	.sigranie-igri {
+    	min-width: 80px;
+	}
+	.nav-turnir ul li {
+		font-size: 12px;
+		padding: 10px 5px;
+	}
+	.noiminovanie ul li {
+		font-size: 11px;
+		width: 20px;
+	}
+	.privat_block1 p, .privat_block2 p, .privat_block3 p {
+    	font-size: 10px;
+	}
+	.line_games p {
+		margin-left: 5px;
+		font-size: 12px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 135px;
+	}
+	.news1 img {
+		height: 80px;
+	}
+	.line_games img {
+		height: 48px;
+	}
+	.privat_dannie2 {
+		width: 100%;
+	}
+}
+@media only screen and (max-width : 414px) {
+	.scroll-block {
+    	width: 355px;
+	}
+	.line_privat .avatar_tour2 {
+		width: 40px;
+	}
+	.privat_block1 p, .privat_block2 p, .privat_block3 p {
+    	font-size: 8px;
+	}
+	.privat_block1 {
+    	min-width: 150px;
+	}
+	.privat_block2, .privat_block3 {
+		min-width: 70px;
+	}
+	.naimen1 {
+    	width: 150px;
+	}
+	.naimen2, .naimen3 {
+		width: 70px;
+	}
+	.naimen1 p, .naimen2 p, .naimen3 p {
+		font-size: 10px;
+	}
+	.line_naimenovaniya {
+		height: 50px;
+	}
+	.line_games p {
+    	font-size: 10px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 115px;
+	}
+	.news1 img {
+		height: 66px;
+	}
+	.line_games img {
+		height: 48px;
+	}
+
+}
+@media only screen and (max-width : 375px) {
+	.spisok-ychasnikov ul li {
+		min-height: 70px;
+	}
+	.avatar-tyrnira {
+    	width: 70px;
+    	height: 70px;
+	}
+	.vivod_avatar_tyrnira {
+    	width: 70px;
+	}
+	.spisok-ychasnikov {
+    	width: calc(100% - 85px);
+	}
+	.oplata {
+    	width: 220px;
+	}
+	.spisok-ychasnikov-turnir .avatar_tour2 {
+		width: 30px;
+		margin-right: 5px;
+	}
+	.spisok-ychasnikov-turnir {
+    	width: 125px;
+	}
+	.scroll-block {
+    	width: 315px;
+	}
+	.line_games {
+    	height: 75px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 105px;
+	}
+	.news1 img {
+		height: 58px;
+	}
+	.line_games img {
+		height: 48px;
+	}
+}
+@media only screen and (max-width : 360px) {
+	.scroll-block {
+    	width: 300px;
+	}
+	.komandi_turnira p {
+		font-size: 12px;
+	}
+	.komanda1 p, .komanda2 p {
+		margin-top: 7px;
+	}
+	.privat_block1 {
+    	min-width: 135px;
+	}
+	.naimen1 {
+    	width: 135px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 100px;
+	}
+	.news1 img {
+		height: 55px;
+	}
+	.liked_games {
+    	margin-top: 40px;
+	}
+	.line_games img {
+		height: 35px;
+		width: 35px;
+	}
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li>a {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width : 320px) {
+	.button_news {
+    	width: 110px;
+	}
+	.fb2, .vk2, .tv2, .gl2, .in2 {
+	    margin-right: 10px;
+	}
+	.fb, .vk, .tv, .gl, .in, .fb:hover, .vk:hover, .tv:hover, .gl:hover, .in:hover {
+		background-size: cover;
+		width: 40px;
+		height: 40px;
+		background-repeat: no-repeat;
+	}
+	.country, .city, .border-top3, .border-bottom3 {
+    	width: 145px;
+	}
+	.select_month .selectbox .select, .select_month .dropdown, .select_day .selectbox .select, .select_year .selectbox .select,
+	.border-top-select, .border-bottom-select, .border-top-select2, .border-bottom-select2 {
+    	width: 90px;
+	}
+	.select_day .selectbox .dropdown, .select_year .selectbox .dropdown {
+    	width: 90px;
+	}
+	.player_avatar2 {
+		margin-right: 10px;
+	}
+	.oplata {
+    	width: 195px;
+	}
+	.igra_win, .igra_defeat, .igra {
+    	width: 3px;
+    	margin-right: 1px;
+	}
+	.itog1, .itog2, .itog3 {
+    	width: 15px;
+	}
+	.sigranie-igri {
+    	min-width: 45px;
+	}
+	.noiminovanie ul li {
+		width: 15px;
+	}
+	.scroll-block {
+    	width: 260px;
+	}
+	.komanda1 {
+    	height: 40px;
+    	float: left;
+    	margin-left: 10px;
+	}
+	.avatar_komanda1, .avatar_komanda2 {
+		width: 40px;
+	}
+	.line_privat .avatar_tour2 {
+    	width: 30px;
+	}
+	.line_privat .avatar_tour2 {
+    	margin-left: 2px;
+    	margin-right: 2px;
+	}
+	.privat_block1 {
+    	min-width: 110px;
+	}
+	.privat_block2, .privat_block3 {
+    	min-width: 60px;
+	}
+	.naimen1 {
+    	width: 110px;
+	}
+	.naimen2, .naimen3 {
+		width: 60px;
+	}
+	.slide1 img, .slide2 img, .slide3 img, .slide4 img, .slide5 img, .slide6 img {
+		height: 90px;
+	}
+	.news1 img {
+		height: 46px;
+	}
+	.line_games img {
+		height: 35px;
+	}
+}
+/*******************************По Высотам***************************/
+@media only screen and (max-height: 768px) {
+	.news .scroll-pane {
+		height: 1500px;
+	}
+}
+@media only screen and (max-height: 640px) {
+	.news .scroll-pane {
+		height: 1450px;
+	}
+}
