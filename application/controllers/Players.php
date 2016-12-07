@@ -155,22 +155,30 @@ class Players extends CI_Controller
         $gmt = $this->input->post('gmt');
         $age = $this->input->post('age') * 31536000;
         $ach = '';
-        switch($game){
-            case 1: $ach = $this->input->post('first');
+        switch ($game) {
+            case 1:
+                $ach = $this->input->post('first');
                 break;
-            case 2:$ach = $this->input->post('second');;
+            case 2:
+                $ach = $this->input->post('second');;
                 break;
-            case 3:$ach = $this->input->post('third');
+            case 3:
+                $ach = $this->input->post('third');
                 break;
-            case 4:$ach = $this->input->post('four');
+            case 4:
+                $ach = $this->input->post('four');
                 break;
-            case 5:$ach = $this->input->post('five');
+            case 5:
+                $ach = $this->input->post('five');
                 break;
-            case 6:$ach = $this->input->post('six');
+            case 6:
+                $ach = $this->input->post('six');
                 break;
-            case 7:$ach = $this->input->post('seven');
+            case 7:
+                $ach = $this->input->post('seven');
                 break;
         }
+
         $dbirth = date('Y', time() - $age);
         $sex = $this->input->post('sex');
         $arr = array('side' => $this->uri->segment(2));
@@ -183,7 +191,8 @@ class Players extends CI_Controller
         $data['slider'] = $this->home_model->get_slider();
 
 
-        $data['get_gamers'] = $this->players_model->search($game, $gmt, $dbirth, $sex);
+        $data['get_gamers'] = $this->players_model->search($game, $ach, $gmt, $dbirth, $sex);
+        //var_dump($data['get_gamers']);
         ///////////////////////////////////////////////////
         $data['favor_all'] = $this->players_model->get_filter_games();
         $data['favor'] = $this->players_model->get_favor_games(1);
@@ -191,7 +200,7 @@ class Players extends CI_Controller
 
         $this->load->view('header', $data);
         $this->load->view('heading', $data);
-        $this->load->view('players', $data);
+        $this->load->view('players_s', $data);
         $this->load->view('footer', $data);
     }
 
@@ -257,7 +266,7 @@ class Players extends CI_Controller
                         echo $w[0]->har;
                     }
                     echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'></div>";
-                    echo "<select name='first[]' class='first'>";
+                    echo "<select name='first[]' class='first'><option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         if ($lang == 'en') {
                             echo "<option value='" . $wq->id_val . "'>" . $wq->value_en . "</option>";
@@ -365,7 +374,8 @@ class Players extends CI_Controller
                         echo $w[0]->har;
                     }
                     echo "</div>";
-                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='second[]'>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'>";
+                    echo "<select name='second[]'><option value=''>". $this->lang->line('opt'). "</option>";
                     foreach ($e->result() as $wq) {
                         echo "<option value='" . $wq->id_val . "'>";
                         if ($lang == 'en') {
@@ -375,7 +385,7 @@ class Players extends CI_Controller
                         }
                         echo "</option>";
                     }
-                    echo '</select>';
+                    echo "</select>";
                 }
                 break;
             case 3:
@@ -496,7 +506,8 @@ class Players extends CI_Controller
                     }
                     echo "
 </div>";
-                    echo "<input type='hidden' value='" . $x[11]->id_har . "' name='id_har[]'><select name='third[]'>";
+                    echo "<input type='hidden' value='" . $x[11]->id_har . "' name='id_har[]'><select name='third[]'>
+                    <option>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";
@@ -803,4 +814,5 @@ class Players extends CI_Controller
 
 
     }
+
 }

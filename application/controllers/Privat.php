@@ -2,11 +2,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Privat extends CI_Controller {
+class Privat extends CI_Controller
+{
 
     var $dataz = array();
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->dataz['month_array_rus'] = array("01" => "января",
             "02" => "февраля",
@@ -36,7 +38,8 @@ class Privat extends CI_Controller {
         $this->dataz['lang'] = $this->lang_model->index();
     }
 
-    public function favorites($param = null) {
+    public function favorites($param = null)
+    {
         $data['title'] = 'Everyplayer - Privat Favorites';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -60,14 +63,16 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function players() {
+    public function players()
+    {
         $id_player = $this->input->post('id_player');
         $id_boss = $this->session->userdata('id');
         $dat = array('id_boss' => $id_boss, 'id_player' => $id_player);
         $this->db->insert('favorite_players', $dat);
     }
 
-    public function del_players() {
+    public function del_players()
+    {
         $id_player = $this->input->post('id_player');
         $id_boss = $this->input->post('id_boss');
         $this->db->where('id_boss', $id_boss);
@@ -76,14 +81,16 @@ class Privat extends CI_Controller {
         //print_r($this->db->queries);
     }
 
-    public function clans() {
+    public function clans()
+    {
         $id_clan = $this->input->post('id_clan');
         $id_boss = $this->session->userdata('id');
         $dat = array('id_boss' => $id_boss, 'id_clan' => $id_clan);
         $this->db->insert('favorite_clans', $dat);
     }
 
-    public function del_clans() {
+    public function del_clans()
+    {
         $id_clan = $this->input->post('id_clan');
         $id_boss = $this->input->post('id_boss');
         $this->db->where('id_boss', $id_boss);
@@ -92,7 +99,8 @@ class Privat extends CI_Controller {
         //print_r($this->db->queries);
     }
 
-    public function tour() {
+    public function tour()
+    {
         $id_clan = $this->input->post('id_tour');
         $id_boss = $this->session->userdata('id');
 
@@ -100,7 +108,8 @@ class Privat extends CI_Controller {
         $this->db->insert('favorite_tour', $dat);
     }
 
-    public function news() {
+    public function news()
+    {
         $id_news = $this->input->post('id_news');
         $id_boss = $this->session->userdata('id');
 
@@ -108,7 +117,8 @@ class Privat extends CI_Controller {
         $this->db->insert('favorite_news', $dat);
     }
 
-    public function del_news() {
+    public function del_news()
+    {
         $id_news = $this->input->post('id_news');
         $id_boss = $this->input->post('id_boss');
         $this->db->where('id_boss', $id_boss);
@@ -117,7 +127,8 @@ class Privat extends CI_Controller {
         //print_r($this->db->queries);
     }
 
-    public function gides() {
+    public function gides()
+    {
         $id_gides = $this->input->post('id_gides');
         $id_boss = $this->session->userdata('id');
 
@@ -125,7 +136,8 @@ class Privat extends CI_Controller {
         $this->db->insert('favorite_gides', $dat);
     }
 
-    public function del_gides() {
+    public function del_gides()
+    {
         $id_gides = $this->input->post('id_gides');
         $id_boss = $this->input->post('id_boss');
         $this->db->where('id_boss', $id_boss);
@@ -133,7 +145,8 @@ class Privat extends CI_Controller {
         $this->db->delete('favorite_gides');
     }
 
-    public function myclans($param) {
+    public function myclans($param)
+    {
         $data['title'] = 'Everyplayer - Privat My Clans';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -178,7 +191,8 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function info($param) {
+    public function info($param)
+    {
         $data['title'] = 'Everyplayer - Privat Info';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -204,7 +218,8 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function avatar() {
+    public function avatar()
+    {
         $this->load->model('lang_model');
         $datas['lang'] = $this->lang_model->index();
         $config['upload_path'] = './images/avatar/';
@@ -228,7 +243,8 @@ class Privat extends CI_Controller {
         }
     }
 
-    public function edit_info() {
+    public function edit_info()
+    {
         $this->load->model('lang_model');
         $datas['lang'] = $this->lang_model->index($this->input->post('lang'));
         $data['month_array_en'] = $this->dataz['month_array_en'];
@@ -368,7 +384,8 @@ class Privat extends CI_Controller {
                                                                 </div>';
     }
 
-    public function save_info() {
+    public function save_info()
+    {
         $user_id = $this->session->userdata('id');
         $first_name = $this->input->post('first_name');
         $username = $this->input->post('username');
@@ -422,7 +439,8 @@ class Privat extends CI_Controller {
         redirect(base_url() . $datas['lang'] . '/' . $this->session->userdata('side') . '/privat_info/' . $user_id, 'refresh');
     }
 
-    public function mytour($param) {
+    public function mytour($param)
+    {
         $data['title'] = 'Everyplayer - Privat Tournaments';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -441,7 +459,8 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function friends($param) {
+    public function friends($param)
+    {
         $data['title'] = 'Everyplayer - Privat Tournaments';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -460,7 +479,8 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function add_friend() {
+    public function add_friend()
+    {
         $fre = $this->input->post('fre');
         $bos = $this->input->post('bos');
         $data = array('user_id' => $bos, 'friend_id' => $fre);
@@ -469,7 +489,8 @@ class Privat extends CI_Controller {
         $this->db->insert('friends', $data);
     }
 
-    public function act_friend() {
+    public function act_friend()
+    {
         $idus = $this->input->post('us_id');
         $id_boss = $this->session->userdata('id');
 
@@ -480,15 +501,18 @@ class Privat extends CI_Controller {
         $this->db->update('friends', $data);
     }
 
-    public function del_friend() {
+    public function del_friend()
+    {
         $idus = $this->input->post('us_id');
         $id_boss = $this->session->userdata('id');
         $this->db->where('friend_id', $idus);
         $this->db->where('user_id', $id_boss);
         $this->db->delete('friends');
     }
+
     /*------- вывод достижений  --*/
-    public function achievements($param) {
+    public function achievements($param)
+    {
         $data['title'] = 'Everyplayer - Privat Achievements';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -506,8 +530,10 @@ class Privat extends CI_Controller {
         $this->load->view('privat/achievements', $data);
         $this->load->view('footer', $data);
     }
-/*-- сохранение нового достижения --*/
-    public function new_ach() {
+
+    /*-- сохранение нового достижения --*/
+    public function new_ach()
+    {
         $id_user = $this->input->post('id_user');
         $id_game = $this->input->post('new_game');
 
@@ -516,20 +542,32 @@ class Privat extends CI_Controller {
         if ($id_game == 1) {
             $id_har = $this->input->post('id_har');
             $first = $this->input->post('first');
-            for($i=0;$i<count($first);$i++) {
-                $dataz = array();
+
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for($i = 0; $i < 3; $i++) {
                 $dataz['user_id'] = $id_user;
                 $dataz['game'] = $id_game;
                 $dataz['id_crit'] = $id_har[$i];
                 $dataz['val_crit'] = $first[$i];
                 $this->db->insert('achi', $dataz);
             }
+            /*--- сохраняем в индивидуальную таблицу ---*/
+            $data['user_id'] = $id_user;
+            $data['region'] = $first[0];
+            $data['rank'] = $first[1];
+            $data['hero'] = $first[2];
+            $this->db->insert('achi_heart', $data);
+
         }
         if ($id_game == 2) {
             $id_har = $this->input->post('id_har');
             $second = $this->input->post('second');
             $dataz = array();
-            for($i=0;$i<3;$i++) {
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 0; $i < 3; $i++) {
                 $dataz['user_id'] = $id_user;
                 $dataz['game'] = $id_game;
                 $dataz['id_crit'] = $id_har[$i];
@@ -540,12 +578,23 @@ class Privat extends CI_Controller {
             $dataz['id_crit'] = $id_har[3];
             $dataz['val_crit'] = $second[3];
             $this->db->insert('achi', $dataz);
+            /*--------------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['priv_mmp'] = $second[0];
+            $data['com_mmp'] = $second[1];
+            $data['time_game'] = $second[2];
+            $data['role'] = $second[3];
+            $this->db->insert('achi_dota2', $data);
         }
+
         if ($id_game == 3) {
             $id_har = $this->input->post('id_har');
             $third = $this->input->post('third');
-            for($i=0;$i<4;$i++) {
-                $dataz = array();
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 0; $i < 4; $i++) {
+
                 $dataz['user_id'] = $id_user;
                 $dataz['game'] = $id_game;
                 $dataz['id_crit'] = $id_har[$i];
@@ -556,11 +605,19 @@ class Privat extends CI_Controller {
             $dataz['id_crit'] = $id_har[4];
             $dataz['val_crit'] = $third[4];
             $this->db->insert('achi', $dataz);
+            /*--------------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['priv_rank'] = $third[0];
+            $data['perc_win'] = $third[1];
+            $data['perc_shoot'] = $third[2];
+            $data['avg_dam'] = $third[3];
+            $data['tank'] = $third[4];
+            $this->db->insert('achi_wot', $data);
         }
         if ($id_game == 4) {
             $id_har = $this->input->post('id_har');
             $four = $this->input->post('four');
-            for($i=0;$i<2;$i++) {
+            for ($i = 0; $i < 2; $i++) {
                 $dataz = array();
                 $dataz['user_id'] = $id_user;
                 $dataz['game'] = $id_game;
@@ -568,7 +625,7 @@ class Privat extends CI_Controller {
                 $dataz['val_crit_text'] = $four[$i];
                 $this->db->insert('achi', $dataz);
             }
-            for($i=2;$i<4;$i++){
+            for ($i = 2; $i < 4; $i++) {
                 $dataz['val_crit_text'] = 0;
                 $dataz['id_crit'] = $id_har[$i];
                 $dataz['val_crit'] = $four[$i];
@@ -584,7 +641,7 @@ class Privat extends CI_Controller {
             $dataz['id_crit'] = $id_har[0];
             $dataz['val_crit_text'] = $five[0];
             $this->db->insert('achi', $dataz);
-            for($i=1;$i<3;$i++) {
+            for ($i = 1; $i < 3; $i++) {
                 $dataz['id_crit'] = $id_har[$i];
                 $dataz['val_crit'] = $five[$i];
                 $this->db->insert('achi', $dataz);
@@ -599,7 +656,7 @@ class Privat extends CI_Controller {
             $dataz['id_crit'] = $id_har[0];
             $dataz['val_crit_text'] = $six[0];
             $this->db->insert('achi', $dataz);
-            for($i=1;$i<4;$i++) {
+            for ($i = 1; $i < 4; $i++) {
                 $dataz['id_crit'] = $id_har[$i];
                 $dataz['val_crit'] = $six[$i];
                 $this->db->insert('achi', $dataz);
@@ -614,7 +671,7 @@ class Privat extends CI_Controller {
             $dataz['id_crit'] = $id_har[0];
             $dataz['val_crit_text'] = $seven[0];
             $this->db->insert('achi', $dataz);
-            for($i=1;$i<4;$i++) {
+            for ($i = 1; $i < 4; $i++) {
                 $dataz['id_crit'] = $id_har[$i];
                 $dataz['val_crit'] = $seven[$i];
                 $this->db->insert('achi', $dataz);
@@ -622,7 +679,8 @@ class Privat extends CI_Controller {
         }
     }
 
-    public function edit_ach() {
+    public function edit_ach()
+    {
         $this->load->model('lang_model');
         $datas['lang'] = $this->lang_model->index($this->input->post('lang'));
         $id_ach = $this->input->post('id_ach');
@@ -646,7 +704,7 @@ class Privat extends CI_Controller {
                                     </div>
                                     <input class="privat8_text ed_text" type="text" id="ed_text" placeholder="' . $this->lang->line('inf_game') . '" value="' . $data[0]->game_info . '">
                                     <input class="privat8_button2 ed" type="button" name="" data-edit="' . $id_ach . '" value="' . $this->lang->line('save') . '">';
-        echo" <script>$('.ed').click(function(){
+        echo " <script>$('.ed').click(function(){
                         var id_ach = $(this).data('edit');
                     $.ajax({
                             url: '/privat/save_ed_ach',
@@ -659,7 +717,8 @@ class Privat extends CI_Controller {
                 })</script>";
     }
 
-    public function save_ed_ach() {
+    public function save_ed_ach()
+    {
         $id_ach = $this->input->post('id_ach');
         $id_game = $this->input->post('id_game');
         $text = $this->input->post('text');
@@ -668,14 +727,17 @@ class Privat extends CI_Controller {
         $this->db->update('achi', $data);
     }
 
-    public function del_ach() {
+    public function del_ach()
+    {
         $id_ach = $this->input->post('id_ach');
 
         $this->db->where('game', $id_ach);
         $this->db->delete('achi');
     }
-/*-------------------  вывод полей достижений для заполнения ---------------------*/
-    public function sel_ach() {
+
+    /*-------------------  вывод полей достижений для заполнения ---------------------*/
+    public function sel_ach()
+    {
         $this->load->model('lang_model');
         $datas['lang'] = $this->lang_model->index($this->input->post('lang'));
         $id_game = $this->input->post('id_ach');
@@ -705,7 +767,7 @@ class Privat extends CI_Controller {
                 } else {
                     echo $w[0]->har;
                 }
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'></div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'></div>";
                 echo "<select name='first[]' class='first'>";
                 foreach ($e->result() as $wq) {
                     if ($datas['lang'] == 'en') {
@@ -727,19 +789,19 @@ class Privat extends CI_Controller {
                 } else {
                     echo $x[3]->har;
                 }
-                echo "<input type='hidden' value='".$x[3]->id_har."' name='id_har[]'></div><input type='text' value='' name='second[]'><div style='color:white;margin-right:15px;' >";
+                echo "<input type='hidden' value='" . $x[3]->id_har . "' name='id_har[]'></div><input type='text' value='' name='second[]'><div style='color:white;margin-right:15px;' >";
                 if ($datas['lang'] == 'en') {
                     echo $x[4]->har_en;
                 } else {
                     echo $x[4]->har;
                 }
-                echo "<input type='hidden' value='".$x[4]->id_har."' name='id_har[]'></div><input type='text' value='' name='second[]'><div style='color:white;margin-right:15px;' >";
+                echo "<input type='hidden' value='" . $x[4]->id_har . "' name='id_har[]'></div><input type='text' value='' name='second[]'><div style='color:white;margin-right:15px;' >";
                 if ($datas['lang'] == 'en') {
                     echo $x[6]->har_en;
                 } else {
                     echo $x[6]->har;
                 }
-                echo "<input type='hidden' value='".$x[6]->id_har."' name='id_har[]'></div><input type='text' value='' name='second[]'>";
+                echo "<input type='hidden' value='" . $x[6]->id_har . "' name='id_har[]'></div><input type='text' value='' name='second[]'>";
 
 
                 $this->db->where('id_har', $val->id_har);
@@ -758,9 +820,9 @@ class Privat extends CI_Controller {
                     echo $w[0]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'><select name='second[]'>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='second[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -781,26 +843,26 @@ class Privat extends CI_Controller {
                 } else {
                     echo $x[7]->har;
                 }
-                echo "<input type='hidden' value='".$x[7]->id_har."' name='id_har[]'></div><input type='text' value='' name='third[]'><div style='color:white;margin-right:15px;' >";
+                echo "<input type='hidden' value='" . $x[7]->id_har . "' name='id_har[]'></div><input type='text' value='' name='third[]'><div style='color:white;margin-right:15px;' >";
                 if ($datas['lang'] == 'en') {
                     echo $x[8]->har_en;
                 } else {
                     echo $x[8]->har;
                 }
-                echo "<input type='hidden' value='".$x[8]->id_har."' name='id_har[]'></div><input type='text' value='' name='third[]'><div style='color:white;margin-right:15px;' >";
+                echo "<input type='hidden' value='" . $x[8]->id_har . "' name='id_har[]'></div><input type='text' value='' name='third[]'><div style='color:white;margin-right:15px;' >";
                 if ($datas['lang'] == 'en') {
                     echo $x[9]->har_en;
                 } else {
                     echo $x[9]->har;
                 }
-                echo "<input type='hidden' value='".$x[9]->id_har."' name='id_har[]'></div><input type='text' value='' name='third[]'>";
+                echo "<input type='hidden' value='" . $x[9]->id_har . "' name='id_har[]'></div><input type='text' value='' name='third[]'>";
                 echo "<div style='color:white;margin-right:15px;' >";
                 if ($datas['lang'] == 'en') {
                     echo $x[10]->har_en;
                 } else {
                     echo $x[10]->har;
                 }
-                echo "<input type='hidden' value='".$x[10]->id_har."' name='id_har[]'></div><input type='text' value='' name='third[]'>";
+                echo "<input type='hidden' value='" . $x[10]->id_har . "' name='id_har[]'></div><input type='text' value='' name='third[]'>";
 
 
                 $this->db->where('id_har', $val->id_har);
@@ -819,9 +881,9 @@ class Privat extends CI_Controller {
                     echo $x[11]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$x[11]->id_har."' name='id_har[]'><select name='third[]'>";
+                echo "<input type='hidden' value='" . $x[11]->id_har . "' name='id_har[]'><select name='third[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -839,13 +901,13 @@ class Privat extends CI_Controller {
             } else {
                 echo $x[12]->har;
             }
-            echo "<input type='hidden' value='".$x[12]->id_har."' name='id_har[]'></div><input type='text' value='' name='four[]'><div style='color:white;margin-right:15px;' >";
+            echo "<input type='hidden' value='" . $x[12]->id_har . "' name='id_har[]'></div><input type='text' value='' name='four[]'><div style='color:white;margin-right:15px;' >";
             if ($datas['lang'] == 'en') {
                 echo $x[13]->har_en;
             } else {
                 echo $x[13]->har;
             }
-            echo "<input type='hidden' value='".$x[13]->id_har."' name='id_har[]'></div><input type='text' value='' name='four[]'>";
+            echo "<input type='hidden' value='" . $x[13]->id_har . "' name='id_har[]'></div><input type='text' value='' name='four[]'>";
             foreach ($res->result() as $val) {
 
                 $this->db->where('id_har', $val->id_har);
@@ -865,9 +927,9 @@ class Privat extends CI_Controller {
                     echo $w[0]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'><select name='four[]'>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='four[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -886,7 +948,7 @@ class Privat extends CI_Controller {
             } else {
                 echo $x[15]->har;
             }
-            echo "<input type='hidden' value='".$x[15]->id_har."' name='id_har[]'></div><input type='text' value='' name='five[]'>";
+            echo "<input type='hidden' value='" . $x[15]->id_har . "' name='id_har[]'></div><input type='text' value='' name='five[]'>";
             foreach ($res->result() as $val) {
 
                 $this->db->where('id_har', $val->id_har);
@@ -906,9 +968,9 @@ class Privat extends CI_Controller {
                     echo $w[0]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'><select name='five[]'>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='five[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -928,7 +990,7 @@ class Privat extends CI_Controller {
             } else {
                 echo $x[12]->har;
             }
-            echo "<input type='hidden' value='".$x[12]->id_har."' name='id_har[]'></div><input type='text' value='' name='six[]'>";
+            echo "<input type='hidden' value='" . $x[12]->id_har . "' name='id_har[]'></div><input type='text' value='' name='six[]'>";
             foreach ($res->result() as $val) {
 
                 $this->db->where('id_har', $val->id_har);
@@ -948,9 +1010,9 @@ class Privat extends CI_Controller {
                     echo $w[0]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'><select name='six[]'>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='six[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -969,7 +1031,7 @@ class Privat extends CI_Controller {
             } else {
                 echo $x[12]->har;
             }
-            echo "<input type='hidden' value='".$x[12]->id_har."' name='id_har[]'></div><input type='text' value='' name='seven[]'>";
+            echo "<input type='hidden' value='" . $x[12]->id_har . "' name='id_har[]'></div><input type='text' value='' name='seven[]'>";
             foreach ($res->result() as $val) {
 
                 $this->db->where('id_har', $val->id_har);
@@ -989,9 +1051,9 @@ class Privat extends CI_Controller {
                     echo $w[0]->har;
                 }
                 echo "</div>";
-                echo "<input type='hidden' value='".$w[0]->id_har."' name='id_har[]'><select name='seven[]'>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='seven[]'>";
                 foreach ($e->result() as $wq) {
-                    echo "<option value='".$wq->id_val."'>";
+                    echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {
                         echo $wq->value_en;
                     } else {
@@ -1004,7 +1066,8 @@ class Privat extends CI_Controller {
         }
     }
 
-    public function creat_clan($param) {
+    public function creat_clan($param)
+    {
         $data['title'] = 'Everyplayer - Privat Creat Clan';
         $this->load->model('home_model');
         $this->load->model('privat_model');
@@ -1026,7 +1089,8 @@ class Privat extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function img_cla() {
+    public function img_cla()
+    {
         $config['upload_path'] = './images/clans/';
         $config['allowed_types'] = 'png|jpg';
         $this->load->library('upload');
@@ -1042,7 +1106,8 @@ class Privat extends CI_Controller {
         echo json_encode($path);
     }
 
-    public function save_clan($param) {
+    public function save_clan($param)
+    {
         $user_id = $param;
         $name_clan = $this->input->post('name_clan');
         $opisanie_clan = $this->input->post('opisanie_clan');
@@ -1061,7 +1126,8 @@ class Privat extends CI_Controller {
         redirect(base_url() . $datas['lang'] . '/' . $this->session->userdata('side') . '/privat_clans/' . $user_id, 'refresh');
     }
 
-    public function premium($param) {
+    public function premium($param)
+    {
 
         $data['title'] = 'Everyplayer - Privat Subscription';
         $this->load->model('home_model');
@@ -1079,52 +1145,56 @@ class Privat extends CI_Controller {
         $this->load->view('privat/premium', $data);
         $this->load->view('footer', $data);
     }
-public function in_prem(){
-    $user = $this->input->post('id_user');
-    $prem = $this->input->post('prem');
-    $now = time();
-    $datas_month = $now+(30*86400);
-    $datas_half = $now+(183*86400);
-    $datas_year = $now+(365*86400);
-    $datas_month = date('Y-m-d h:i:s', $datas_month);
-    $datas_half = date('Y-m-d h:i:s', $datas_half);
-    $datas_year = date('Y-m-d h:i:s', $datas_year);
-    if($prem == 1){
-        $dat = array('data_premium'=>$datas_month, 'premium'=>1);
-        $this->db->where('user_id', $user);
-        $this->db->update('users',$dat);
+
+    public function in_prem()
+    {
+        $user = $this->input->post('id_user');
+        $prem = $this->input->post('prem');
+        $now = time();
+        $datas_month = $now + (30 * 86400);
+        $datas_half = $now + (183 * 86400);
+        $datas_year = $now + (365 * 86400);
+        $datas_month = date('Y-m-d h:i:s', $datas_month);
+        $datas_half = date('Y-m-d h:i:s', $datas_half);
+        $datas_year = date('Y-m-d h:i:s', $datas_year);
+        if ($prem == 1) {
+            $dat = array('data_premium' => $datas_month, 'premium' => 1);
+            $this->db->where('user_id', $user);
+            $this->db->update('users', $dat);
+        }
+        if ($prem == 6) {
+            $dat = array('data_premium' => $datas_half, 'premium' => 1);
+            $this->db->where('user_id', $user);
+            $this->db->update('users', $dat);
+        }
+        if ($prem == 12) {
+            $dat = array('data_premium' => $datas_year, 'premium' => 1);
+            $this->db->where('user_id', $user);
+            $this->db->update('users', $dat);
+        }
     }
-    if($prem == 6){
-        $dat = array('data_premium'=>$datas_half, 'premium'=>1);
+
+    public function in_top()
+    {
+        $user = $this->input->post('id_user');
+        $prem = $this->input->post('top');
+        $end_time = $this->input->post('end_time');
+        $now = time();
+        $end_times = $now + ($end_time * 86400);
+        $end_timess = date('Y-m-d h:i:s', $end_times);
+
+        $dat = array('top' => 1, 'data_top' => $end_timess);
         $this->db->where('user_id', $user);
-        $this->db->update('users',$dat);
+        $this->db->update('users', $dat);
+
+        $this->db->where('id_user', $user);
+        $get = $this->db->get('golden');
+        $ge = $get->result();
+        $old = $ge[0]->count_gold;
+        $new = $old - $prem;
+        $da = date('Y-m-d h:i:s', time());
+        $dats = array('count_gold' => $new, 'datas' => $da);
+        $this->db->where('id_user', $user);
+        $this->db->update('golden', $dats);
     }
-    if($prem == 12){
-        $dat = array('data_premium'=>$datas_year, 'premium'=>1);
-        $this->db->where('user_id', $user);
-        $this->db->update('users',$dat);
-    }
-}
-public function in_top() {
-    $user = $this->input->post('id_user');
-    $prem = $this->input->post('top');
-    $end_time = $this->input->post('end_time');
-    $now = time();
-    $end_times = $now + ($end_time*86400);
-    $end_timess = date('Y-m-d h:i:s', $end_times);
-    
-    $dat = array('top'=>1, 'data_top'=>$end_timess);
-    $this->db->where('user_id',$user);
-    $this->db->update('users',$dat);
-    
-    $this->db->where('id_user',$user);
-    $get = $this->db->get('golden');
-    $ge = $get->result();
-    $old = $ge[0]->count_gold;
-    $new = $old - $prem;
-    $da = date('Y-m-d h:i:s', time());
-    $dats = array('count_gold'=>$new, 'datas'=>$da);
-    $this->db->where('id_user',$user);
-    $this->db->update('golden',$dats);
-}
 }

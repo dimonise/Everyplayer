@@ -2,9 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Players_model extends CI_Model {
+class Players_model extends CI_Model
+{
 
-    function get_gamers() {
+    function get_gamers()
+    {
         $this->db->where('active', 1);
         $this->db->where('first_name !=', 'Admin');
         $this->db->where('last_name !=', 'istrator');
@@ -14,29 +16,36 @@ class Players_model extends CI_Model {
         return $query->result();
     }
 
-    function count_for_pag() {
+    function count_for_pag()
+    {
         return $this->db->count_all_results('users');
     }
 
-    function get_favor_games($limit = null) {
+    function get_favor_games($limit = null)
+    {
         if ($limit != null) {
             $this->db->limit(5);
         }
         $query = $this->db->get('favorite_games');
         return $query->result();
     }
-    function get_filter_games() {
+
+    function get_filter_games()
+    {
 
         $query = $this->db->get('achi_games');
         return $query->result();
     }
-    function get_gmt() {
+
+    function get_gmt()
+    {
 
         $query = $this->db->get('gmt');
         return $query->result();
     }
 
-    function get_gamers_search($num, $offset, $param) {
+    function get_gamers_search($num, $offset, $param)
+    {
         $this->db->where('games_id', $param);
         $quer = $this->db->get('favorite_games');
         $games = $quer->result();
@@ -51,17 +60,120 @@ class Players_model extends CI_Model {
         return $query->result();
     }
 
-    function search( $game, $gmt, $age, $sex) {
-
+    function search($game, $ach, $gmt, $age, $sex)
+    {
         $this->db->where('id_ach_game', $game);
         $quer = $this->db->get('achi_games');
-        $games = $quer->result();
+        $gamess = $quer->result();
 
-        //var_dump($games);
-        if (empty($games[0]->game_name)) {
+        if (empty($gamess[0]->game_name)) {
             $games = 'x';
         } else {
-            $games = $games[0]->game_name;
+            $games = $gamess[0]->game_name;
+
+            /*фильтры в зависимости от типа игры*/
+            switch ($gamess[0]->id_ach_game) {
+                case 1:
+//                    echo "<pre>";
+//                    var_dump($ach);
+                    $crit = array(0 => 'region', 1 => 'rank', 2 => 'hero');
+                    for ($i = 0; $i < count($ach); $i++) {
+                        if (!empty($ach[$i])) {
+                            $this->db->where($crit[$i], $ach[$i]);
+                        }
+                    }
+                    $query = $this->db->get('achi_heart');
+                    $result = $query->result();
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+                    return $filtr;
+                    break;
+                case 2:
+                    if (!empty($ach[0])) {
+                            $first = explode(' - ', $ach[0]);
+                        }
+                    if (!empty($ach[1])) {
+                        $second = explode(' - ', $ach[1]);
+                    }
+                    if (!empty($ach[2])) {
+                        $third = explode(' - ', $ach[2]);
+                    }
+                    if (!empty($ach[3])) {
+                        $four = 'and role='.$ach[3];
+                     }
+                     else{
+                         $four = null;
+                     }
+                     $where = "select *  from `achi_dota2` where `priv_mmp` between '$first[0]' and '$first[1]' and `com_mmp` between '$second[0]' and  '$second[1]' and `time_game` between  '$third[0]' and '$third[1]' $four";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+
+                    return $filtr;
+                    ;
+                    break;
+                case 3:
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = explode(' - ', $ach[1]);
+                    }
+                    if (!empty($ach[2])) {
+                        $third = explode(' - ', $ach[2]);
+                    }
+                    if (!empty($ach[3])) {
+                        $four = explode(' - ', $ach[3]);
+                    }
+                    if ($ach[4] != $this->lang->line('opt')) {
+                        $five = 'and tank='.$ach[4];
+                    }
+                    else{
+                        $five = null;
+                    }
+                    $where = "select *  from `achi_wot` where `priv_rank` between '$first[0]' and '$first[1]' and `perc_win` between '$second[0]' and  '$second[1]' and `perc_shoot` between  '$third[0]' and '$third[1]' and `avg_dam` between  '$four[0]' and '$four[1]' $five";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+
+                    return $filtr;
+                    ;
+                    break;
+                case 4:
+                    ;
+                    break;
+                case 5:
+                    ;
+                    break;
+                case 6:
+                    ;
+                    break;
+                case 7:
+                    ;
+                    break;
+            }
         }
         if (empty($gmt)) {
             $gmt = 'x';
@@ -90,34 +202,31 @@ class Players_model extends CI_Model {
         //print_r($this->db->queries);
         return $query->result();
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function get_ten_next($startFrom, $param=null) {
 
-     
-		$this->db->where('active', 1);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function get_ten_next($startFrom, $param = null)
+    {
+
+
+        $this->db->where('active', 1);
         $this->db->where('first_name !=', 'Admin');
         $this->db->where('last_name !=', 'istrator');
-		if($param!=null){
-		$this->db->where('games_id', $param);
-        $quer = $this->db->get('favorite_games');
-        $games = $quer->result();
-		$this->db->like('like_games', $games[0]->games_name);
-		}
+        if ($param != null) {
+            $this->db->where('games_id', $param);
+            $quer = $this->db->get('favorite_games');
+            $games = $quer->result();
+            $this->db->like('like_games', $games[0]->games_name);
+        }
         $this->db->order_by('top', 'desc');
-        $this->db->limit(3,$startFrom);
+        $this->db->limit(3, $startFrom);
         $query = $this->db->get('users');
         //print_r($this->db->queries);
-		$articles = array();
+        $articles = array();
         foreach ($query->result() as $row) {
             $articles[] = $row;
         }
         return json_encode($articles);
     }
-
-
-
-
-
 
 
 }

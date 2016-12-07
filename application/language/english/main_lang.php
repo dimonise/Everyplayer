@@ -475,3 +475,4 @@ $lang['spand']='Collapse';
 $lang['sid']='Select your side';
 
 $lang['nik']='Nickname on the website';
+$lang['opt'] = '-- undefined --';
