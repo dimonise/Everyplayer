@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 06 2016 г., 06:22
+-- Время создания: Дек 07 2016 г., 11:43
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -55,7 +55,48 @@ CREATE TABLE IF NOT EXISTS `achi` (
   `val_crit_text` varchar(50) NOT NULL,
   PRIMARY KEY (`id_achi`),
   KEY `val_crit_text` (`val_crit_text`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+
+--
+-- Дамп данных таблицы `achi`
+--
+
+INSERT INTO `achi` (`id_achi`, `user_id`, `game`, `id_crit`, `val_crit`, `val_crit_text`) VALUES
+(10, 6, 1, 1, 1, ''),
+(11, 6, 1, 2, 4, ''),
+(12, 6, 1, 3, 30, ''),
+(13, 6, 2, 4, 0, '15'),
+(14, 6, 2, 5, 0, '100'),
+(15, 6, 2, 7, 0, '200'),
+(16, 6, 2, 6, 39, '0'),
+(17, 6, 3, 8, 0, '1111'),
+(18, 6, 3, 9, 0, '22'),
+(19, 6, 3, 10, 0, '33'),
+(20, 6, 3, 11, 0, '44'),
+(21, 6, 3, 12, 43, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_dota2`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_dota2` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `priv_mmp` int(11) NOT NULL,
+  `com_mmp` int(11) NOT NULL,
+  `time_game` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `achi_dota2`
+--
+
+INSERT INTO `achi_dota2` (`id_achi`, `user_id`, `priv_mmp`, `com_mmp`, `time_game`, `role`) VALUES
+(1, 6, 15, 100, 200, 39);
 
 -- --------------------------------------------------------
 
@@ -82,6 +123,54 @@ INSERT INTO `achi_games` (`id_ach_game`, `game_name`, `game_img`) VALUES
 (5, 'Counter Strike global offensive', '284a4-icon_for_csgo_by_karara160-d74xrig.png'),
 (6, 'League of Legends', 'aaa93-league_of_legends__connected_fates__episode_2_by_lol_connectedfates-d8fgb24.jpg'),
 (7, 'Heroes of the Storm', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_heart`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_heart` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `region` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `hero` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `achi_heart`
+--
+
+INSERT INTO `achi_heart` (`id_achi`, `user_id`, `region`, `rank`, `hero`) VALUES
+(1, 6, 1, 4, 30),
+(2, 25, 2, 4, 30),
+(3, 16, 3, 6, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_wot`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_wot` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `priv_rank` int(11) NOT NULL,
+  `perc_win` int(11) NOT NULL,
+  `perc_shoot` int(11) NOT NULL,
+  `avg_dam` int(11) NOT NULL,
+  `tank` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `achi_wot`
+--
+
+INSERT INTO `achi_wot` (`id_achi`, `user_id`, `priv_rank`, `perc_win`, `perc_shoot`, `avg_dam`, `tank`) VALUES
+(1, 6, 111, 22, 33, 44, 43);
 
 -- --------------------------------------------------------
 
@@ -25286,7 +25375,7 @@ INSERT INTO `users` (`user_id`, `username`, `first_name`, `last_name`, `bdate`, 
 (21, 'Dmitrij', 'Дмитрий', 'Симцис', '14.09.1976', 'Украина', 'Николаев', 2, 'simtzis@yandex.ru', '85d225afe2a56265d2a92aec75c2e602', '139160180', 1, '', '2016-10-31 12:35:26', 'light', '', '', '127.0.0.1', 'LMNOPRSTUFIE', '', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
 (22, 'Kez', 'Дмитрий', '', '1.01.1950', 'Зимбабве', 'Хараре', 2, 'kezzeret@yandex.ru', '85064efb60a9601805dcea56ec5402f7', '', 1, '', '2016-11-08 23:46:56', 'black', '', 'Контактные данные: сайт, телефон ...', '87.255.14.170', 'ieABVGDEGZIYKLMNOPRSTUFIE', '1479937978', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
 (23, 'Ei', 'Петр', '', '1.01.1950', 'Россия', 'москва', 2, 'Lif40@ya.ru', '3fc0a7acf087f549ac2b266baf94b8b1', '', 1, '', '2016-11-08 23:47:05', 'black', 'DOTA 2/', 'Контактные данные: сайт, телефон ...', '46.188.44.98', 'vgdegziyklmnoprstufieABVG', '1479385057', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
-(25, 'TodaRaba', 'васёк', '', '2.03.2000', 'Украина', 'Nikolaev', 2, 'simtzis@yandex.ua', '25f9e794323b453885f5181f1b624d0b', '', 1, '', '2016-11-09 20:51:38', 'black', 'Counter Strike global offensive/League of legends/', 'iusdciuhdiucd sidhc sdijc osdijc oidsdjc oisddj csd', '176.119.76.105', '@#$%^&*()abvgdegziyklmnop', '1480480017', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
+(25, 'TodaRaba', 'васёк', '', '2.03.2000', 'Украина', 'Nikolaev', 2, 'simtzis@yandex.ua', '25f9e794323b453885f5181f1b624d0b', '', 1, '', '2016-11-09 20:51:38', 'black', 'Counter Strike global offensive/League of legends/', 'iusdciuhdiucd sidhc sdijc osdijc oidsdjc oisddj csd', '176.119.76.105', '@#$%^&*()abvgdegziyklmnop', '1480998635', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
 (26, 'Paul', 'Paul', 'Stepanov', '1.01.1950', 'Украина', 'Николаев', 2, 'stegars@gmail.com', '7a097eb512f06da462b3dd9839365cb5', '1179226152088196', 1, 'w256h2561339399173TrophyGold.png', '2016-11-10 11:23:55', 'Выбрать сторону', '', '', '46.33.234.156', 'RSTUFIE', '', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
 (27, 'young-krishna', 'Jess', '', '11.08.1992', 'Russia', 'Moscow', 1, 'young-krishna@yandex.ru', 'a7ab3302b0ba2fe4af38344f41c78d58', '', 1, '', '2016-11-14 15:02:52', 'Выбрать сторону', 'League of legends/Overwatch/', 'Контактные данные: сайт, телефон ...', '87.255.14.192', 'GZIYKLMNOPRSTUFIE', '1479151079', 'GMT +4', '', '', '', '', '', 'высшее', 'рабочий', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
 (28, 'Olya', 'Оля', 'Коцюруба', '09.10.1989', 'Украина', 'Николаев', 1, 'okle4ka@rambler.ru', '800077d5a1bf1bbf05d4a8523d824ab7', '10223602', 1, '', '2016-11-16 09:29:22', 'black', '', '', '46.33.234.156', '567890!@#$%^&*()abvgdegzi', '1479291674', 'GMT +0', '', '', '', '', '', '', '', '', 0, 0, 0, '0000-00-00 00:00:00', 0, ''),
