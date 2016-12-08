@@ -138,7 +138,7 @@ class Players_model extends CI_Model
                     if (!empty($ach[3])) {
                         $four = explode(' - ', $ach[3]);
                     }
-                    if ($ach[4] != $this->lang->line('opt')) {
+                    if (!empty($ach[4])) {
                         $five = 'and tank='.$ach[4];
                     }
                     else{
@@ -162,16 +162,145 @@ class Players_model extends CI_Model
                     ;
                     break;
                 case 4:
-                    ;
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = explode(' - ', $ach[1]);
+                    }
+                    if (!empty($ach[2])) {
+                        $three = 'and role='.$ach[2];
+                    }
+                    else{
+                        $three = null;
+                    }
+                    if (!empty($ach[3])) {
+                        $four = ' and device='.$ach[3];
+                    }
+                    else{
+                        $four = null;
+                    }
+                    $where = "select *  from `achi_parag` where `count_gam` between '$first[0]' and '$first[1]' and `elo` between '$second[0]' and  '$second[1]' $three $four";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
+
                     break;
                 case 5:
-                    ;
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = 'and role='.$ach[1];
+                    }
+                    else{
+                        $second = null;
+                    }
+                    if (!empty($ach[2])) {
+                        $three = ' and rank='.$ach[2];
+                    }
+                    else{
+                        $three = null;
+                    }
+
+                    $where = "select *  from `achi_cs` where `count_gam` between '$first[0]' and '$first[1]'  $second $three";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
                     break;
                 case 6:
-                    ;
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = 'and rank='.$ach[1];
+                    }
+                    else{
+                        $second = null;
+                    }
+                    if (!empty($ach[2])) {
+                        $three = ' and role='.$ach[2];
+                    }
+                    else{
+                        $three = null;
+                    }
+                    if (!empty($ach[3])) {
+                        $four = ' and type_gam='.$ach[3];
+                    }
+                    else{
+                        $four = null;
+                    }
+                    $where = "select *  from `achi_lol` where `count_gam` between '$first[0]' and '$first[1]'  $second $three $four";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
                     break;
                 case 7:
-                    ;
+                    if (!empty($ach[0])) {
+                    $first = explode(' - ', $ach[0]);
+                }
+                    if (!empty($ach[1])) {
+                        $second = 'and rank='.$ach[1];
+                    }
+                    else{
+                        $second = null;
+                    }
+                    if (!empty($ach[2])) {
+                        $three = ' and role='.$ach[2];
+                    }
+                    else{
+                        $three = null;
+                    }
+                    if (!empty($ach[3])) {
+                        $four = ' and type_gam='.$ach[3];
+                    }
+                    else{
+                        $four = null;
+                    }
+                    $where = "select *  from `achi_hs` where `count_gam` between '$first[0]' and '$first[1]'  $second $three $four";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $this->db->where('user_id', $result[$x]->user_id);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
                     break;
             }
         }

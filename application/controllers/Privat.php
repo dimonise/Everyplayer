@@ -617,6 +617,9 @@ class Privat extends CI_Controller
         if ($id_game == 4) {
             $id_har = $this->input->post('id_har');
             $four = $this->input->post('four');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
             for ($i = 0; $i < 2; $i++) {
                 $dataz = array();
                 $dataz['user_id'] = $id_user;
@@ -631,11 +634,20 @@ class Privat extends CI_Controller
                 $dataz['val_crit'] = $four[$i];
                 $this->db->insert('achi', $dataz);
             }
+            /*---------------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['count_gam'] = $four[0];
+            $data['elo'] = $four[1];
+            $data['role'] = $four[2];
+            $data['device'] = $four[3];
+            $this->db->insert('achi_parag', $data);
         }
         if ($id_game == 5) {
             $id_har = $this->input->post('id_har');
             $five = $this->input->post('five');
             $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
             $dataz['user_id'] = $id_user;
             $dataz['game'] = $id_game;
             $dataz['id_crit'] = $id_har[0];
@@ -646,11 +658,20 @@ class Privat extends CI_Controller
                 $dataz['val_crit'] = $five[$i];
                 $this->db->insert('achi', $dataz);
             }
+            /*-------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['count_gam'] = $five[0];
+            $data['role'] = $five[1];
+            $data['rank'] = $five[2];
+
+            $this->db->insert('achi_cs', $data);
         }
         if ($id_game == 6) {
             $id_har = $this->input->post('id_har');
             $six = $this->input->post('six');
             $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
             $dataz['user_id'] = $id_user;
             $dataz['game'] = $id_game;
             $dataz['id_crit'] = $id_har[0];
@@ -661,11 +682,21 @@ class Privat extends CI_Controller
                 $dataz['val_crit'] = $six[$i];
                 $this->db->insert('achi', $dataz);
             }
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['count_gam'] = $six[0];
+            $data['rank'] = $six[1];
+            $data['role'] = $six[2];
+            $data['type_gam'] = $six[3];
+
+            $this->db->insert('achi_lol', $data);
         }
         if ($id_game == 7) {
             $id_har = $this->input->post('id_har');
             $seven = $this->input->post('seven');
             $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
             $dataz['user_id'] = $id_user;
             $dataz['game'] = $id_game;
             $dataz['id_crit'] = $id_har[0];
@@ -676,6 +707,14 @@ class Privat extends CI_Controller
                 $dataz['val_crit'] = $seven[$i];
                 $this->db->insert('achi', $dataz);
             }
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['count_gam'] = $seven[0];
+            $data['rank'] = $seven[1];
+            $data['role'] = $seven[2];
+            $data['type_gam'] = $seven[3];
+
+            $this->db->insert('achi_hs', $data);
         }
     }
 

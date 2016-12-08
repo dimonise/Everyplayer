@@ -507,7 +507,7 @@ class Players extends CI_Controller
                     echo "
 </div>";
                     echo "<input type='hidden' value='" . $x[11]->id_har . "' name='id_har[]'><select name='third[]'>
-                    <option>".$this->lang->line('opt')."</option>";
+                    <option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";
@@ -596,7 +596,8 @@ class Players extends CI_Controller
                     }
                     echo "
 </div>";
-                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='four[]'>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='four[]'>
+                    <option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";
@@ -662,7 +663,8 @@ class Players extends CI_Controller
                     }
                     echo "
 </div>";
-                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='five[]'>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='five[]'>
+                    <option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";
@@ -728,7 +730,8 @@ class Players extends CI_Controller
                     }
                     echo "
 </div>";
-                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='six[]'>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='six[]'>
+                    <option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";
@@ -795,6 +798,7 @@ class Players extends CI_Controller
                     echo "
 </div>";
                     echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='seven[]'>";
+                    echo "<option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "
     <option value='" . $wq->id_val . "'>";

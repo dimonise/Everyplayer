@@ -161,7 +161,9 @@ function GetYearWord($int, $age, $old)
                     </div>
                 </div>
                 <?php
-
+//                echo "<pre>";
+//var_dump($get_gamers);
+//                die;
                 foreach ($get_gamers as $user) {
                     $dbirth = strtotime($user[0]->bdate);
                     $now = time();
