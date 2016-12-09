@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 07 2016 г., 11:43
+-- Время создания: Дек 09 2016 г., 09:44
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -55,25 +55,39 @@ CREATE TABLE IF NOT EXISTS `achi` (
   `val_crit_text` varchar(50) NOT NULL,
   PRIMARY KEY (`id_achi`),
   KEY `val_crit_text` (`val_crit_text`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
 
 --
 -- Дамп данных таблицы `achi`
 --
 
 INSERT INTO `achi` (`id_achi`, `user_id`, `game`, `id_crit`, `val_crit`, `val_crit_text`) VALUES
-(10, 6, 1, 1, 1, ''),
-(11, 6, 1, 2, 4, ''),
-(12, 6, 1, 3, 30, ''),
-(13, 6, 2, 4, 0, '15'),
-(14, 6, 2, 5, 0, '100'),
-(15, 6, 2, 7, 0, '200'),
-(16, 6, 2, 6, 39, '0'),
-(17, 6, 3, 8, 0, '1111'),
-(18, 6, 3, 9, 0, '22'),
-(19, 6, 3, 10, 0, '33'),
-(20, 6, 3, 11, 0, '44'),
-(21, 6, 3, 12, 43, '0');
+(53, 6, 7, 13, 0, '100500'),
+(54, 6, 7, 2, 93, '100500'),
+(55, 6, 7, 6, 100, '100500'),
+(56, 6, 7, 18, 107, '100500');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_cs`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_cs` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `count_gam` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `achi_cs`
+--
+
+INSERT INTO `achi_cs` (`id_achi`, `user_id`, `count_gam`, `role`, `rank`) VALUES
+(1, 6, 55, 77, 73);
 
 -- --------------------------------------------------------
 
@@ -147,6 +161,75 @@ INSERT INTO `achi_heart` (`id_achi`, `user_id`, `region`, `rank`, `hero`) VALUES
 (1, 6, 1, 4, 30),
 (2, 25, 2, 4, 30),
 (3, 16, 3, 6, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_hs`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_hs` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `count_gam` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  `type_gam` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `achi_hs`
+--
+
+INSERT INTO `achi_hs` (`id_achi`, `user_id`, `count_gam`, `rank`, `role`, `type_gam`) VALUES
+(2, 6, 100, 93, 100, 107);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_lol`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_lol` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `count_gam` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  `type_gam` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `achi_lol`
+--
+
+INSERT INTO `achi_lol` (`id_achi`, `user_id`, `count_gam`, `rank`, `role`, `type_gam`) VALUES
+(1, 6, 158, 81, 88, 79);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `achi_parag`
+--
+
+CREATE TABLE IF NOT EXISTS `achi_parag` (
+  `id_achi` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `count_gam` int(11) NOT NULL,
+  `elo` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  `device` int(11) NOT NULL,
+  PRIMARY KEY (`id_achi`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `achi_parag`
+--
+
+INSERT INTO `achi_parag` (`id_achi`, `user_id`, `count_gam`, `elo`, `role`, `device`) VALUES
+(1, 6, 54, 34, 50, 48);
 
 -- --------------------------------------------------------
 
@@ -24973,7 +25056,7 @@ CREATE TABLE IF NOT EXISTS `members_clan` (
   PRIMARY KEY (`i`),
   KEY `id_clan` (`id_clan`),
   KEY `user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Дамп данных таблицы `members_clan`
@@ -24985,9 +25068,9 @@ INSERT INTO `members_clan` (`i`, `id_clan`, `id_user`, `active_clan`, `datas_cla
 (7, 5, 13, 1, '2016-10-05 12:03:30'),
 (8, 1, 14, 1, '2016-10-05 12:03:52'),
 (10, 1, 6, 1, '2016-11-02 14:37:36'),
-(12, 3, 6, 1, '2016-11-26 10:40:27'),
 (13, 3, 11, 1, '2016-11-26 10:40:27'),
-(14, 3, 14, 1, '2016-11-26 10:40:34');
+(14, 3, 14, 1, '2016-11-26 10:40:34'),
+(15, 3, 6, 1, '2016-12-08 21:16:28');
 
 -- --------------------------------------------------------
 

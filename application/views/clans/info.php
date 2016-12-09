@@ -60,7 +60,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 $this->db->where('id_clans', $cl);
                                 $q = $this->db->get('clan_roles');
                                 $rol = $q->result();
-                                if ($rol != null) {
+
+                                if ($rol) {
 								?>
 								<li><a href="/<?= $lang . '/' . $this->session->userdata('side') ?>/clan_news/<?= $this->uri->segment(4) ?>"><?=$this->lang->line('news_clan')?></a></li>
 								<?php
