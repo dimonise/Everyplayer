@@ -143,11 +143,14 @@ class Players extends CI_Controller
         $data['favor'] = $this->players_model->get_favor_games(1);
         $data['get_gmt'] = $this->players_model->get_gmt();
 
+      //  var_dump($data['crit']);
         $this->load->view('header', $data);
         $this->load->view('heading', $data);
         $this->load->view('players', $data);
         $this->load->view('footer', $data);
     }
+
+
 
     public function search()
     {
@@ -177,9 +180,16 @@ class Players extends CI_Controller
             case 7:
                 $ach = $this->input->post('seven');
                 break;
+            case 8:
+                $ach = $this->input->post('eight');
+                break;
         }
-
-        $dbirth = date('Y', time() - $age);
+if(!empty($age)) {
+    $dbirth = date('Y', time() - $age);
+}
+else{
+    $dbirth = "";
+}
         $sex = $this->input->post('sex');
         $arr = array('side' => $this->uri->segment(2));
         $this->session->set_userdata($arr);
@@ -233,9 +243,14 @@ class Players extends CI_Controller
         echo "Ваше сообщение успешно отправлено!";
     }
 
-    public function get_filtr()
+    public function get_filtr($id_uri=null)
     {
-        $id_game = $this->input->post('id_game');
+        if($id_uri == null) {
+            $id_game = $this->input->post('id_game');
+        }
+        else{
+            $id_game = $id_uri;
+        }
         $lang = $this->dataz['lang'];
         $this->db->select('*');
         $this->db->from('har_value');
@@ -284,8 +299,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 10000,
+                            values: [1, 10000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -298,8 +313,8 @@ class Players extends CI_Controller
                         $("#slider-range1").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 10000,
+                            values: [1, 10000],
                             slide: function (event, ui) {
                                 $("#amount1").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -312,8 +327,8 @@ class Players extends CI_Controller
                         $("#slider-range2").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 50000,
+                            values: [1, 50000],
                             slide: function (event, ui) {
                                 $("#amount2").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -395,8 +410,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 20000,
+                            values: [1, 20000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -437,8 +452,8 @@ class Players extends CI_Controller
                         $("#slider-range3").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 200000,
+                            values: [1, 200000],
                             slide: function (event, ui) {
                                 $("#amount3").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -530,8 +545,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 10000,
+                            values: [1, 10000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -544,8 +559,8 @@ class Players extends CI_Controller
                         $("#slider-range1").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 3000,
+                            values: [1, 3000],
                             slide: function (event, ui) {
                                 $("#amount1").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -620,8 +635,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 40000,
+                            values: [1, 40000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -687,8 +702,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 10000,
+                            values: [1, 10000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -754,8 +769,8 @@ class Players extends CI_Controller
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
-                            max: 500,
-                            values: [1, 500],
+                            max: 20000,
+                            values: [1, 20000],
                             slide: function (event, ui) {
                                 $("#amount").val(ui.values[0] + " - " + ui.values[1]);
                             }
@@ -798,6 +813,73 @@ class Players extends CI_Controller
                     echo "
 </div>";
                     echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='seven[]'>";
+                    echo "<option value=''>".$this->lang->line('opt')."</option>";
+                    foreach ($e->result() as $wq) {
+                        echo "
+    <option value='" . $wq->id_val . "'>";
+                        if ($lang == 'en') {
+                            echo $wq->value_en;
+                        } else {
+                            echo $wq->value;
+                        }
+                        echo "
+    </option>
+    ";
+                    }
+                    echo '</select>';
+                }
+                break;
+            case 8:
+                ?>
+                <script>
+                    $(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 0,
+                            max: 1000,
+                            values: [1, 1000],
+                            slide: function (event, ui) {
+                                $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+                    });
+                </script>
+
+                <?php
+                echo "
+<div style='color:white;margin-right:15px;'>";
+                if ($lang == 'en') {
+                    echo '<label for="amount">' . $x[12]->har_en . '</label>';
+                } else {
+                    echo '<label for="amount">' . $x[12]->har . '</label>';
+                }
+                echo '<input type="text" id="amount" name="eight[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                echo "<input type='hidden' value='" . $x[12]->id_har . "' name='id_har[]'></div>";
+                echo '<div id="slider-range"></div>';
+
+                foreach ($res->result() as $val) {
+
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+//print_r($this->db->queries);
+                    $w = $q->result();
+
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "
+<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "
+</div>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='eight[]'>";
                     echo "<option value=''>".$this->lang->line('opt')."</option>";
                     foreach ($e->result() as $wq) {
                         echo "

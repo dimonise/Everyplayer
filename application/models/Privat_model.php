@@ -105,6 +105,7 @@ class Privat_model extends CI_Model {
         $this->db->join('achi_games', 'achi_games.id_ach_game = achi.game', 'left');
         $this->db->where('achi.user_id', $param);
         $query = $this->db->get();
+//        print_r($this->db->queries);
         return $query->result();
     }
 

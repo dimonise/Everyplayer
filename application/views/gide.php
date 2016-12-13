@@ -38,13 +38,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        
-            <div class="news_in">
+    <div class="news-top-bg row">
+        <div class="picLeft"></div>
+        <div class="picRight"></div>
+            <div class="news">
                 <div class="news1">
                     <div class="news_in_header">
                         <div class="col-md-6 col-sm-12 col-xs-12 left">
-                            <p><?= $gide[0]->author_gides ?></p>
+                            <!--<p><?= $gide[0]->author_gides ?></p>-->
                             <p><?php
                                 $arrr = explode(" ", $gide[0]->datas_gides);
                                 $arr = explode(":", $arrr[1]);
@@ -230,7 +231,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     foreach ($komm as $vall) {
                                         ?>
                                         <div class="pod_koment">
-                                            <div class="col-md-1 col-sm-1 avatar_width2">
+                                            <div class="col-md-2 col-sm-2 avatar_width2">
                                                 <div class="row">
                                                     <div class="avatar2" style=" background-image: url(<?php
                                     $this->db->where('user_id',$vall->id_author);
@@ -246,7 +247,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     ?>);"></div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-11 col-sm-11">
+                                            <div class="col-md-8 col-sm-8">
                                                 <div class="row">
                                                     <div>
                                                         <?= "<p>" . $vall->author_k . "</p><p>" . $vall->datas_k . "</p>"; ?>

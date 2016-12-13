@@ -74,8 +74,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="news1">
                         <div class="news_header">
                             <div class="col-md-6 col-sm-12 col-xs-12 left">
-                                <p><?= $new->author_gides; ?></p>
-
+                                <!--<p><?= $new->author_gides; ?></p>-->
+                                
                                 <?php
                                 $arrr = explode(" ", $new->datas_gides);
                                 $arr = explode(":", $arrr[1]);
@@ -112,31 +112,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								$this->db->where('games_id', $new->cat_gides);
 								$gets = $this->db->get('favorite_games');
 								$im = $gets->result();
-								echo "<img src='/images/games/".$im[0]->games_img."' style='height:50px;width:50px'>";
+								echo "<img src='/images/games/".$im[0]->games_img."' style='height:50px;width:50px;float:left;'>";
                                 if ($lang == 'en') {
                                     ?>                                
-                                    <h3><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/<?= $new->gides_id ?>/<?= $segment ?>'><?= $new->title_en ?></a></h3>
+                                    <h3 style="text-align: left; padding-left: 60px;"><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/<?= $new->gides_id ?>/<?= $segment ?>'><?= $new->title_en ?></a></h3>
                                     <?php
                                 } else {
 								?>
-                                    <h3><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/<?= $new->gides_id ?>/<?= $segment ?>'><?=$new->title_gides?></a></h3>
+                                    <h3 style="text-align: left; padding-left: 60px;"><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/<?= $new->gides_id ?>/<?= $segment ?>'><?=$new->title_gides?></a></h3>
                                <?php }
                                 ?>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
-    <?php
-    if ($new->img_gides != null) {
-        echo '<img src="' . base_url() . 'images/gides/' . $new->img_gides . '">';
-    } else {
-        echo $new->video_gide;
-    }
-    ?></div>
+                            <?php
+                            if ($new->img_gides != null) {
+                                echo '<img src="' . base_url() . 'images/gides/' . $new->img_gides . '">';
+                            } else {
+                                echo $new->video_gide;
+                            }
+                            ?></div>
                         <div class="col-md-12 col-sm-12 col-xs-12 gides_text">
                             <?php
                             if ($lang != 'en') {
                                 ?>                              
-                                <h5><?= $new->text_gides; ?></h5>
+                                <h5><p><?= $new->text_gides; ?></p></h5>
                                 <?php
                             } else {
                                 echo "<h3>" . $new->text_en . "</h3>";
@@ -260,7 +260,7 @@ console.log(html);
                                     } else {
                                         var taba = data.video_gide;
                                     }
-                                    $(".scroll-pane").append("<div class='news1'><div class='news_header'><div class='col-md-6 col-sm-12 col-xs-12 left'><img src='/images/games/"+html.im[0].games_img+"' style='height:50px;width:50px'><p>" + data.author_gides + "</p><p>" + html.day + " " + html.mon + " " + html.year + " " + html.tim + "</p></div><div class='col-md-6 col-sm-12 col-xs-12 right'><div class='comments'><p>" + html.comm + "</p></div><div class='liked' onclick='like(" + data.gides_id + ")'><p>&nbsp;</p></div></div><div class='col-md-12 col-sm-12 col-xs-12'><h3>" + title + "</h3></div></div><div class='col-md-12 col-sm-12 col-xs-12'>" + taba + "</div><div class='col-md-12 col-sm-12 col-xs-12 news_text'><h5>" + texts + "</h5></div><div class='col-md-6 col-sm-6 col-xs-12'><div class='social_icon'><ul><div id='fb-root'></div><meta property='og:url'  content='<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "'><meta property='og:type'  content='website'><meta property='og:title'  content='" + data.title_gides + "'><meta property='og:image'  content='<?php echo base_url(); ?>images/gide_one/" + data.img_gides + "'><a id='share' href='http://www.facebook.com/sharer.php?u=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "' onclick='window.open(this.href, this.target, 'width= 500,height=600,scrollbars=1,top=150,left=' + (window.screen.width / 2 - 250));return false;'><div class='fb'></div></a><a href='http://vk.com/share.php?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "&title=" + data.title_gides + "&image=<?php echo base_url(); ?>images/gides/" + data.img_gides + "&noparse=true'><div class='vk'></div></a><a href='https://twitter.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "&text=<?= $segment ?>'><div class='tv'></div></a><a href='https://plus.google.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "' onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;'><div class='gl'></div></a></ul></div></div><div class='col-md-6 col-sm-6 col-xs-12 button-center'><input class='button_news spoiler' type='button' value='<?= $this->lang->line('expand'); ?>'><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "/" + segment + "'><input class='button_news' type='button' value='<?= $this->lang->line('more'); ?>'></a></div><hr><hr></div>");
+                                    $(".scroll-pane").append("<div class='news1'><div class='news_header'><div class='col-md-6 col-sm-12 col-xs-12 left'><p>" + data.author_gides + "</p><p>" + html.day + " " + html.mon + " " + html.year + " " + html.tim + "</p></div><div class='col-md-6 col-sm-12 col-xs-12 right'><div class='comments'><p>" + html.comm + "</p></div><div class='liked' onclick='like(" + data.gides_id + ")'><p>&nbsp;</p></div></div><div class='col-md-12 col-sm-12 col-xs-12'><img src='/images/games/"+html.im[0].games_img+"' style='height:50px;width:50px;float:left;'><h3 style='text-align: left; padding-left: 60px;'>" + title + "</h3></div></div><div class='col-md-12 col-sm-12 col-xs-12'>" + taba + "</div><div class='col-md-12 col-sm-12 col-xs-12 news_text'><h5>" + texts + "</h5></div><div class='col-md-6 col-sm-6 col-xs-12'><div class='social_icon'><ul><div id='fb-root'></div><meta property='og:url'  content='<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "'><meta property='og:type'  content='website'><meta property='og:title'  content='" + data.title_gides + "'><meta property='og:image'  content='<?php echo base_url(); ?>images/gide_one/" + data.img_gides + "'><a id='share' href='http://www.facebook.com/sharer.php?u=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "' onclick='window.open(this.href, this.target, 'width= 500,height=600,scrollbars=1,top=150,left=' + (window.screen.width / 2 - 250));return false;'><div class='fb'></div></a><a href='http://vk.com/share.php?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "&title=" + data.title_gides + "&image=<?php echo base_url(); ?>images/gides/" + data.img_gides + "&noparse=true'><div class='vk'></div></a><a href='https://twitter.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "&text=<?= $segment ?>'><div class='tv'></div></a><a href='https://plus.google.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "' onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;'><div class='gl'></div></a></ul></div></div><div class='col-md-6 col-sm-6 col-xs-12 button-center'><input class='button_news spoiler' type='button' value='<?= $this->lang->line('expand'); ?>'><a href='/<?= $lang ?>/<?= $this->session->userdata('side') ?>/gide_one/" + data.gides_id + "/" + segment + "'><input class='button_news' type='button' value='<?= $this->lang->line('more'); ?>'></a></div><hr><hr></div>");
 
                                 }
                             });

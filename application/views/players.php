@@ -84,8 +84,15 @@ function GetYearWord($int, $age, $old)
                         <p><?= $this->lang->line('sort_games') ?></p>
                         <div class="vivod_liked_games">
                             <?php
+                            $class = "";
                             foreach ($favor as $fav) {
-                                echo "<a href='/" . $lang . "/" . $this->session->userdata('side') . "/player/search_gamers_games/" . $fav->games_id . "'><img src='/images/games/" . $fav->games_img . "' ></a>";
+                                if($this->uri->segment(5) == $fav->id_ach_game){
+                                    $class = 'style="-webkit-filter: grayscale(0);-moz-filter: grayscale(0);-o-filter: grayscale(0);-ms-filter: grayscale(0);filter: grayscale(0);cursor: pointer;transition: 0.3s;"';
+
+                                }
+
+                                echo "<a href='/" . $lang . "/" . $this->session->userdata('side') . "/player/search_gamers_games/" . $fav->id_ach_game . "'><img src='/images/games/" . $fav->game_img . "' ".$class."  ></a>";
+                           $class = "";
                             }
                             ?>
                         </div>
@@ -96,7 +103,12 @@ function GetYearWord($int, $age, $old)
                                     <option value="" value="" disabled selected
                                             style='display:none;'><?= $this->lang->line('sel_games') ?></option>
                                     <?php
-                                    $fgam = $this->input->post('all_games');
+                                    if($this->input->post('all_games')) {
+                                        $fgam = $this->input->post('all_games');
+                                    }
+                                    if($this->uri->segment(5)){
+                                        $fgam = $this->uri->segment(5);
+                                    }
                                     foreach ($favor_all as $fav_all) {
                                         echo "<option value='" . $fav_all->id_ach_game . "'";
                                         if (!empty($fgam) and $fgam == $fav_all->id_ach_game) {
@@ -107,8 +119,10 @@ function GetYearWord($int, $age, $old)
                                     ?>
                                 </select>
                             </div>
-                            <div class="vibor_game filtr"></div>
-<!--                            <p>--><?//= $this->lang->line('timez') ?><!--</p>-->
+                            <div class="vibor_game filtr">
+
+                            </div>
+
                             <div class="vibor_game">
                                 <select name="gmt">
                                     <option value="" disabled selected
@@ -126,18 +140,40 @@ function GetYearWord($int, $age, $old)
                                 </select>
                             </div>
                             <div class="vibor_game">
+<!--                                <script>-->
+<!--                                    $(function () {-->
+<!--                                        $("#slider-range_age").slider({-->
+<!--                                            range: true,-->
+<!--                                            min: 0,-->
+<!--                                            max: 100,-->
+<!--                                            values: [1, 100],-->
+<!--                                            slide: function (event, ui) {-->
+<!--                                                $("#amount_age").val(ui.values[0] + " - " + ui.values[1]);-->
+<!--                                            }-->
+<!--                                        });-->
+<!--                                        $("#amount_age").val($("#slider-range_age").slider("values", 0) + " - " + $("#slider-range_age").slider("values", 1));-->
+<!--                                    });-->
+<!--                                </script>-->
+<!--                                --><?php
+//
+//                                echo '<label for="amount_age">' . $this->lang->line('age') . '</label>';
+//
+//                                echo '<input type="text" id="amount_age" name="age" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+//                                echo '<div id="slider-range_age"></div>';
+//                                ?>
                                 <select name="age">
                                     <option value="" disabled selected
                                             style='display:none;'><?= $this->lang->line('age') ?></option>
                                     <?php
                                     $fage = $this->input->post('age');
-                                    for ($i = 10; $i < 61; $i++) {
+                                    for ($i = 10; $i < 101; $i++) {
                                         echo "<option value='$i'";
                                         if (!empty($fage) and $fage == $i) {
                                             echo "selected='selected'";
                                         }
                                         echo ">$i</option>";
                                     }
+
                                     ?>
                                 </select>
                             </div>
@@ -171,8 +207,8 @@ function GetYearWord($int, $age, $old)
                     $ar = explode('/', $games);
                     $res = array();
                     for ($i = 0; $i < count($ar); $i++) {
-                        $this->db->where('games_name', $ar[$i]);
-                        $query = $this->db->get('favorite_games');
+                        $this->db->where('game_name', $ar[$i]);
+                        $query = $this->db->get('achi_games');
                         $res[] = $query->result();
                     }
                     $this->db->where('id_med', $user->medal);
@@ -219,7 +255,7 @@ function GetYearWord($int, $age, $old)
                                 if (!empty($res[0])) {
                                     for ($i = 0; $i < count($res); $i++) {
 
-                                        echo "<img src='/images/games/" . $res[$i][0]->games_img . "'>";
+                                        echo "<a href='/" . $lang . "/" . $this->session->userdata('side') . "/player/search_gamers_games/" . @$res[$i][0]->id_ach_game . "'><img src='/images/games/" . @$res[$i][0]->game_img . "'></a>";
                                     }
                                 }
                                 ?>
@@ -438,3 +474,6 @@ if ($this->uri->segment(3) == 'players') {
         });
     })
 </script>
+<script>
+
+    </script>

@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container-fluid">
             <div class="row">
                 <nav class="nav_black">
-                    <a href="/<?= $lang ?>/home/<?= $this->session->userdata('side'); ?>"><div class="logo_black"></div></a>
+                    <a href="/<?= $lang ?>/home/<?= $this->session->userdata('side'); ?>"><div class="logo_black navbar-fixed-top"></div></a>
                     <div class="gam"></div>
                     <div class="container navigation">
                         <div class="row">
@@ -58,7 +58,7 @@ if (!$this->session->userdata('id')) {
     if ($this->uri->segment(3) != 'registration' && $this->uri->segment(3) != 'login' && $this->uri->segment(2) != 'creat_user' && $this->uri->segment(1) != 'auth') {
         ?>
         <div class="container">
-            <div class="row">
+            <div style="margin-top: 30px;" class="row">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">

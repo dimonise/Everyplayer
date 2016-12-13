@@ -419,7 +419,9 @@
 	.liked_games {
     	margin-right: 14px;
 	}
-
+	body {
+		background-position: center top;
+	}
 }
 @media only screen and (max-width : 640px) {
 	.nav_black {
@@ -461,8 +463,8 @@
 		text-align: center;
 	}
 	.news {
-		background-image: none;
-		background-color: rgb(236, 245, 248);
+		/*background-image: none;
+		background-color: rgb(236, 245, 248);*/
 		padding-top: 30px;
 		margin-left: 10px;
    		margin-right: 10px;

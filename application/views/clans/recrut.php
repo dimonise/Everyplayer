@@ -113,8 +113,8 @@ function GetYearWord($int, $age, $old) {
                     <div class="row">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs tabs-left noselect">
-                            <li class="active first"><a href="#tab_first" data-toggle="tab"><?= strtoupper($this->lang->line('members')) ?></a></li>
-                            <li class="second"><a href="#tab_second " data-toggle="tab"><?= strtoupper($this->lang->line('request')) ?></a></li>
+                            <li class="active first"><a href="#tab_first" data-toggle="tab"><?= $this->lang->line('members') ?></a></li>
+                            <li class="second"><a href="#tab_second " data-toggle="tab"><?= $this->lang->line('request') ?></a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active tab1" id="tab_first">

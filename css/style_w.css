@@ -476,7 +476,7 @@ nav .nav-right {
 }
 .news {
 	background: url(../images/news_bg_white_repeat.png) repeat-y center top;
-    padding-top: 0px;
+    padding-top: 4px;
     padding-left: 47px;
     padding-right: 47px;
     margin-top: 58px;
@@ -493,7 +493,7 @@ nav .nav-right {
     font-size: 18px;
     font-family: "OpenSans";
     text-align: left;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
     line-height: 29px;
 }
 .news_text h5 {
@@ -508,18 +508,25 @@ nav .nav-right {
 }
 .news img {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 100%;
     height: 213px;
 }
+.news h3 a {
+    color: #585858;
+    font-size: 30px;
+    font-family: "OpenSans";
+    line-height: 65px;
+    text-align: center;
+    text-transform: uppercase;
+}
 .news h3 {
     color: #585858;
-    font-size: 20px;
+    font-size: 30px;
     font-family: "OpenSans";
-    text-align: left;
-    line-height: 58px;
+    line-height: 65px;
+    text-align: center;
     text-transform: uppercase;
-    margin-left: 40px;
 }
 .social_icon {
     margin-bottom: 25px;
@@ -564,19 +571,47 @@ nav .nav-right {
 .paginat2 {
     position: relative;
     bottom: 50px;
-    right: 15px;
+    right: 6px;
 }
 .paginat2 ul {
     text-align: right;
 }
 .paginat2 ul li {
-    color: #838182;
+    color: #fff;
     font-size: 15px;
-    text-transform: uppercase;
+    line-height: 40px;
     font-family: "OpenSans";
     display: inline-block;
     text-align: center;
     letter-spacing: 3px;
+    background-color: #989898;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin: 0 3px 5px;
+    cursor: pointer;
+}
+.paginat2 ul li a {
+    color: #fff;
+}
+.paginat2 ul > a {
+    color: #fff;
+    font-size: 25px;
+    line-height: 34px;
+    font-family: "OpenSans";
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 3px;
+    background-color: #989898;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin: 0 3px 5px;
+    cursor: pointer;  
+}
+.paginat2 ul li:hover, .paginat2 ul > a:hover {
+    background-color: #2c9eff;
+    transition: 0.5s;
 }
 .fb2, .vk2, .tv2, .gl2, .in2 {
     background-size: cover;
@@ -702,6 +737,11 @@ nav .nav-right {
 .news1 hr:last-child {
     margin-bottom: 20px;
 }
+/*.news1 {
+    position: relative;
+    top: -25px;
+}*/
+
 /********************************ФУТЕР************************************/
 .padding-top {
     padding-top: 90px;
@@ -746,16 +786,16 @@ footer p {
 /******************************КОНЕЦ ФУТЕРА*********************************/
 
 /******************************Страница НОВОСТИ ВНУТР.***********************/
+
+.bg-rep {
+    background: url(../images/news_bg_white_repeat.png) repeat-y center top;   
+}
 .news_in {
-    background-image: url(../images/news_bg_white.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding-top: 137px;
+    padding-top: 0px;
     padding-left: 47px;
     padding-right: 47px;
-    margin-top: 50px;
+    margin-top: 58px;
     padding-bottom: 55px;
-    overflow: hidden;
 }
 .news_in p {
     color: #585858;
@@ -772,6 +812,7 @@ footer p {
     text-align: left;
     line-height: 29px;
     margin-top: 25px;
+    margin-bottom: 20px;
     overflow: hidden;
     text-indent: 35px;
 }
@@ -898,18 +939,24 @@ footer p {
 }
 .margin-top {
     margin-top: 10px;
-    margin-left: -40px;
+    /*margin-left: -40px;*/
 }
 .avatar {
     background-image: url(../images/avatar.jpg);
-    background-size: cover;
+    /*background-size: cover;
     background-repeat: no-repeat;
     width: 115px;
     height: 115px;
     background-position: center;
     float: left;
     margin-left: 5px;
-    margin-top: 15px;
+    margin-top: 15px;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 130px;
+    background-position: center center;
+    margin: 0 auto;
 }
 .koment p {
     color: #585858;
@@ -957,14 +1004,20 @@ footer p {
     background-color: #2c9eff;
     transition: 0.5s;
 }
+.reply-comment-txt p {
+    font-size: 16px;
+}
 .avatar2 {
     background-image: url(../images/avatar.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
     background-position: center;
-    float: left;
+    margin: 0 auto;
+}
+.reply-main-comment {
+    margin: 20px 0;
 }
 .koment .vivod_pod_koment p {
     color: #585858;
@@ -1474,7 +1527,7 @@ input[type=radio]:checked + label:before {
     background-image: url(../images/player-avatar.png);
     background-size: cover;
     background-position: center;
-    width: 160px;
+    width: 150px;
     height: 150px;
     float: left;
     margin-right: 10px;
@@ -1482,9 +1535,6 @@ input[type=radio]:checked + label:before {
 .info_vivod {
     float: left;
     min-width: 183px;
-}
-.news .info_vivod p {
-    margin-left: 0px;
 }
 .liked_games {
     max-width: 160px;
@@ -1773,6 +1823,7 @@ input[type=radio]:checked + label:before {
     display: block;
     width: 100%;
     float: left;
+    height: 100%;
 }
 .uzor_avatar {
     background-image: url(../images/uzor_avatar_w.png);
@@ -3174,15 +3225,15 @@ input::-webkit-calendar-picker-indicator {
 .pencil3 {
     background-image: url(../images/pencil.png);
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     position: absolute;
     cursor: pointer;
     right: 0px;
     background-repeat: no-repeat;
     background-color: #151515;
-    top: 40px;
+    top: 50px;
 }
 .privat_input_grup {
     width: 410px;
@@ -4138,6 +4189,7 @@ input[name='creat_vibor_img'] {
 .koment {
     padding-top: 15px;
     padding-bottom: 120px;
+    margin-bottom: 30px;
 }
 .koment .scroll-pane {
     height: 1000px;
@@ -4156,7 +4208,7 @@ input[name='creat_vibor_img'] {
 }
 .paginat2 ul li {
     font-size: 18px;
-    color: #ff7e00;
+    color: #23527c;
 }
 .paginat2 li a, .paginat2 a {
     color: #838182;

@@ -54,6 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	<div class="picRight"></div>
         <div class="news">
             <div class="scroll-pane">
+
                 <?php
                 foreach ($news as $new) {
                     ?>		

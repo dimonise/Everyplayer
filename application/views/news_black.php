@@ -40,13 +40,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        
-            <div class="news_in">
+    <div class="news-top-bg row">
+        <div class="picLeft"></div>
+        <div class="picRight"></div>
+            <div class="news_in bg-rep">
                 <div class="news1">
                     <div class="news_in_header">
                         <div class="col-md-6 col-sm-12 col-xs-12 left">
-                            <p><?= $news[0]->author_news ?></p>
                             <p><?php
                                 $arrr = explode(" ", $news[0]->datas_news);
                                 $arr = explode(":", $arrr[1]);
@@ -72,15 +72,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <?php
                                 if ($lang == 'en') {
-                                
-?>                                
-                                <h3><?= $news[0]->title_en ?></h3>
-                                <?php
-                }
-                else{
-                   echo  "<h3>".$news[0]->title_news."</h3>";
-                }
-                ?>
+
+                                ?>
+                                                                <h3><?= $news[0]->title_en ?></h3>
+                                                                <?php
+                                                }
+                                                else{
+                                                   echo  "<h3>".$news[0]->title_news."</h3>";
+                                                }
+                                                ?>
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -89,8 +89,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-md-12 col-sm-12 col-xs-12 news_in_text">
                         <?php
                            if ($lang != 'en') {
-                                
-?>                              
+
+?>
                             <h5><?= $news[0]->text_news; ?></h5>
                             <?php
                 }
@@ -126,12 +126,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <!-- Put this script tag to the place, where the Share button will be -->
                                 <a href="http://vk.com/share.php?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/news/<?= $news[0]->news_id ?>&title=<?=$segment?>&image=<?php echo base_url(); ?>images/news/<?= $news[0]->img_news; ?>&noparse=true"><div class="vk"></div></a>
 
-                                <!--**********************************************************************************************************************************************************-->                               
+                                <!--**********************************************************************************************************************************************************-->
                                 <!--***************************************************TWITTER*****************************************************************************************************-->
-                                    <a href="https://twitter.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/news/<?= $news[0]->news_id ?>&text=<?=$segment?>"  ><div class="tv"></div></a> 
+                                    <a href="https://twitter.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/news/<?= $news[0]->news_id ?>&text=<?=$segment?>"  ><div class="tv"></div></a>
                                 <!--------************************************************************************************************************************************-->
-                                <!--***************************************************GOOGLE+*****************************************************************************************************-->                                
-                                
+                                <!--***************************************************GOOGLE+*****************************************************************************************************-->
+
                                 <a href="https://plus.google.com/share?url=<?= base_url() . $lang ?>/<?= $this->session->userdata('side') ?>/news/<?= $news[0]->news_id ?>" onclick="javascript:window.open(this.href,
                                                 '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
                                         return false;"><div class="gl"></div></a>
@@ -151,32 +151,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <h3><?= $this->lang->line('coms'); ?></h3>
                     </div>
-<?php
-if ($this->session->userdata('id')) {
 
-    $this->db->where('user_id', $this->session->userdata('id'));
-    $query = $this->db->count_all_results('user_ban');
+                    <?php
+                    if ($this->session->userdata('id'))
+                    {
 
-    if ($query < 1) {
-        ?>
-                            <div class="napisat_koment">
+                        $this->db->where('user_id', $this->session->userdata('id'));
+                        $query = $this->db->count_all_results('user_ban');
+
+                        if ($query < 1)
+                            {
+                            ?>
                                 <form action="/home/new_komm" method="post">
-                                    <textarea name="text"></textarea>
-                                    <input type="hidden" value="<?php echo $this->session->userdata('username'); ?>" name="user">
-                                    <input type="hidden" value="<?php echo $news[0]->news_id; ?>" name="id_con">
+                                    <div class="napisat_koment">
+                                        <textarea name="text"></textarea>
+                                        <input type="hidden" value="<?php echo $this->session->userdata('username'); ?>" name="user">
+                                        <input type="hidden" value="<?php echo $news[0]->news_id; ?>" name="id_con">
                                     </div>
+
                                     <div>
                                         <input type="submit" class="button_koment" value="<?php echo $this->lang->line('send_komm'); ?>">
                                     </div>
                                 </form>
-                                        <?php
-                                    }
-                                }
-                                foreach ($komm as $val) {
-                                    ?>
-                            <div class="col-md-2 col-sm-2 avatar_width">
-                                <div class="row">
-                                    <div class="avatar" style=" background-image: url(<?php
+                            <?php
+                            }
+                    }
+                    ?>
+
+
+
+
+                    <?php
+                    foreach ($komm as $val)
+                    {
+                    ?>
+                        <div class="row main-comment">
+
+                            <div class="col-md-2 comment-img">
+                                <div class="avatar" style=" background-image: url(<?php
                                 $this->db->where('user_id', $val->id_author);
                                 $query = $this->db->get('users');
                                 $user = $query->result();
@@ -186,48 +198,39 @@ if ($this->session->userdata('id')) {
                                 } else {
                                     echo '/images/avatar/avatar.jpg';
                                 }
-                                    ?>);"></div>
-                                </div>
+                                ?>);"></div>
                             </div>
-                            <div class="col-md-10 col-sm-10 margin-top">
-                                <div class="row">
-                                    <div>
-                                        <?= "<p>" . $val->author . "</p><p>" . $val->datas . "</p>"; ?>
-                                    </div>
-                                    <div class="vivod_koment">
-                                        <p><?= $val->text; ?></p>
-                                        <?php
-                                        if ($this->session->userdata('last_name') == 'istrator') {
-                                            ?>
-                                            <p><input type="button" value="<?=$this->lang->line('add_ban')?>" onclick="ban(<?= $user[0]->user_id ?>,<?= $news[0]->news_id; ?>)"></p>
-                                            <p><input type="button" value="<?=$this->lang->line('del_com')?>" onclick="del_kom(<?= $val->id_komm ?>,<?= $news[0]->news_id; ?>)"></p>
-                                                <?php
-                                            }
-                                            if ($this->session->userdata('id')) {
-                                                $this->db->where('user_id', $this->session->userdata('id'));
-                                                $query = $this->db->count_all_results('user_ban');
-                                                if ($query < 1) {
-                                                    ?>
-                                                <div class="otpravit_koment" data-infa="<?php echo $val->id_komm; ?>">
-                                            <?php
-                                        }
-                                    }
+
+                            <div class="col-md-8 comment-txt">
+                                <?= "<p>" . $val->author . "</p><p>" . $val->datas . "</p>"; ?>
+                                <p><?= $val->text; ?></p>
+
+                                <?php
+
+
+
+
+                                    if ($this->session->userdata('last_name') == 'istrator') {
                                     ?>
-                                        </div>
-                                    </div>
+                                        <!--<p><input type="button" value="<?=$this->lang->line('add_ban')?>" onclick="ban(<?= $user[0]->user_id ?>,<?= $news[0]->news_id; ?>)"></p>-->
+                                        <p><input type="button" value="<?=$this->lang->line('del_com')?>" onclick="del_kom(<?= $val->id_komm ?>,<?= $news[0]->news_id; ?>)"></p>
+                                <?php
+                                }
+                                ?>
 
 
+                                <div class="otpravit_koment" id="target" data-infa="<?php echo $val->id_komm; ?>"></div>
 
-                                                <?php
-                                                $this->load->model('news_model');
-                                                $komm = $this->news_model->get_komm_komm($val->id_komm);
+                                <?php
+                                $this->load->model('news_model');
+                                $komm = $this->news_model->get_komm_komm($val->id_komm);
 
-                                                foreach ($komm as $vall) {
-                                                    ?>
-                                        <div class="pod_koment">
-                                            <div class="col-md-1 col-sm-1 avatar_width2">
-                                                <div class="row">
-                                                    <div class="avatar2" style=" background-image: url(<?php
+                                foreach ($komm as $vall)
+                                {
+                                ?>
+                                    <div class="row reply-main-comment">
+                                        <div class="col-md-2 reply-comment-img">
+                                            <div class="avatar2" style=" background-image: url(<?php
                                             $this->db->where('user_id', $vall->id_author);
                                             $query = $this->db->get('users');
                                             $user = $query->result();
@@ -237,52 +240,84 @@ if ($this->session->userdata('id')) {
                                             } else {
                                                 echo '/images/avatar/avatar.jpg';
                                             }
-                                                    ?>);"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-11 col-sm-11">
-                                                <div class="row">
-                                                    <div>
-        <?= "<p>" . $vall->author_k . "</p><p>" . $vall->datas_k . "</p>"; ?>
-                                                    </div>
-                                                    <div class="vivod_pod_koment">
-                                                        <p><?= $vall->text_k; ?></p>
-                                        <?php
-                                        if ($this->session->userdata('last_name') == 'istrator') {
-                                            ?>
-                                                            <p><input type="button" value="<?=$this->lang->line('add_ban')?>" onclick="ban(<?= $user[0]->user_id ?>,<?= $news[0]->news_id; ?>)"></p>
-                                                            <p><input type="button" value="<?=$this->lang->line('del_com')?>" onclick="del_komm(<?= $vall->id_komm_komm ?>,<?= $news[0]->news_id; ?>)"></p>
-        <?php } ?>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            ?>);"></div>
                                         </div>
-    <?php } ?>
-                                </div>
+                                        <div class="col-md-10 reply-comment-txt">
+                                            <?= "<p>" . $vall->author_k . "</p><p>" . $vall->datas_k . "</p>"; ?>
+                                            <p><?= $vall->text_k; ?></p>
+
+                                            <?php
+                                            if ($this->session->userdata('last_name') == 'istrator') {
+                                                ?>
+                                                <!--<p><input type="button" value="<?=$this->lang->line('add_ban')?>" onclick="ban(<?= $user[0]->user_id ?>,<?= $news[0]->news_id; ?>)"></p>-->
+                                                <p><input type="button" value="<?=$this->lang->line('del_com')?>" onclick="del_komm(<?= $vall->id_komm_komm ?>,<?= $news[0]->news_id; ?>)"></p>
+                                            <?php } ?>
+
+
+                                        </div>
+
+                                    </div>
+
+                                <?php
+                                }
+                                ?>
 
                             </div>
-<?php } ?>
-                    </div>
+
+                        </div>
+
+
+
+                    <?php
+                    }
+                    ?>
+
+
+
                 </div>
-            </div>	
+            </div>
         </div>
     </div>
     </div>
+
     <script>
-        /*** ответ на комментарий ***/
-        $('.otpravit_koment').click(function () {
+
+        $( ".otpravit_koment" ).click(function() {
             var prev_id = $(this).data("infa");
+
+            //alert(prev_id);
             $(this).replaceWith('<form action="/home/komm_komm" method="post"><div class="napisat_koment"><textarea class="komentar1" name="text"></textarea></div><input type="hidden" value="<?php echo $this->session->userdata('username'); ?>" name="user"><input type="hidden" value="<?php echo @$news[0]->news_id; ?>" name="id_con"><input type="hidden" value="' + prev_id + '" name="id_prev_komm"><div><input type="submit" class="button_koment" value="<?php echo $this->lang->line('repl'); ?>"></div></form>');
-        })
+        });
+
+
+
+        function del_komm(x, y)
+        {
+
+            alert(x);
+            /*
+            $.ajax({
+                type: "post",
+                url: "/home/del_komm",
+                data: {id_komm: x, id_con: y},
+                success: function () {
+                    alert("<?=$this->lang->line('del_comm')?>");
+                    location.href = "<?= base_url() . $lang . '/' . $this->session->userdata('side') . '/news/' ?>" + y;
+                }
+            });*/
+        }
+
+
 
         /*** подсчет лайков***/
+/*
         $('.liked_in').click(function () {
             $.ajax({
                 type: "post",
                 url: "/home/add_like",
                 data: {
-                    id_user: <?= $this->session->userdata('id') ?>,
-                    id_news: <?= $news[0]->news_id ?>,
+                    id_user: <?= $this->session->userdata('id') ?>
+                    id_news: <?= $news[0]->news_id ?>
                 },
                 success: function (html) {
                     if (html == 'false') {
@@ -294,8 +329,8 @@ if ($this->session->userdata('id')) {
                 }
             });
         })
-
-
+ */
+/*
         function ban(x, y) {
             $.ajax({
                 type: "post",
@@ -318,19 +353,10 @@ if ($this->session->userdata('id')) {
                 }
             });
         }
-        function del_komm(x, y) {
-            $.ajax({
-                type: "post",
-                url: "/home/del_komm",
-                data: {id_komm: x, id_con: y},
-                success: function () {
-                    alert("<?=$this->lang->line('del_comm')?>");
-                    location.href = "<?= base_url() . $lang . '/' . $this->session->userdata('side') . '/news/' ?>" + y;
-                }
-            });
-        }
+        */
     </script>
-<script>
+
+<script>/*
     function like(x) {
 
         $.ajax({
@@ -341,5 +367,5 @@ if ($this->session->userdata('id')) {
                 alert('<?=$this->lang->line('news_liked')?>');
             }
         });
-    }
+    }*/
 </script>

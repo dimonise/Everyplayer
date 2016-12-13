@@ -586,7 +586,6 @@ class Privat extends CI_Controller
             $data['role'] = $second[3];
             $this->db->insert('achi_dota2', $data);
         }
-
         if ($id_game == 3) {
             $id_har = $this->input->post('id_har');
             $third = $this->input->post('third');
@@ -715,6 +714,32 @@ class Privat extends CI_Controller
             $data['type_gam'] = $seven[3];
 
             $this->db->insert('achi_hs', $data);
+        }
+        if ($id_game == 8) {
+            $id_har = $this->input->post('id_har');
+            $eight = $this->input->post('eight');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            $dataz['user_id'] = $id_user;
+            $dataz['game'] = $id_game;
+            $dataz['id_crit'] = $id_har[0];
+            $dataz['val_crit_text'] = $eight[0];
+            $this->db->insert('achi', $dataz);
+            for ($i = 1; $i < 6; $i++) {
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit'] = $eight[$i];
+                $this->db->insert('achi', $dataz);
+            }
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['level'] = $eight[0];
+            $data['rank'] = $eight[1];
+            $data['tank'] = $eight[2];
+            $data['killer'] = $eight[3];
+            $data['support'] = $eight[4];
+            $data['guard'] = $eight[5];
+            $this->db->insert('achi_over', $data);
         }
     }
 
@@ -1091,6 +1116,47 @@ class Privat extends CI_Controller
                 }
                 echo "</div>";
                 echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='seven[]'>";
+                foreach ($e->result() as $wq) {
+                    echo "<option value='" . $wq->id_val . "'>";
+                    if ($datas['lang'] == 'en') {
+                        echo $wq->value_en;
+                    } else {
+                        echo $wq->value;
+                    }
+                    echo "</option>";
+                }
+                echo '</select>';
+            }
+        }
+        if ($id_game == 8) {
+
+            echo "<div style='color:white;margin-right:15px;' >";
+            if ($datas['lang'] == 'en') {
+                echo $x[18]->har_en;
+            } else {
+                echo $x[18]->har;
+            }
+            echo "<input type='hidden' value='" . $x[18]->id_har . "' name='id_har[]'></div><input type='text' value='' name='eight[]'>";
+            foreach ($res->result() as $val) {
+
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+                //print_r($this->db->queries);
+                $w = $q->result();
+
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "</div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='eight[]'>";
                 foreach ($e->result() as $wq) {
                     echo "<option value='" . $wq->id_val . "'>";
                     if ($datas['lang'] == 'en') {

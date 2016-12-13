@@ -84,10 +84,18 @@ function GetYearWord($int, $age, $old)
                         <p><?= $this->lang->line('sort_games') ?></p>
                         <div class="vivod_liked_games">
                             <?php
+                            $class = "";
                             foreach ($favor as $fav) {
-                                echo "<a href='/" . $lang . "/" . $this->session->userdata('side') . "/player/search_gamers_games/" . $fav->games_id . "'><img src='/images/games/" . $fav->games_img . "' ></a>";
+                                if($this->uri->segment(5) == $fav->id_ach_game){
+                                    $class = 'style="-webkit-filter: grayscale(0);-moz-filter: grayscale(0);-o-filter: grayscale(0);-ms-filter: grayscale(0);filter: grayscale(0);cursor: pointer;transition: 0.3s;"';
+
+                                }
+
+                                echo "<a href='/" . $lang . "/" . $this->session->userdata('side') . "/player/search_gamers_games/" . $fav->id_ach_game . "'><img src='/images/games/" . $fav->game_img . "' ".$class."  ></a>";
+                                $class = "";
                             }
                             ?>
+
                         </div>
                         <form action="/<?= $lang . "/" . $this->session->userdata('side') ?>/player/search"
                               method="post">
@@ -108,7 +116,7 @@ function GetYearWord($int, $age, $old)
                                 </select>
                             </div>
                             <div class="vibor_game filtr"></div>
-                            <!--                            <p>--><?//= $this->lang->line('timez') ?><!--</p>-->
+
                             <div class="vibor_game">
                                 <select name="gmt">
                                     <option value="" disabled selected
@@ -131,7 +139,7 @@ function GetYearWord($int, $age, $old)
                                             style='display:none;'><?= $this->lang->line('age') ?></option>
                                     <?php
                                     $fage = $this->input->post('age');
-                                    for ($i = 10; $i < 61; $i++) {
+                                    for ($i = 10; $i < 101; $i++) {
                                         echo "<option value='$i'";
                                         if (!empty($fage) and $fage == $i) {
                                             echo "selected='selected'";
@@ -161,86 +169,98 @@ function GetYearWord($int, $age, $old)
                     </div>
                 </div>
                 <?php
-//                echo "<pre>";
-//var_dump($get_gamers);
-//                die;
-                foreach ($get_gamers as $user) {
-                    $dbirth = strtotime($user[0]->bdate);
-                    $now = time();
-                    $age_sec = $now - $dbirth;
-                    $age_years = floor($age_sec / 31536000);
+                //                echo "<pre>";
+                //var_dump($get_gamers);
+                //                die;
+                              //  var_dump($get_gamers);
+//echo count($get_gamers[0]);
+                if (!empty($get_gamers[0]) and isset($get_gamers[0])) {
+                    foreach ($get_gamers as $user) {
 
-                    $games = substr($user[0]->like_games, 0, -1);
-                    $ar = explode('/', $games);
-                    $res = array();
-                    for ($i = 0; $i < count($ar); $i++) {
-                        $this->db->where('games_name', $ar[$i]);
-                        $query = $this->db->get('favorite_games');
-                        $res[] = $query->result();
-                    }
-                    $this->db->where('id_med', $user[0]->medal);
-                    $med = $this->db->get('medal');
-                    $medal = $med->result();
-                    ?>
-                    <div class="col-md-9 col-sm-9 col-xs-12 players">
-                        <div class="row">
-                            <a href='/<?= $lang ?>/<?= $this->session->userdata('side') . "/privat_info/" . $user[0]->user_id ?>'>
-                                <div class="player_avatar" style=" background-image: url(<?php
-                                if (!empty($user[0]->avatar)) {
-                                    echo '/images/avatar/' . $user[0]->avatar;
-                                } else {
-                                    echo '/images/avatar/avatar.jpg';
-                                }
-                                ?>);"></div>
-                            </a>
-                            <div class="info_vivod">
-                                <p>
-                                    <a href='/<?= $lang ?>/<?= $this->session->userdata('side') . "/privat_info/" . $user[0]->user_id ?>'><?= $user[0]->first_name ?></a>
-                                </p>
-                                <p><?= $user[0]->username ?></p>
-                                <p>г. <?= $user[0]->city ?> (<?= $user[0]->gmt ?>)</p>
-                                <p><?= $age_years . " " . GetYearWord($age_years, $age, $old); ?></p>
-                                <?php
+                        $dbirth = strtotime($user[0]->bdate);
+                        $now = time();
+                        $age_sec = $now - $dbirth;
+                        $age_years = floor($age_sec / 31536000);
 
-                                if (@$medal[0]->medal_img) { ?>
-                                    <p class='nagradi'><img src='/images/medal/<?= $medal[0]->medal_img ?>'
-                                                            title="<?= $medal[0]->medal_name ?>"></p>
-                                <?php }
-                                if ($user[0]->premium == 1) {
-                                    ?>
-                                    <p class='nagradi'><img src='/images/medal/gold.png' title="Premium" class="golden">
-                                    </p>
-                                    <?php
-                                }
-
-
-                                ?>
-                            </div>
-
-                            <div class="liked_games">
-                                <?php
-                                if (!empty($res[0])) {
-                                    for ($i = 0; $i < count($res); $i++) {
-
-                                        echo "<img src='/images/games/" . $res[$i][0]->games_img . "'>";
+                        $games = substr($user[0]->like_games, 0, -1);
+                        $ar = explode('/', $games);
+                        $res = array();
+                        for ($i = 0; $i < count($ar); $i++) {
+                            $this->db->where('games_name', $ar[$i]);
+                            $query = $this->db->get('favorite_games');
+                            $res[] = $query->result();
+                        }
+                        $this->db->where('id_med', $user[0]->medal);
+                        $med = $this->db->get('medal');
+                        $medal = $med->result();
+                        ?>
+                        <div class="col-md-9 col-sm-9 col-xs-12 players">
+                            <div class="row">
+                                <a href='/<?= $lang ?>/<?= $this->session->userdata('side') . "/privat_info/" . $user[0]->user_id ?>'>
+                                    <div class="player_avatar" style=" background-image: url(<?php
+                                    if (!empty($user[0]->avatar)) {
+                                        echo '/images/avatar/' . $user[0]->avatar;
+                                    } else {
+                                        echo '/images/avatar/avatar.jpg';
                                     }
-                                }
-                                ?>
+                                    ?>);"></div>
+                                </a>
+                                <div class="info_vivod">
+                                    <p>
+                                        <a href='/<?= $lang ?>/<?= $this->session->userdata('side') . "/privat_info/" . $user[0]->user_id ?>'><?= $user[0]->first_name ?></a>
+                                    </p>
+                                    <p><?= $user[0]->username ?></p>
+                                    <p>г. <?= $user[0]->city ?> (<?= $user[0]->gmt ?>)</p>
+                                    <p><?= $age_years . " " . GetYearWord($age_years, $age, $old); ?></p>
+                                    <?php
+
+                                    if (@$medal[0]->medal_img) { ?>
+                                        <p class='nagradi'><img src='/images/medal/<?= $medal[0]->medal_img ?>'
+                                                                title="<?= $medal[0]->medal_name ?>"></p>
+                                    <?php }
+                                    if ($user[0]->premium == 1) {
+                                        ?>
+                                        <p class='nagradi'><img src='/images/medal/gold.png' title="Premium"
+                                                                class="golden">
+                                        </p>
+                                        <?php
+                                    }
+
+
+                                    ?>
+                                </div>
+
+                                <div class="liked_games">
+                                    <?php
+                                    if (!empty($res[0])) {
+                                        for ($i = 0; $i < count($res); $i++) {
+
+                                            echo "<img src='/images/games/" . $res[$i][0]->games_img . "'>";
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <div class="group_buttons">
+                                    <input type="button" class="button_players click_mes"
+                                           data-infa="<?= $user[0]->user_id ?>"
+                                           value="<?= $this->lang->line('mess') ?>">
+                                    <input type="button" class="button_players add_to_privat_player"
+                                           value="<?= $this->lang->line('add_liked') ?>"
+                                           data-info="<?= $user[0]->user_id ?>">
+                                    <input type="button" class="button_players friend2"
+                                           data-friend="<?= $user[0]->user_id ?>"
+                                           value="<?= $this->lang->line('add_friend') ?>">
+                                    <input type="hidden" id="friend"
+                                           value="<?php echo $this->session->userdata('id'); ?>">
+                                </div>
+                                <hr>
+                                <hr>
                             </div>
-                            <div class="group_buttons">
-                                <input type="button" class="button_players click_mes" data-infa="<?= $user[0]->user_id ?>"
-                                       value="<?= $this->lang->line('mess') ?>">
-                                <input type="button" class="button_players add_to_privat_player"
-                                       value="<?= $this->lang->line('add_liked') ?>" data-info="<?= $user[0]->user_id ?>">
-                                <input type="button" class="button_players friend2" data-friend="<?= $user[0]->user_id ?>"
-                                       value="<?= $this->lang->line('add_friend') ?>">
-                                <input type="hidden" id="friend" value="<?php echo $this->session->userdata('id'); ?>">
-                            </div>
-                            <hr>
-                            <hr>
                         </div>
-                    </div>
-                <?php } ?>
+                    <?php }
+                } else {
+                    echo "<h2>Игроки с заданными критериями не найдены</h2>";
+                } ?>
 
 
             </div>
@@ -430,7 +450,7 @@ if ($this->uri->segment(3) == 'players') {
 
 </script>
 <script>
-    $('#all_games').change(function (){
+    $('#all_games').change(function () {
         $.ajax({
             url: '/players/get_filtr',
             method: 'POST',

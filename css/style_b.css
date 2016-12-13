@@ -470,17 +470,15 @@ box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
 }
 .news {
 	background: url(../images/news_bg3_repeat.png) repeat-y center top;
-    padding-top: 0px;
+    padding-top: 4px;
     padding-left: 47px;
     padding-right: 47px;
     margin-top: 60px;
     padding-bottom: 20px;
 }
 .scroll-pane {
-    width: 100% !important; /* Ширина видимой области*/
-    height: 1600px; /* Высота видимой области*/
-    /*overflow: auto !important; 
-    outline: none;*/
+    /*width: 100% !important;
+    height: 1600px;*/
 }
 
 .news p {
@@ -488,7 +486,7 @@ box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
     font-size: 18px;
     font-family: "OpenSans";
     text-align: left;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
     line-height: 29px;
 }
 .news_text h5 {
@@ -503,18 +501,25 @@ box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
 }
 .news img {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 100%;
     height: 213px;
 }
 .news h3 {
     color: #838182;
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 65px;
     font-family: "OpenSans";
-    text-align: left;
-    line-height: 58px;
+    text-align: center;
     text-transform: uppercase;
-    margin-left: 40px;
+}
+.news h3 a {
+    color: #838182;
+    font-size: 30px;
+    line-height: 65px;
+    font-family: "OpenSans";
+    text-align: center;
+    text-transform: uppercase;
 }
 .social_icon {
     margin-bottom: 25px;
@@ -562,7 +567,7 @@ box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
 .paginat2 {
     position: relative;
     bottom: 50px;
-    right: 15px;
+    right: 6px;
 }
 .paginat2 ul {
     text-align: right;
@@ -570,11 +575,43 @@ box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
 .paginat2 ul li {
     color: #838182;
     font-size: 15px;
-    text-transform: uppercase;
+    line-height: 40px;
     font-family: "OpenSans";
     display: inline-block;
     text-align: center;
     letter-spacing: 3px;
+    background-color: #000;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin: 0 3px 5px;
+    cursor: pointer;
+}
+.paginat2 ul > a {
+    color: #838182;
+    font-size: 25px;
+    line-height: 34px;
+    font-family: "OpenSans";
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 3px;
+    background-color: #000;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin: 0 3px 5px;
+    cursor: pointer;  
+}
+.paginat2 ul li:hover, .paginat2 ul > a:hover {
+    color: #ff7e00;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
+    transition: 0.5s;
+}
+.paginat2 ul li a:hover {
+    color: #ff7e00;
+    transition: 0.5s;
 }
 .fb2, .vk2, .tv2, .gl2, .in2 {
     background-size: cover;
@@ -759,8 +796,17 @@ footer p {
 /******************************КОНЕЦ ФУТЕРА*********************************/
 
 /******************************Страница НОВОСТИ ВНУТР.***********************/
+.bg-rep {
+    background: url(../images/news_bg3_repeat.png) repeat-y center top;   
+}
 .news_in {
-    background-image: url(../images/news_bg2.png);
+    /*background: url(../images/news_bg3_repeat.png) repeat-y center top;*/
+    padding-top: 0px;
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-top: 60px;
+    padding-bottom: 55px;
+    /*background-image: url(../images/news_bg2.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding-top: 137px;
@@ -768,7 +814,7 @@ footer p {
     padding-right: 47px;
     margin-top: 50px;
     padding-bottom: 55px;
-    overflow: hidden;
+    overflow: hidden;*/
 }
 .news_in p {
     color: #838182;
@@ -785,6 +831,7 @@ footer p {
     text-align: left;
     line-height: 29px;
     margin-top: 25px;
+    margin-bottom: 20px;
     overflow: hidden;
     text-indent: 35px;
 }
@@ -894,6 +941,7 @@ footer p {
     padding-left: 47px;
     padding-right: 47px;
     margin-top: 50px;
+    margin-bottom: 20px;
     overflow-x: hidden;
     padding-bottom: 100px;
 
@@ -911,10 +959,17 @@ footer p {
 }
 .margin-top {
 	margin-top: 10px;
-	margin-left: -40px;
 }
 .avatar {
-    
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 130px;
+    background-position: center center;
+    margin: 0 auto;
+}
+/*
+.avatar {
     background-size: cover;
     background-repeat: no-repeat;
     width: 115px;
@@ -924,6 +979,7 @@ footer p {
     margin-left: 5px;
     margin-top: 15px;
 }
+*/
 .koment p {
 	color: #fff;
     font-size: 18px;
@@ -948,11 +1004,12 @@ footer p {
 	width: 585px;
 	border: 0px;
 	outline: 0px;
-	padding: 15px 10px;
+	padding: 15px 15px;
 	font-family: "OpenSans";
 	resize: none;
 	margin-top: 30px;
 	margin-bottom: 20px;
+    text-align: left;
 }
 .button_koment {
 	width: 210px;
@@ -973,14 +1030,20 @@ footer p {
     box-shadow: 0px 0px 5px 1px rgba(255,128,0,1);
     transition: 0.5s;
 }
+.reply-comment-txt p {
+    font-size: 16px;
+}
 .avatar2 {
 	background-image: url(../images/avatar.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     background-position: center;
-    float: left;
+    margin: 0 auto;
+}
+.reply-main-comment {
+    margin: 20px 0;
 }
 .koment .vivod_pod_koment p {
 	color: #838182;
@@ -1487,10 +1550,9 @@ input[type=radio]:checked + label:before {
 
 /*************************************Страница Игроков **********************************/
 .player_avatar {
-	background-image: url(../images/player-avatar.png);
-	background-size: cover;
-	background-position: center;
-	width: 160px;
+	background: url(../images/player-avatar.png) no-repeat center center;
+	background-size: contain;
+	width: 150px;
 	height: 150px;
 	float: left;
 	margin-right: 10px;
@@ -1499,14 +1561,11 @@ input[type=radio]:checked + label:before {
 	float: left;
 	min-width: 183px;
 }
-.news .info_vivod p {
-	margin-left: 0px;
-}
 .liked_games {
 	max-width: 160px;
 	max-height: 160px;
 	min-width: 160px;
-        float: left;
+    float: left;
 	margin-left: 40px;
 	min-height: 160px;
 }
@@ -1795,6 +1854,7 @@ input[type=radio]:checked + label:before {
     display: block;
     width: 100%;
     float: left;
+    height: 100%;
 }
 .uzor_avatar {
     background-image: url(../images/uzor_avatar.png);
@@ -3199,15 +3259,16 @@ input::-webkit-calendar-picker-indicator {
 .pencil3 {
     background-image: url(../images/pencil.png);
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     position: absolute;
     cursor: pointer;
     right: 0px;
     background-repeat: no-repeat;
     background-color: #151515;
-    top: 40px;
+    top: 50px;
+    display: none;
 }
 .privat_input_grup {
     width: 410px;
@@ -4191,7 +4252,7 @@ input[name='creat_vibor_img'] {
 /***********************************Доработки натяжки*******************************/
 .koment {
     padding-top: 15px;
-    padding-bottom: 120px;
+    padding-bottom: 70px;
 }
 .koment .scroll-pane {
     height: 1000px;
