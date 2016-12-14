@@ -377,7 +377,130 @@ class Players_model extends CI_Model
 
                     return $filtr;
                     break;
+                case 9:
+                if (!empty($ach[0])) {
+                    $first = explode(' - ', $ach[0]);
+                }
+                if (!empty($ach[1])) {
+                    $second = 'and regime=' . $ach[1];
+                } else {
+                    $second = null;
+                }
+                if (!empty($ach[2])) {
+                    $three = ' and class=' . $ach[2];
+                } else {
+                    $three = null;
+                }
 
+                $where = "select *  from `achi_diab` where `paragon` between '$first[0]' and '$first[1]'  $second $three ";
+
+                $query = $this->db->query($where);
+                $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                $filtr = array();
+                for ($x = 0; $x < count($result); $x++) {
+                    $where = "user_id=" . $result[$x]->user_id . "  $add_where";
+                    $this->db->where($where);
+                    $users = $this->db->get('users');
+                    $filtr[] = $users->result();
+                }
+
+                return $filtr;
+                break;
+                case 10: ;
+                    break;
+                case 11:
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = explode(' - ', $ach[1]);
+                    }
+                    if (!empty($ach[2])) {
+                        $three = ' and class=' . $ach[2];
+                    } else {
+                        $three = null;
+                    }
+
+                    $where = "select *  from `achi_black_des` where `level` between '$first[0]' and '$first[1]' and `min_sharp` between '$second[0]' and '$second[1]'  $three ";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $where = "user_id=" . $result[$x]->user_id . "  $add_where";
+                        $this->db->where($where);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
+                    break;
+                case 12:
+                    $crit = array(0 => 'race', 1 => 'server', 2 => 'ligue');
+                    for ($i = 0; $i < count($ach); $i++) {
+                        if (!empty($ach[$i])) {
+                            $this->db->where($crit[$i], $ach[$i]);
+                        }
+                    }
+                    $query = $this->db->get('achi_star');
+                    $result = $query->result();
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $where = "user_id=" . $result[$x]->user_id . "  $add_where";
+                        $this->db->where($where);
+                        $users = $this->db->get('users');
+
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
+                    break;
+                case 13 :
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = explode(' - ', $ach[1]);
+                    }
+                    if (!empty($ach[2])) {
+                        $third = explode(' - ', $ach[2]);
+                    }
+                    if (!empty($ach[3])) {
+                        $four = 'and server=' . $ach[3];
+                    } else {
+                        $four = null;
+                    }
+                    if (!empty($ach[4])) {
+                        $five = 'and class=' . $ach[4];
+                    } else {
+                        $five = null;
+                    }
+                    if (!empty($ach[5])) {
+                        $six = 'and vector=' . $ach[5];
+                    } else {
+                        $six = null;
+                    }
+                    $where = "select *  from `achi_wow` where `level` between '$first[0]' and '$first[1]' and `arena_2` between '$second[0]' and  '$second[1]' and `arena_3` between  '$third[0]' and '$third[1]' $four $five $six";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $where = "user_id=" . $result[$x]->user_id . "  $add_where";
+                        $this->db->where($where);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+
+                    return $filtr;
+                    break;
             }
 
         }

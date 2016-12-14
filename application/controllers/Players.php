@@ -183,6 +183,20 @@ class Players extends CI_Controller
             case 8:
                 $ach = $this->input->post('eight');
                 break;
+            case 9:
+                $ach = $this->input->post('nine');
+                break;
+            case 10: ;
+                break;
+            case 11:
+                $ach = $this->input->post('elev');
+                break;
+            case 12:
+                $ach = $this->input->post('tvel');
+                break;
+            case 13:
+                $ach = $this->input->post('thot');
+                break;
         }
 if(!empty($age)) {
     $dbirth = date('Y', time() - $age);
@@ -894,6 +908,306 @@ else{
     ";
                     }
                     echo '</select>';
+                }
+                break;
+            case 9:
+                ?>
+                <script>
+                    $(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 0,
+                            max: 5000,
+                            values: [1, 5000],
+                            slide: function (event, ui) {
+                                $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+                    });
+                </script>
+
+                <?php
+                echo "
+<div style='color:white;margin-right:15px;'>";
+                if ($lang == 'en') {
+                    echo '<label for="amount">' . $x[25]->har_en . '</label>';
+                } else {
+                    echo '<label for="amount">' . $x[25]->har . '</label>';
+                }
+                echo '<input type="text" id="amount" name="nine[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                echo "<input type='hidden' value='" . $x[25]->id_har . "' name='id_har[]'></div>";
+                echo '<div id="slider-range"></div>';
+
+                foreach ($res->result() as $val) {
+
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+//print_r($this->db->queries);
+                    $w = $q->result();
+
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "
+<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "
+</div>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='nine[]'>";
+                    echo "<option value=''>".$this->lang->line('opt')."</option>";
+                    foreach ($e->result() as $wq) {
+                        echo "
+    <option value='" . $wq->id_val . "'>";
+                        if ($lang == 'en') {
+                            echo $wq->value_en;
+                        } else {
+                            echo $wq->value;
+                        }
+                        echo "
+    </option>
+    ";
+                    }
+                    echo '</select>';
+                }
+                break;
+            case 10: ;
+                break;
+            case 11: ;
+                ?>
+                <script>
+                    $(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 0,
+                            max: 65,
+                            values: [1, 65],
+                            slide: function (event, ui) {
+                                $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+                    });
+                </script>
+                <script>
+                    $(function () {
+                        $("#slider-range1").slider({
+                            range: true,
+                            min: 0,
+                            max: 20,
+                            values: [1, 20],
+                            slide: function (event, ui) {
+                                $("#amount1").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount1").val($("#slider-range1").slider("values", 0) + " - " + $("#slider-range1").slider("values", 1));
+                    });
+                </script>
+                <?php
+                echo "
+<div style='color:white;margin-right:15px;'>";
+                if ($lang == 'en') {
+                    echo '<label for="amount">' . $x[18]->har_en . '</label>';
+                } else {
+                    echo '<label for="amount">' . $x[18]->har . '</label>';
+                }
+                echo '<input type="text" id="amount" name="elev[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                echo "<input type='hidden' value='" . $x[18]->id_har . "' name='id_har[]'></div>";
+                echo '<div id="slider-range"></div>';
+
+                echo "<div style='color:white;margin-right:15px;'>";
+                if ($lang == 'en') {
+                    echo '<label for="amount1">' . $x[26]->har_en . '</label>';
+                } else {
+                    echo '<label for="amount1">' . $x[26]->har . '</label>';
+                }
+                echo '<input type="text" id="amount1" name="elev[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                echo "<input type='hidden' value='" . $x[26]->id_har . "' name='id_har[]'></div>";
+                echo '<div id="slider-range1"></div>';
+
+                foreach ($res->result() as $val) {
+
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+
+                    $w = $q->result();
+
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "
+<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "
+</div>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='elev[]'>
+                    <option value=''>".$this->lang->line('opt')."</option>";
+                    foreach ($e->result() as $wq) {
+                        echo "
+    <option value='" . $wq->id_val . "'>";
+                        if ($lang == 'en') {
+                            echo $wq->value_en;
+                        } else {
+                            echo $wq->value;
+                        }
+                        echo "
+    </option>
+    ";
+                    }
+                    echo '</select>';
+                }
+                break;
+            case 12:
+                foreach ($res->result() as $val) {
+
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+
+                    $w = $q->result();
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'></div>";
+                    echo "<select name='tvel[]' class='first'><option value=''>".$this->lang->line('opt')."</option>";
+                    foreach ($e->result() as $wq) {
+                        if ($lang == 'en') {
+                            echo "<option value='" . $wq->id_val . "'>" . $wq->value_en . "</option>";
+                        } else {
+                            echo "<option value='" . $wq->id_val . "'>" . $wq->value . "</option>";
+                        }
+                    }
+                    echo '</select>';
+                }
+                break;
+            case 13:
+                ?>
+                <script>
+                    $(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 1,
+                            max: 110,
+                            values: [1, 110],
+                            slide: function (event, ui) {
+                                $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+                    });
+                </script>
+                <script>
+                    $(function () {
+                        $("#slider-range1").slider({
+                            range: true,
+                            min: 1,
+                            max: 10000,
+                            values: [1, 10000],
+                            slide: function (event, ui) {
+                                $("#amount1").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount1").val($("#slider-range1").slider("values", 0) + " - " + $("#slider-range1").slider("values", 1));
+                    });
+                </script>
+                <script>
+                    $(function () {
+                        $("#slider-range2").slider({
+                            range: true,
+                            min: 1,
+                            max: 10000,
+                            values: [1, 10000],
+                            slide: function (event, ui) {
+                                $("#amount2").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount2").val($("#slider-range2").slider("values", 0) + " - " + $("#slider-range2").slider("values", 1));
+                    });
+                </script>
+                <?php
+
+                    echo "<div style='color:white;margin-right:15px;' >";
+                    if ($lang == 'en') {
+                        echo '<label for="amount">' . $x[18]->har_en . '</label>';
+
+                    } else {
+                        echo '<label for="amount">' . $x[18]->har . '</label>';
+                    }
+                    echo '<input type="text" id="amount" name="thot[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                    echo "<input type='hidden' value='" . $x[18]->id_har . "' name='id_har[]'></div>";
+                    echo '<div id="slider-range"></div>';
+                    //<input type='text' value='' name='second[]'>
+
+                    echo "<div style='color:white;margin-right:15px;' >";
+                    if ($lang == 'en') {
+                        echo '<label for="amount1">' . $x[31]->har_en . '</label>';
+                    } else {
+                        echo '<label for="amount1">' . $x[31]->har . '</label>';
+                    }
+                    echo '<input type="text" id="amount1" name="thot[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                    echo "<input type='hidden' value='" . $x[31]->id_har . "' name='id_har[]'></div>";
+                    echo '<div id="slider-range1"></div>';
+                    //<input type='text' value='' name='second[]'>
+
+                    echo "<div style='color:white;margin-right:15px;' >";
+                    if ($lang == 'en') {
+                        echo '<label for="amount2">' . $x[32]->har_en . '</label>';
+                    } else {
+                        echo '<label for="amount2">' . $x[32]->har . '</label>';
+                    }
+                    echo '<input type="text" id="amount2" name="thot[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                    echo "<input type='hidden' value='" . $x[32]->id_har . "' name='id_har[]'></div>";
+                    echo '<div id="slider-range2"></div>';
+                    //<input type='text' value='' name='second[]'>";
+
+                    foreach ($res->result() as $val) {
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+
+                    $w = $q->result();
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "</div>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'>";
+                    echo "<select name='thot[]'><option value=''>". $this->lang->line('opt'). "</option>";
+                    foreach ($e->result() as $wq) {
+                        echo "<option value='" . $wq->id_val . "'>";
+                        if ($lang == 'en') {
+                            echo $wq->value_en;
+                        } else {
+                            echo $wq->value;
+                        }
+                        echo "</option>";
+                    }
+                    echo "</select>";
                 }
                 break;
         }

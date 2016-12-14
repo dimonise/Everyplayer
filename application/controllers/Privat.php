@@ -546,7 +546,7 @@ class Privat extends CI_Controller
             $dataz = array();
             $data = array();
             /*--- сохраняем в общую таблицу ---*/
-            for($i = 0; $i < 3; $i++) {
+            for ($i = 0; $i < 3; $i++) {
                 $dataz['user_id'] = $id_user;
                 $dataz['game'] = $id_game;
                 $dataz['id_crit'] = $id_har[$i];
@@ -740,6 +740,109 @@ class Privat extends CI_Controller
             $data['support'] = $eight[4];
             $data['guard'] = $eight[5];
             $this->db->insert('achi_over', $data);
+        }
+        if ($id_game == 9) {
+            $id_har = $this->input->post('id_har');
+            $nine = $this->input->post('nine');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            $dataz['user_id'] = $id_user;
+            $dataz['game'] = $id_game;
+            $dataz['id_crit'] = $id_har[0];
+            $dataz['val_crit_text'] = $nine[0];
+            $this->db->insert('achi', $dataz);
+            for ($i = 1; $i < 3; $i++) {
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit'] = $nine[$i];
+                $this->db->insert('achi', $dataz);
+            }
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['regime'] = $nine[1];
+            $data['class'] = $nine[2];
+            $data['paragon'] = $nine[0];
+
+            $this->db->insert('achi_diab', $data);
+        }
+        if ($id_game == 10) {
+        }
+        if ($id_game == 11) {
+            $id_har = $this->input->post('id_har');
+            $elev = $this->input->post('elev');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 0; $i < 2; $i++) {
+                $dataz = array();
+                $dataz['user_id'] = $id_user;
+                $dataz['game'] = $id_game;
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit_text'] = $elev[$i];
+                $this->db->insert('achi', $dataz);
+            }
+
+            $dataz['val_crit_text'] = 0;
+            $dataz['id_crit'] = $id_har[2];
+            $dataz['val_crit'] = $elev[2];
+            $this->db->insert('achi', $dataz);
+
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['level'] = $elev[0];
+            $data['min_sharp'] = $elev[1];
+            $data['class'] = $elev[2];
+            $this->db->insert('achi_black_des', $data);
+        }
+        if ($id_game == 12) {
+            $id_har = $this->input->post('id_har');
+            $tvel = $this->input->post('tvel');
+
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 0; $i < 3; $i++) {
+                $dataz['user_id'] = $id_user;
+                $dataz['game'] = $id_game;
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit'] = $tvel[$i];
+                $this->db->insert('achi', $dataz);
+            }
+            /*--- сохраняем в индивидуальную таблицу ---*/
+            $data['user_id'] = $id_user;
+            $data['race'] = $tvel[0];
+            $data['server'] = $tvel[1];
+            $data['ligue'] = $tvel[2];
+            $this->db->insert('achi_star', $data);
+
+        }
+        if ($id_game == 13) {
+            $id_har = $this->input->post('id_har');
+            $thot = $this->input->post('thot');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 0; $i < 3; $i++) {
+                $dataz['user_id'] = $id_user;
+                $dataz['game'] = $id_game;
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit_text'] = $thot[$i];
+                $this->db->insert('achi', $dataz);
+            }
+            $dataz['val_crit_text'] = 0;
+            $dataz['id_crit'] = $id_har[3];
+            $dataz['val_crit'] = $thot[3];
+            $this->db->insert('achi', $dataz);
+            /*--------------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['level'] = $thot[0];
+            $data['arena_2'] = $thot[1];
+            $data['arena_3'] = $thot[2];
+            $data['server'] = $thot[3];
+            $data['class'] = $thot[4];
+            $data['vector'] = $thot[5];
+
+            $this->db->insert('achi_wow', $data);
         }
     }
 
@@ -1045,7 +1148,7 @@ class Privat extends CI_Controller
                 echo '</select>';
             }
         }
-        /*---------------------------------------------------------------------------------------*/
+
         if ($id_game == 6) {
 
             echo "<div style='color:white;margin-right:15px;' >";
@@ -1169,8 +1272,183 @@ class Privat extends CI_Controller
                 echo '</select>';
             }
         }
-    }
+        if ($id_game == 9) {
 
+            echo "<div style='color:white;margin-right:15px;' >";
+            if ($datas['lang'] == 'en') {
+                echo $x[25]->har_en;
+            } else {
+                echo $x[25]->har;
+            }
+            echo "<input type='hidden' value='" . $x[25]->id_har . "' name='id_har[]'></div><input type='text' value='' name='nine[]'>";
+            foreach ($res->result() as $val) {
+
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+                //print_r($this->db->queries);
+                $w = $q->result();
+
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "</div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='nine[]'>";
+                foreach ($e->result() as $wq) {
+                    echo "<option value='" . $wq->id_val . "'>";
+                    if ($datas['lang'] == 'en') {
+                        echo $wq->value_en;
+                    } else {
+                        echo $wq->value;
+                    }
+                    echo "</option>";
+                }
+                echo '</select>';
+            }
+        }
+        if ($id_game == 10) {
+        }
+        if ($id_game == 11) {
+            echo "<div style='color:white;margin-right:15px;' >";
+            if ($datas['lang'] == 'en') {
+                echo $x[18]->har_en;
+            } else {
+                echo $x[18]->har;
+            }
+            echo "<input type='hidden' value='" . $x[18]->id_har . "' name='id_har[]'></div><input type='text' value='' name='elev[]'><div style='color:white;margin-right:15px;' >";
+            if ($datas['lang'] == 'en') {
+                echo $x[26]->har_en;
+            } else {
+                echo $x[26]->har;
+            }
+            echo "<input type='hidden' value='" . $x[26]->id_har . "' name='id_har[]'></div><input type='text' value='' name='elev[]'>";
+
+            foreach ($res->result() as $val) {
+
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+
+                $w = $q->result();
+
+
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "</div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='elev[]'>";
+                foreach ($e->result() as $wq) {
+                    echo "<option value='" . $wq->id_val . "'>";
+                    if ($datas['lang'] == 'en') {
+                        echo $wq->value_en;
+                    } else {
+                        echo $wq->value;
+                    }
+                    echo "</option>";
+                }
+                echo '</select>';
+            }
+        }
+        if ($id_game == 12) {
+            foreach ($res->result() as $val) {
+
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+
+                $w = $q->result();
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'></div>";
+                echo "<select name='tvel[]' class='tvel'>";
+                foreach ($e->result() as $wq) {
+                    if ($datas['lang'] == 'en') {
+                        echo "<option value='" . $wq->id_val . "'>" . $wq->value_en . "</option>";
+                    } else {
+                        echo "<option value='" . $wq->id_val . "'>" . $wq->value . "</option>";
+                    }
+                }
+                echo '</select>';
+            }
+        }
+        if ($id_game == 13) {
+
+
+                echo "<div style='color:white;margin-right:15px;' >";
+                if ($datas['lang'] == 'en') {
+                    echo $x[18]->har_en;
+                } else {
+                    echo $x[18]->har;
+                }
+                echo "<input type='hidden' value='" . $x[18]->id_har . "' name='id_har[]'></div><input type='text' value='' name='thot[]'><div style='color:white;margin-right:15px;' >";
+                if ($datas['lang'] == 'en') {
+                    echo $x[31]->har_en;
+                } else {
+                    echo $x[31]->har;
+                }
+                echo "<input type='hidden' value='" . $x[31]->id_har . "' name='id_har[]'></div><input type='text' value='' name='thot[]'><div style='color:white;margin-right:15px;' >";
+                if ($datas['lang'] == 'en') {
+                    echo $x[32]->har_en;
+                } else {
+                    echo $x[32]->har;
+                }
+                echo "<input type='hidden' value='" . $x[32]->id_har . "' name='id_har[]'></div><input type='text' value='' name='thot[]'>";
+
+                foreach ($res->result() as $val) {
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+
+                $w = $q->result();
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "</div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='thot[]'>";
+                foreach ($e->result() as $wq) {
+                    echo "<option value='" . $wq->id_val . "'>";
+                    if ($datas['lang'] == 'en') {
+                        echo $wq->value_en;
+                    } else {
+                        echo $wq->value;
+                    }
+                    echo "</option>";
+                }
+                echo '</select>';
+            }
+        }
+
+    }
+    /*---------------------------------------------------------------------------------------*/
     public function creat_clan($param)
     {
         $data['title'] = 'Everyplayer - Privat Creat Clan';
