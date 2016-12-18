@@ -409,6 +409,35 @@ class Players_model extends CI_Model
                 return $filtr;
                 break;
                 case 10: ;
+                    if (!empty($ach[0])) {
+                        $first = explode(' - ', $ach[0]);
+                    }
+                    if (!empty($ach[1])) {
+                        $second = 'and class=' . $ach[1];
+                    } else {
+                        $second = null;
+                    }
+                    if (!empty($ach[2])) {
+                        $three = ' and fract=' . $ach[2];
+                    } else {
+                        $three = null;
+                    }
+
+                    $where = "select *  from `achi_arch` where `reit` between '$first[0]' and '$first[1]' $second  $three ";
+
+                    $query = $this->db->query($where);
+                    $result = $query->result();
+//                    echo "<pre>";
+//                    print_r($this->db->queries);
+                    $filtr = array();
+                    for ($x = 0; $x < count($result); $x++) {
+                        $where = "user_id=" . $result[$x]->user_id . "  $add_where";
+                        $this->db->where($where);
+                        $users = $this->db->get('users');
+                        $filtr[] = $users->result();
+                    }
+
+                    return $filtr;
                     break;
                 case 11:
                     if (!empty($ach[0])) {

@@ -318,6 +318,7 @@ class Clans extends CI_Controller {
 
     public function komm_komm() {
         $datas['lang'] = $this->dataz['lang'];
+        $id_clan = $this->input->post('id_clan');
         $id_con = $this->input->post('id_con');
         $id_prev_komm = $this->input->post('id_prev_komm');
         $text = $this->input->post('text');
@@ -325,7 +326,7 @@ class Clans extends CI_Controller {
         $id_author = $this->session->userdata('id');
         $this->load->model('clans_model');
         $this->clans_model->komm_komm($id_con, $id_prev_komm, $user, $text, $id_author);
-        redirect(base_url() . $datas['lang'] . '/black/news_clan/' . $id_con, 'refresh');
+        redirect(base_url() . $datas['lang'] . '/black/news_clan/'.$id_clan.'/'. $id_con, 'refresh');
     }
 
     public function add_like() {
@@ -512,6 +513,10 @@ class Clans extends CI_Controller {
     }
     public function new_news($param) {
         $datas['lang'] = $this->dataz['lang'];
+        $arr = array('side' => $this->input->post('side'));
+        $this->session->set_userdata($arr);
+//        echo "<h1>".$this->session->userdata('side')."</h1>";
+//        die;
         $name_rus = $this->input->post('name_news');
         $name_en = $this->input->post('name_news_en');
         $opisanie_news = $this->input->post('opisanie_news');
@@ -524,7 +529,7 @@ class Clans extends CI_Controller {
         $user = $get->result();
         $data = array('clan_id'=>$param, 'author_news'=>$user[0]->username, 'title_news'=>$name_rus, 'title_en'=>$name_en, 'text_news'=>$opisanie_news, 'text_en'=>$opisanie_news_en, 'img_news'=>$path);
         $this->db->insert('news_clan', $data);
-        redirect(base_url() . $datas['lang'] . '/' . $this->session->userdata('side') . '/clan_news/' . $param, 'refresh');
-        
+
+        redirect($datas['lang'] . '/' . $this->session->userdata('side') . '/clan_news/' . $param, 'refresh');
     }
 }

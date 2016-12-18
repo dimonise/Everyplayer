@@ -91,11 +91,11 @@ $roles = $query->result();
                                 <h4><?=$this->lang->line('cr_news')?></h4>
                                 <div class="name_clan">
                                     <p><?=$this->lang->line('nam_news')?></p>
-                                    <input type="text" name="name_news" placeholder="Введите название новости"></input>
+                                    <input type="text" name="name_news" placeholder="Введите название новости">
                                 </div>
                                 <div class="name_clan">
                                     <p><?=$this->lang->line('nam_news_en')?></p>
-                                    <input type="text" name="name_news_en" placeholder="Enter the title news"></input>
+                                    <input type="text" name="name_news_en" placeholder="Enter the title news">
                                 </div>
                                 <div class="opisanie_clan">
                                     <p><?=$this->lang->line('des_news')?></p>
@@ -150,7 +150,7 @@ $roles = $query->result();
                                             })
                                         }
                                     </script>
-
+                                    <input type="hidden" name="side" id="side" value="<?=$this->session->userdata('side')?>">
                                     <input type="hidden" name="path" id="path" value=""> 
                                     <section class="imka"></section>
                                 </div>

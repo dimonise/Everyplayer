@@ -766,6 +766,31 @@ class Privat extends CI_Controller
             $this->db->insert('achi_diab', $data);
         }
         if ($id_game == 10) {
+            $id_har = $this->input->post('id_har');
+            $ten = $this->input->post('ten');
+            $dataz = array();
+            $data = array();
+            /*--- сохраняем в общую таблицу ---*/
+            for ($i = 1; $i < 3; $i++) {
+                $dataz = array();
+                $dataz['user_id'] = $id_user;
+                $dataz['game'] = $id_game;
+                $dataz['id_crit'] = $id_har[$i];
+                $dataz['val_crit'] = $ten[$i];
+                $this->db->insert('achi', $dataz);
+            }
+
+            $dataz['val_crit'] = 0;
+            $dataz['id_crit'] = $id_har[0];
+            $dataz['val_crit_text'] = $ten[0];
+            $this->db->insert('achi', $dataz);
+
+            /*---------------------------------*/
+            $data['user_id'] = $id_user;
+            $data['class'] = $ten[0];
+            $data['fract'] = $ten[1];
+            $data['reit'] = $ten[2];
+            $this->db->insert('achi_arch', $data);
         }
         if ($id_game == 11) {
             $id_har = $this->input->post('id_har');
@@ -1148,7 +1173,6 @@ class Privat extends CI_Controller
                 echo '</select>';
             }
         }
-
         if ($id_game == 6) {
 
             echo "<div style='color:white;margin-right:15px;' >";
@@ -1314,6 +1338,45 @@ class Privat extends CI_Controller
             }
         }
         if ($id_game == 10) {
+            echo "<div style='color:white;margin-right:15px;' >";
+            if ($datas['lang'] == 'en') {
+                echo $x[34]->har_en;
+            } else {
+                echo $x[34]->har;
+            }
+            echo "<input type='hidden' value='" . $x[34]->id_har . "' name='id_har[]'></div><input type='text' value='' name='ten[]'>";
+
+            foreach ($res->result() as $val) {
+
+                $this->db->where('id_har', $val->id_har);
+                $this->db->group_by('id_har');
+                $q = $this->db->get('ach_game_har');
+
+                $w = $q->result();
+
+                $this->db->where('id_har', $w[0]->id_har);
+                $this->db->where('id_ach_game', $id_game);
+                $e = $this->db->get('har_value');
+
+                echo "<div style='color:white;margin-right:15px; '>";
+                if ($datas['lang'] == 'en') {
+                    echo $w[0]->har_en;
+                } else {
+                    echo $w[0]->har;
+                }
+                echo "</div>";
+                echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='ten[]'>";
+                foreach ($e->result() as $wq) {
+                    echo "<option value='" . $wq->id_val . "'>";
+                    if ($datas['lang'] == 'en') {
+                        echo $wq->value_en;
+                    } else {
+                        echo $wq->value;
+                    }
+                    echo "</option>";
+                }
+                echo '</select>';
+            }
         }
         if ($id_game == 11) {
             echo "<div style='color:white;margin-right:15px;' >";

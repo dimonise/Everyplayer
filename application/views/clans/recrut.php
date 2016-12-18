@@ -155,9 +155,15 @@ function GetYearWord($int, $age, $old) {
                                                     $a = $this->db->get();
                                                     $medal = $a->result();
                                                     ?>
-                                                    <img src="/images/medal/<?= $medal[0]->img ?>">
+                                                    <img src="/images/medal/<?= $medal[0]->img ?>" title=" <?php
+                                                    if ($lang == 'en') {
+                                                        echo $medal[0]->desc_role_en;
+                                                    } else {
+                                                        echo $medal[0]->desc_role;
+                                                    }
+                                                    ?>">
                                                     <?php if (@$medals[0]->medal_img) { ?>
-                                                        <p class='nagradi'><img src='/images/medal/<?= $medals[0]->medal_img ?>'></p>
+                                                        <p class='nagradi'><img src='/images/medal/<?= $medals[0]->medal_img ?>' title='<?= @$medals[0]->medal_name?>'></p>
                                                     <?php } 
                                                         if($user->premium == 1){                    
 ?>

@@ -187,6 +187,7 @@ class Players extends CI_Controller
                 $ach = $this->input->post('nine');
                 break;
             case 10: ;
+                $ach = $this->input->post('ten');
                 break;
             case 11:
                 $ach = $this->input->post('elev');
@@ -977,7 +978,72 @@ else{
                     echo '</select>';
                 }
                 break;
-            case 10: ;
+            case 10:  ?>
+                <script>
+                    $(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 0,
+                            max: 20000,
+                            values: [1, 20000],
+                            slide: function (event, ui) {
+                                $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+                    });
+                </script>
+
+                <?php
+                echo "
+<div style='color:white;margin-right:15px;'>";
+                if ($lang == 'en') {
+                    echo '<label for="amount">' . $x[34]->har_en . '</label>';
+                } else {
+                    echo '<label for="amount">' . $x[34]->har . '</label>';
+                }
+                echo '<input type="text" id="amount" name="ten[]" readonly style="border:0; color:#f6931f; font-weight:bold;width:40%">';
+                echo "<input type='hidden' value='" . $x[34]->id_har . "' name='id_har[]'></div>";
+                echo '<div id="slider-range"></div>';
+
+                foreach ($res->result() as $val) {
+
+                    $this->db->where('id_har', $val->id_har);
+                    $this->db->group_by('id_har');
+                    $q = $this->db->get('ach_game_har');
+//print_r($this->db->queries);
+                    $w = $q->result();
+
+                    $this->db->where('id_har', $w[0]->id_har);
+                    $this->db->where('id_ach_game', $id_game);
+                    $e = $this->db->get('har_value');
+
+                    echo "
+<div style='color:white;margin-right:15px; '>";
+                    if ($lang == 'en') {
+                        echo $w[0]->har_en;
+                    } else {
+                        echo $w[0]->har;
+                    }
+                    echo "
+</div>";
+                    echo "<input type='hidden' value='" . $w[0]->id_har . "' name='id_har[]'><select name='ten[]'>
+                    <option value=''>".$this->lang->line('opt')."</option>";
+                    foreach ($e->result() as $wq) {
+                        echo "
+    <option value='" . $wq->id_val . "'>";
+                        if ($lang == 'en') {
+                            echo $wq->value_en;
+                        } else {
+                            echo $wq->value;
+                        }
+                        echo "
+    </option>
+    ";
+                    }
+                    echo '</select>';
+                }
+
                 break;
             case 11: ;
                 ?>

@@ -306,7 +306,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         /*** ответ на комментарий ***/
         $('.otpravit_koment').click(function () {
             var prev_id = $(this).data("infa");
-            $(this).replaceWith('<form action="/clans/komm_komm" method="post"><div class="napisat_koment"><textarea class="komentar1" name="text"></textarea></div><input type="hidden" value="<?php echo $this->session->userdata('username'); ?>" name="user"><input type="hidden" value="<?php echo @$news[0]->news_id; ?>" name="id_con"><input type="hidden" value="' + prev_id + '" name="id_prev_komm"><div><input type="submit" class="button_koment" value="<?php echo $this->lang->line('repl'); ?>"></div></form>');
+            $(this).replaceWith('<form action="/clans/komm_komm" method="post"><div class="napisat_koment"><textarea class="komentar1" name="text"></textarea></div><input type="hidden" value="<?php echo $this->session->userdata('username'); ?>" name="user"><input type="hidden" value="<?=$this->uri->segment(4); ?>" name="id_clan"><input type="hidden" value="<?php echo @$news[0]->news_id; ?>" name="id_con"><input type="hidden" value="' + prev_id + '" name="id_prev_komm"><div><input type="submit" class="button_koment" value="<?php echo $this->lang->line('repl'); ?>"></div></form>');
         })
 
         /*** подсчет лайков***/

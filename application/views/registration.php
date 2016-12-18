@@ -52,7 +52,7 @@
                         <select name="byear" required>
                             <option disabled selected="selected"><?=$this->lang->line('y')?></option>
                             <?php
-                            for ($i = 1950; $i < 2020; $i++) {
+                            for ($i = 1950; $i < 2016; $i++) {
                                 echo "<option value='$i'>$i</option>";
                             }
                             ?>
